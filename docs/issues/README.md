@@ -44,7 +44,7 @@ Use the `create-issue` skill (`/create-issue`), or do it by hand:
 2. **Write the detail file** `docs/issues/NNN-name.md` with the full context, acceptance
    criteria, and implementation notes.
 
-3. **Reference the number** in branches and commits: `feature/N-name`, `feat(N): …`,
+3. **Reference the number** in branches and commits: `feature/NNN-name` (zero-padded, `#8` → `feature/008-name`), `feat(N): …`,
    `fixes #N`.
 
 No table to update — GitHub is the list of record.

@@ -37,7 +37,7 @@ filename number **equals the GitHub issue number** (zero-padded to three digits)
    📄 [Full details](https://github.com/cassandragargoyle/portunix-ireco/blob/main/docs/issues/NNN-name.md)"
    ```
 
-4. **Reference `N`** in branches and commits: `feature/N-name`, `feat(N): …`, `fixes #N`.
+4. **Reference `N`** in branches and commits: `feature/NNN-name` (zero-padded, `#8` → `feature/008-name`), `feat(N): …`, `fixes #N`.
 
 5. **Archive on completion**: `gh issue close N` and
    `git mv docs/issues/NNN-name*.md docs/issues/done/`.
@@ -157,8 +157,11 @@ gh issue edit N --repo cassandragargoyle/portunix-ireco --add-assignee @me
 
 ### Branches
 
-- `feature/N-short-name` for features and enhancements
-- `fix/N-short-name` for bug fixes
+- `feature/NNN-short-name` for features and enhancements
+- `fix/NNN-short-name` for bug fixes
+
+`NNN` is the GitHub issue number zero-padded to three digits (`#8` → `fix/008-short-name`),
+matching the issue file name.
 
 ### Commit Messages
 

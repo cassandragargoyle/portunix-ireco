@@ -38,11 +38,11 @@ After I give you the issue:
 
 Create a git branch following the project convention (see
 [ISSUE-DEVELOPMENT-METHODOLOGY.md](../../../docs/contributing/ISSUE-DEVELOPMENT-METHODOLOGY.md)):
-`feature/<N>-<short-description>` or `fix/<N>-<short-description>`
+`feature/<NNN>-<short-description>` or `fix/<NNN>-<short-description>`
 
-- `<N>` is the GitHub issue number
+- `<NNN>` is the GitHub issue number zero-padded to three digits (`#12` → `012`)
 - Use lowercase letters and hyphens for the description (kebab-case)
-- Example: `feature/12-isdoc-credit-notes`
+- Example: `feature/012-isdoc-credit-notes`
 
 Then assign the issue and mark it as in progress:
 

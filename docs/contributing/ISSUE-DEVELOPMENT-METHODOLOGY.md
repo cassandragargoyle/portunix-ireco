@@ -25,7 +25,8 @@ This methodology ensures quality, traceability, and proper testing before code i
    - Identify affected components
    - Estimate implementation complexity
    - Branch naming convention: `feature/{number}-{short-name}` (features/enhancements),
-     `fix/{number}-{short-name}` (bug fixes)
+     `fix/{number}-{short-name}` (bug fixes), where `{number}` is the GitHub issue
+     number zero-padded to three digits (`#8` → `feature/008-short-name`)
 
 ### Phase 2: Implementation
 
