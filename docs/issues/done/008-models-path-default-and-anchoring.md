@@ -9,13 +9,14 @@ runtime reads as `./models/models/invoice/`. A relative `models.path` is also an
 the config file by `ptx-ireco-watcher` but at the current working directory by
 `ptx-ireco-worker`.
 
-**Status**: 📋 Open
+**Status**: ✅ Implemented
 **Type**: Bug
 **Priority**: Low
 **Component**: `docs/cli/watcher.md`, `docs/cli/worker.md`,
 `docs/schemas/ireco-config-1.0.json`, `ptx_ireco.watcher.config`,
 `ptx_ireco.cli.worker_main`, `ptx_ireco.config.schema`
 **Created**: 2026-10-18
+**Closed**: 2026-10-18 — acceptance: [`docs/testing/acceptance-008.md`](../../testing/acceptance-008.md) (STATUS PASS)
 **GitHub**: #8
 **Related**: #3 (worker), #4 (watcher)
 

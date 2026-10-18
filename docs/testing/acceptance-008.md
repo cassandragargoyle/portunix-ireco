@@ -5,7 +5,7 @@
 
 **Issue**: models.path default and example are wrong; worker and
 watcher resolve a relative path differently
-([`docs/issues/008-models-path-default-and-anchoring.md`](../issues/008-models-path-default-and-anchoring.md),
+([`docs/issues/done/008-models-path-default-and-anchoring.md`](../issues/done/008-models-path-default-and-anchoring.md),
 GitHub #8)
 **Branch**: `fix/008-models-path-anchoring`
 **Commits under test**:
