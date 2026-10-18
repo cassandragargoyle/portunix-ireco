@@ -1,0 +1,27 @@
+{
+  "version": "1.0",
+  "description": "UN/ECE Recommendation 20 → ISDOC UnitCode mapping. Subset commonly used by CZ ERPs; identity mapping (ISDOC accepts the Rec.20 codes directly).",
+  "mapping": {
+    "EA": "EA",
+    "PCE": "EA",
+    "ks": "EA",
+    "kg": "KGM",
+    "KGM": "KGM",
+    "g": "GRM",
+    "GRM": "GRM",
+    "l": "LTR",
+    "LTR": "LTR",
+    "m": "MTR",
+    "MTR": "MTR",
+    "m2": "MTK",
+    "MTK": "MTK",
+    "m3": "MTQ",
+    "MTQ": "MTQ",
+    "h": "HUR",
+    "HUR": "HUR",
+    "den": "DAY",
+    "DAY": "DAY",
+    "kWh": "KWH",
+    "KWH": "KWH"
+  }
+}

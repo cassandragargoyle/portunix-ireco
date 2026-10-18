@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VIM Visualization - flowii-FA_26050001.pdf</title>
+  <style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f5f5f5; color: #333; line-height: 1.6; }
+.header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 2rem; text-align: center; }
+.header h1 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+.source-info { font-size: 0.9rem; opacity: 0.9; }
+.source-info span { margin: 0 1rem; }
+.metadata-info { margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.3); display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem 1.5rem; font-size: 0.85rem; opacity: 0.95; }
+.meta-item { display: inline-flex; align-items: center; gap: 0.3rem; }
+.meta-label { opacity: 0.8; }
+.meta-item.hash { width: 100%; justify-content: center; margin-top: 0.5rem; }
+.meta-item.hash code { font-family: monospace; font-size: 0.75rem; background: rgba(0,0,0,0.2); padding: 0.2rem 0.5rem; border-radius: 4px; }
+.tabs { display: flex; justify-content: center; background: #fff; border-bottom: 2px solid #e0e0e0; padding: 0.5rem; }
+.tab { background: none; border: none; padding: 0.75rem 1.5rem; cursor: pointer; font-size: 1rem; color: #666; transition: all 0.3s; border-radius: 4px 4px 0 0; }
+.tab:hover { background: #f0f0f0; }
+.tab.active { color: #667eea; border-bottom: 3px solid #667eea; font-weight: 600; }
+.layer-content { display: none; padding: 2rem; max-width: 1200px; margin: 0 auto; }
+.layer-content.active { display: block; }
+h2 { color: #444; margin-bottom: 1.5rem; padding-bottom: 0.5rem; border-bottom: 2px solid #e0e0e0; margin-top: 2rem; }
+h2:first-child { margin-top: 0; }
+.blocks-grid { display: flex; flex-direction: column; gap: 1rem; }
+.block { border-radius: 8px; padding: 1rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+.block-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; font-size: 0.8rem; }
+.block-id { font-weight: 600; color: #555; }
+.block-type { background: #667eea; color: white; padding: 0.1rem 0.5rem; border-radius: 4px; font-size: 0.7rem; }
+.block-page { background: #43a047; color: white; padding: 0.1rem 0.5rem; border-radius: 4px; font-size: 0.7rem; font-weight: 600; margin-left: auto; }
+.page-section { margin-bottom: 2rem; }
+.page-section-header { font-size: 1rem; font-weight: 600; color: #555; padding: 0.5rem 0; margin-bottom: 1rem; border-bottom: 2px solid #667eea; display: flex; align-items: center; gap: 0.5rem; }
+.block-title { font-weight: 700; font-size: 1.1rem; color: #333; margin-bottom: 0.75rem; padding-bottom: 0.5rem; border-bottom: 1px solid rgba(0,0,0,0.1); }
+.block-content { font-size: 0.9rem; }
+.content-line { padding: 0.2rem 0; color: #555; }
+.no-data { color: #888; font-style: italic; padding: 2rem; text-align: center; }
+.data-table { width: 100%; border-collapse: collapse; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin-bottom: 1rem; }
+.data-table th, .data-table td { padding: 0.75rem 1rem; text-align: left; border-bottom: 1px solid #e0e0e0; }
+.data-table th { background: #667eea; color: white; font-weight: 600; }
+.data-table tr:hover { background: #f9f9f9; }
+.entities-list { display: flex; flex-direction: column; gap: 1rem; }
+.entity { background: white; border-radius: 8px; padding: 1rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+.entity-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 0.75rem; flex-wrap: wrap; }
+.entity-type { background: #4caf50; color: white; padding: 0.25rem 0.75rem; border-radius: 4px; font-weight: 600; font-size: 0.85rem; }
+.entity-source { color: #888; font-size: 0.85rem; }
+.entity-confidence { margin-left: auto; color: #667eea; font-weight: 600; }
+.entity-fields { padding-left: 0.5rem; border-left: 3px solid #e0e0e0; }
+.field { padding: 0.25rem 0; }
+.field-name { color: #888; font-size: 0.85rem; }
+.field-value { color: #333; }
+.barcode-block { background: linear-gradient(135deg, #fff9c4 0%, #fff59d 100%); }
+.barcode-format { background: #ff9800; color: white; padding: 0.1rem 0.5rem; border-radius: 4px; font-size: 0.75rem; font-weight: 600; }
+.barcode-content { font-family: monospace; font-size: 0.8rem; word-break: break-all; white-space: normal; max-width: 400px; }
+.image-type { background: #9c27b0; color: white; padding: 0.1rem 0.5rem; border-radius: 4px; font-size: 0.75rem; font-weight: 600; }
+.image-format { background: #e91e63; color: white; padding: 0.1rem 0.5rem; border-radius: 4px; font-size: 0.75rem; font-weight: 600; }
+.payment { background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); border-left: 4px solid #4caf50; }
+.payment-type { background: #2e7d32; }
+.payment-format { background: #43a047; color: white; padding: 0.1rem 0.5rem; border-radius: 4px; font-size: 0.75rem; }
+.payment-details { padding: 0.5rem; background: rgba(255,255,255,0.7); border-radius: 4px; }
+.payment-field { padding: 0.3rem 0; display: flex; gap: 0.5rem; }
+.amount-field { font-size: 1.1rem; }
+.amount { font-weight: 700; color: #2e7d32; }
+.account { font-family: monospace; font-size: 0.9rem; }
+.extracted-table { background: white; border-radius: 8px; padding: 1rem; margin-bottom: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+.table-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; flex-wrap: wrap; padding-bottom: 0.75rem; border-bottom: 1px solid #e0e0e0; }
+.table-id { font-weight: 700; color: #333; font-size: 1.1rem; }
+.table-info { color: #666; font-size: 0.85rem; padding: 0.2rem 0.6rem; background: #f0f0f0; border-radius: 4px; }
+.table-confidence { margin-left: auto; color: #667eea; font-weight: 600; }
+.extracted-data-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+.extracted-data-table th, .extracted-data-table td { padding: 0.5rem 0.75rem; border: 1px solid #e0e0e0; text-align: left; }
+.extracted-data-table th { background: #f5f5f5; font-weight: 600; color: #444; }
+.extracted-data-table tr:hover td { background: #fafafa; }
+.extracted-data-table td:empty { background: #f9f9f9; }
+.fulltext-container { background: white; border-radius: 8px; padding: 1rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+.fulltext-stats { display: flex; gap: 2rem; margin-bottom: 1rem; padding-bottom: 0.75rem; border-bottom: 1px solid #e0e0e0; color: #666; font-size: 0.9rem; }
+.fulltext-content { max-height: 400px; overflow-y: auto; }
+.fulltext-content pre { white-space: pre-wrap; word-wrap: break-word; font-family: monospace; font-size: 0.85rem; line-height: 1.5; color: #444; background: #f9f9f9; padding: 1rem; border-radius: 4px; }
+.stemming-container { background: white; border-radius: 8px; padding: 1rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-left: 4px solid #03a9f4; }
+.stemming-header { display: flex; flex-wrap: wrap; gap: 1rem 2rem; margin-bottom: 1rem; padding-bottom: 0.75rem; border-bottom: 1px solid #e0e0e0; }
+.stemming-info { color: #666; font-size: 0.9rem; }
+.stemming-label { color: #888; }
+.stemming-tokens { max-height: 500px; overflow-y: auto; }
+.stemming-table { font-size: 0.85rem; }
+.stemming-table th { background: #03a9f4; }
+.stemming-table .token-num { color: #999; font-size: 0.75rem; width: 50px; text-align: center; }
+.stemming-table .token-surface { font-weight: 500; }
+.stemming-table .token-stem { font-family: monospace; color: #03a9f4; font-weight: 600; }
+.stemming-table .token-offset { font-family: monospace; font-size: 0.75rem; color: #999; }
+.token-notice { color: #888; font-style: italic; font-size: 0.85rem; margin-bottom: 0.75rem; padding: 0.5rem; background: #f5f5f5; border-radius: 4px; }
+.toc-container { background: white; border-radius: 8px; padding: 1rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-left: 4px solid #ff9800; }
+.toc-stats { display: flex; gap: 2rem; margin-bottom: 1rem; padding-bottom: 0.75rem; border-bottom: 1px solid #e0e0e0; color: #666; font-size: 0.9rem; }
+.toc-entries { display: flex; flex-direction: column; gap: 0.25rem; }
+.toc-entry { display: flex; align-items: center; gap: 0.75rem; padding: 0.5rem 0.75rem; border-radius: 4px; transition: background 0.2s; }
+.toc-entry:hover { background: #f5f5f5; }
+.toc-level { font-size: 0.7rem; font-weight: 600; color: white; background: #ff9800; padding: 0.15rem 0.4rem; border-radius: 3px; min-width: 28px; text-align: center; }
+.toc-level-1 { font-size: 1rem; }
+.toc-level-1 .toc-title { font-weight: 700; }
+.toc-level-2 { padding-left: 2rem; font-size: 0.95rem; }
+.toc-level-2 .toc-level { background: #ffa726; }
+.toc-level-3 { padding-left: 3.5rem; font-size: 0.9rem; color: #666; }
+.toc-level-3 .toc-level { background: #ffcc80; color: #333; }
+.toc-title { flex-shrink: 0; }
+.toc-dots { flex: 1; border-bottom: 1px dotted #ccc; min-width: 20px; margin-bottom: 0.3rem; }
+.toc-page { font-weight: 600; color: #667eea; font-size: 0.95rem; min-width: 24px; text-align: right; }
+.toc-meta { display: flex; gap: 0.5rem; align-items: center; font-size: 0.75rem; color: #999; margin-left: 0.5rem; }
+.toc-block-ref { font-family: monospace; }
+.toc-confidence { color: #667eea; font-weight: 600; }
+.toc-source { font-size: 0.65rem; padding: 0.1rem 0.35rem; border-radius: 3px; font-weight: 600; text-transform: uppercase; }
+.toc-source-explicit { background: #4caf50; color: white; }
+.toc-source-heuristic { background: #9e9e9e; color: white; }
+.significance-controls { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; padding: 0.75rem 1rem; background: white; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+.toggle-auxiliary { background: #667eea; color: white; border: none; padding: 0.5rem 1rem; border-radius: 4px; cursor: pointer; font-size: 0.85rem; font-weight: 600; transition: background 0.2s; }
+.toggle-auxiliary:hover { background: #5a6fd6; }
+.toggle-auxiliary.active { background: #43a047; }
+.block-count { color: #888; font-size: 0.85rem; }
+.auxiliary-block { border: 2px dashed #ccc; opacity: 0.7; font-size: 0.85rem; }
+.auxiliary-block .block-type { background: #9e9e9e; }
+  </style>
+</head>
+<body>
+<div class="header">
+  <h1>VIM Block Visualization</h1>
+  <div class="source-info">
+    <span>Source: <strong>flowii-FA_26050001.pdf</strong></span>
+    <span>Pages: <strong>1</strong></span>
+  </div>
+  <div class="metadata-info">
+    <span class="meta-item"><span class="meta-label">Format:</span> application/pdf</span>
+    <span class="meta-item"><span class="meta-label">Size:</span> 32,0 KB</span>
+    <span class="meta-item"><span class="meta-label">Language:</span> cs</span>
+  </div>
+</div>
+<div class="tabs">
+  <button class="tab active" onclick="showLayer('structural')">Structural</button>
+  <button class="tab" onclick="showLayer('physical')">Physical</button>
+  <button class="tab" onclick="showLayer('semantic')">Semantic</button>
+  <button class="tab" onclick="showLayer('toc')">TOC</button>
+</div>
+<div id="structural" class="layer-content active">
+<h2>Structural Blocks</h2>
+<div class="significance-controls">
+  <button class="toggle-auxiliary" onclick="toggleAuxiliary()">Show auxiliary blocks</button>
+  <span class="block-count" id="blockCount">Showing 14/15 blocks (1 auxiliary hidden)</span>
+</div>
+<div class="page-section">
+  <div class="page-section-header">Page 1</div>
+  <div class="blocks-grid">
+  <div class="block" style="background-color: #e3f2fd">
+    <div class="block-header">
+      <span class="block-id">block_1</span>
+      <span class="block-type">content</span>
+      <span class="block-page">1</span>
+    </div>
+    <div class="block-content">
+      <div class="content-line">Dříč s.r.o.</div>
+      <div class="content-line">Za rohem 123</div>
+      <div class="content-line">12300 Ráj</div>
+      <div class="content-line">Česká republika</div>
+      <div class="content-line">IČO: 12345678</div>
+      <div class="content-line">DIČ: CZ12345678</div>
+    </div>
+  </div>
+  <div class="block" style="background-color: #f3e5f5">
+    <div class="block-header">
+      <span class="block-id">block_2</span>
+      <span class="block-type">content</span>
+      <span class="block-page">1</span>
+    </div>
+    <div class="block-content">
+      <div class="content-line">Způsob platby:Převodní příkaz</div>
+      <div class="content-line">K úhradě:1 210 000,00 Kč</div>
+      <div class="content-line">Variabilní symbol:26050001</div>
+    </div>
+  </div>
+  <div class="block" style="background-color: #e8f5e9">
+    <div class="block-header">
+      <span class="block-id">block_3</span>
+      <span class="block-type">content</span>
+      <span class="block-page">1</span>
+    </div>
+    <div class="block-content">
+      <div class="content-line">Fakturujeme Vám:</div>
+      <div class="content-line">Č.Položka</div>
+      <div class="content-line">1Baterie</div>
+    </div>
+  </div>
+  <div class="block" style="background-color: #fff3e0">
+    <div class="block-header">
+      <span class="block-id">block_4</span>
+      <span class="block-type">content</span>
+      <span class="block-page">1</span>
+    </div>
+    <div class="block-content">
+      <div class="content-line">ZákladDPHCelkemFakturovaná částka</div>
+      <div class="content-line">Sazba DPH</div>
+      <div class="content-line">1 000 000,00 Kč210 000,00 Kč1 210 000,00 KčZaplaceno</div>
+      <div class="content-line">21%</div>
+    </div>
+  </div>
+  <div class="block" style="background-color: #fce4ec">
+    <div class="block-header">
+      <span class="block-id">block_5</span>
+      <span class="block-type">content</span>
+      <span class="block-page">1</span>
+    </div>
+    <div class="block-content">
+      <div class="content-line">Faktura slouží zároveň jako dodací list.</div>
+    </div>
+  </div>
+  <div class="block" style="background-color: #e0f7fa">
+    <div class="block-header">
+      <span class="block-id">block_6</span>
+      <span class="block-type">labeled_content</span>
+      <span class="block-page">1</span>
+    </div>
+    <div class="block-title">Vystavil:</div>
+    <div class="block-content">
+      <div class="content-line">Jan Novák</div>
+      <div class="content-line">jan.novak@example.com</div>
+    </div>
+  </div>
+  <div class="block" style="background-color: #f1f8e9">
+    <div class="block-header">
+      <span class="block-id">block_7</span>
+      <span class="block-type">content</span>
+      <span class="block-page">1</span>
+    </div>
+    <div class="block-content">
+      <div class="content-line">Vytvořeno aplikací www.flowii.com</div>
+    </div>
+  </div>
+  <div class="block" style="background-color: #fbe9e7">
+    <div class="block-header">
+      <span class="block-id">block_8</span>
+      <span class="block-type">labeled_content</span>
+      <span class="block-page">1</span>
+    </div>
+    <div class="block-title">Odběratel:</div>
+  </div>
+  <div class="block" style="background-color: #ede7f6">
+    <div class="block-header">
+      <span class="block-id">block_9</span>
+      <span class="block-type">content</span>
+      <span class="block-page">1</span>
+    </div>
+    <div class="block-content">
+      <div class="content-line">IČO: 00000019</div>
+      <div class="content-line">DIČ: CZ00000019</div>
+      <div class="content-line">Datum vystavení: 9.5.2026</div>
+      <div class="content-line">DUZP: 9.5.2026</div>
+      <div class="content-line">Splatnost: 23.5.2026</div>
+    </div>
+  </div>
+  <div class="block" style="background-color: #e1f5fe">
+    <div class="block-header">
+      <span class="block-id">block_10</span>
+      <span class="block-type">labeled_content</span>
+      <span class="block-page">1</span>
+    </div>
+    <div class="block-title">Faktura: 26050001</div>
+    <div class="block-content">
+      <div class="content-line">Daňový doklad</div>
+    </div>
+  </div>
+  <div class="block" style="background-color: #f9fbe7">
+    <div class="block-header">
+      <span class="block-id">block_11</span>
+      <span class="block-type">content</span>
+      <span class="block-page">1</span>
+    </div>
+    <div class="block-content">
+      <div class="content-line">PŘÍKLADOVÁ a.s.</div>
+      <div class="content-line">Ukázková 1</div>
+      <div class="content-line">110 00 Praha 1</div>
+      <div class="content-line">Česká republika</div>
+    </div>
+  </div>
+  <div class="block" style="background-color: #efebe9">
+    <div class="block-header">
+      <span class="block-id">block_12</span>
+      <span class="block-type">content</span>
+      <span class="block-page">1</span>
+    </div>
+    <div class="block-content">
+      <div class="content-line">MnožstvíMJDPH (%)JC bez DPHCelkem bez DPH</div>
+      <div class="content-line">JC s DPHCelkem s DPH</div>
+      <div class="content-line">1ks211 000 000,001 000 000,00</div>
+      <div class="content-line">1 210 000,001 210 000,00</div>
+    </div>
+  </div>
+  <div class="block" style="background-color: #e3f2fd">
+    <div class="block-header">
+      <span class="block-id">block_13</span>
+      <span class="block-type">content</span>
+      <span class="block-page">1</span>
+    </div>
+    <div class="block-content">
+      <div class="content-line">1 210 000,00 Kč</div>
+      <div class="content-line">0,00 Kč</div>
+      <div class="content-line">Celkem k úhradě</div>
+      <div class="content-line">1 210 000,00 Kč</div>
+    </div>
+  </div>
+  <div class="block" style="background-color: #f3e5f5">
+    <div class="block-header">
+      <span class="block-id">block_14</span>
+      <span class="block-type">labeled_content</span>
+      <span class="block-page">1</span>
+    </div>
+    <div class="block-title">Přijal:</div>
+  </div>
+  <div class="block auxiliary-block" style="background-color: #f5f5f5; display: none;">
+    <div class="block-header">
+      <span class="block-id">block_15</span>
+      <span class="block-type">page_number</span>
+      <span class="block-page">1</span>
+    </div>
+    <div class="block-content">
+      <div class="content-line">1 / 1</div>
+    </div>
+  </div>
+  </div>
+</div>
+</div>
+<div id="physical" class="layer-content">
+<h2>Physical Blocks (Bounding Boxes)</h2>
+<table class="data-table">
+<thead><tr><th>ID</th><th>Page</th><th>X</th><th>Y</th><th>Width</th><th>Height</th><th>Elements</th></tr></thead>
+<tbody>
+<tr>
+  <td>block_1</td>
+  <td>1</td>
+  <td>41,7</td>
+  <td>36,8</td>
+  <td>67,8</td>
+  <td>75,3</td>
+  <td>6</td>
+</tr>
+<tr>
+  <td>block_2</td>
+  <td>1</td>
+  <td>41,7</td>
+  <td>245,0</td>
+  <td>141,2</td>
+  <td>35,6</td>
+  <td>3</td>
+</tr>
+<tr>
+  <td>block_3</td>
+  <td>1</td>
+  <td>41,7</td>
+  <td>306,6</td>
+  <td>67,5</td>
+  <td>53,5</td>
+  <td>3</td>
+</tr>
+<tr>
+  <td>block_4</td>
+  <td>1</td>
+  <td>41,7</td>
+  <td>442,7</td>
+  <td>361,0</td>
+  <td>25,5</td>
+  <td>4</td>
+</tr>
+<tr>
+  <td>block_5</td>
+  <td>1</td>
+  <td>41,7</td>
+  <td>492,0</td>
+  <td>140,1</td>
+  <td>5,8</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>block_6</td>
+  <td>1</td>
+  <td>36,4</td>
+  <td>607,4</td>
+  <td>82,3</td>
+  <td>37,7</td>
+  <td>3</td>
+</tr>
+<tr>
+  <td>block_7</td>
+  <td>1</td>
+  <td>30,3</td>
+  <td>819,1</td>
+  <td>111,1</td>
+  <td>5,5</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>block_8</td>
+  <td>1</td>
+  <td>282,8</td>
+  <td>77,6</td>
+  <td>39,6</td>
+  <td>6,0</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>block_9</td>
+  <td>1</td>
+  <td>282,8</td>
+  <td>218,7</td>
+  <td>101,4</td>
+  <td>60,4</td>
+  <td>5</td>
+</tr>
+<tr>
+  <td>block_10</td>
+  <td>1</td>
+  <td>433,3</td>
+  <td>37,9</td>
+  <td>131,6</td>
+  <td>25,0</td>
+  <td>2</td>
+</tr>
+<tr>
+  <td>block_11</td>
+  <td>1</td>
+  <td>304,5</td>
+  <td>119,5</td>
+  <td>92,1</td>
+  <td>47,2</td>
+  <td>4</td>
+</tr>
+<tr>
+  <td>block_12</td>
+  <td>1</td>
+  <td>322,0</td>
+  <td>332,0</td>
+  <td>234,5</td>
+  <td>37,1</td>
+  <td>4</td>
+</tr>
+<tr>
+  <td>block_13</td>
+  <td>1</td>
+  <td>322,5</td>
+  <td>442,7</td>
+  <td>238,6</td>
+  <td>36,6</td>
+  <td>4</td>
+</tr>
+<tr>
+  <td>block_14</td>
+  <td>1</td>
+  <td>327,8</td>
+  <td>607,4</td>
+  <td>23,1</td>
+  <td>6,5</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>block_15</td>
+  <td>1</td>
+  <td>546,4</td>
+  <td>818,0</td>
+  <td>17,9</td>
+  <td>6,6</td>
+  <td>1</td>
+</tr>
+</tbody>
+</table>
+<h2>Graphic Elements</h2>
+<table class="data-table">
+<thead><tr><th>ID</th><th>Page</th><th>Element Type</th><th>Details</th><th>Position</th></tr></thead>
+<tbody>
+<tr>
+  <td>graphic_1</td>
+  <td>1</td>
+  <td><span class="image-type">PATH</span></td>
+  <td>filled (1,0pt) [18 points]</td>
+  <td>(35,9, 494,6) 24×25</td>
+</tr>
+<tr>
+  <td>graphic_2</td>
+  <td>1</td>
+  <td><span class="image-type">PATH</span></td>
+  <td>filled (1,0pt) [18 points]</td>
+  <td>(60,3, 494,6) 24×25</td>
+</tr>
+<tr>
+  <td>graphic_3</td>
+  <td>1</td>
+  <td><span class="image-type">PATH</span></td>
+  <td>filled (1,0pt) [12 points]</td>
+  <td>(36,4, 495,1) 23×24</td>
+</tr>
+<tr>
+  <td>graphic_4</td>
+  <td>1</td>
+  <td><span class="image-type">RECT</span></td>
+  <td>filled (1,0pt) [4 points]</td>
+  <td>(58,7, 494,6) 243×25</td>
+</tr>
+<tr>
+  <td>graphic_5</td>
+  <td>1</td>
+  <td><span class="image-type">RECT</span></td>
+  <td>filled (1,0pt) [4 points]</td>
+  <td>(301,9, 494,6) 243×25</td>
+</tr>
+<tr>
+  <td>graphic_6</td>
+  <td>1</td>
+  <td><span class="image-type">RECT</span></td>
+  <td>filled (1,0pt) [4 points]</td>
+  <td>(59,2, 495,1) 242×24</td>
+</tr>
+<tr>
+  <td>graphic_7</td>
+  <td>1</td>
+  <td><span class="image-type">RECT</span></td>
+  <td>filled (1,0pt) [4 points]</td>
+  <td>(300,3, 494,6) 57×25</td>
+</tr>
+<tr>
+  <td>graphic_8</td>
+  <td>1</td>
+  <td><span class="image-type">RECT</span></td>
+  <td>filled (1,0pt) [4 points]</td>
+  <td>(357,5, 494,6) 57×25</td>
+</tr>
+<tr>
+  <td>graphic_9</td>
+  <td>1</td>
+  <td><span class="image-type">RECT</span></td>
+  <td>filled (1,0pt) [4 points]</td>
+  <td>(300,8, 495,1) 56×24</td>
+</tr>
+<tr>
+  <td>graphic_10</td>
+  <td>1</td>
+  <td><span class="image-type">RECT</span></td>
+  <td>filled (1,0pt) [4 points]</td>
+  <td>(355,9, 494,6) 17×25</td>
+</tr>
+<tr>
+  <td>graphic_11</td>
+  <td>1</td>
+  <td><span class="image-type">RECT</span></td>
+  <td>filled (1,0pt) [4 points]</td>
+  <td>(373,4, 494,6) 17×25</td>
+</tr>
+<tr>
+  <td>graphic_12</td>
+  <td>1</td>
+  <td><span class="image-type">RECT</span></td>
+  <td>filled (1,0pt) [4 points]</td>
+  <td>(356,4, 495,1) 16×24</td>
+</tr>
+<tr>
+  <td>graphic_13</td>
+  <td>1</td>
+  <td><span class="image-type">RECT</span></td>
+  <td>filled (1,0pt) [4 points]</td>
+  <td>(371,8, 494,6) 43×25</td>
+</tr>
+<tr>
+  <td>graphic_14</td>
+  <td>1</td>
+  <td><span class="image-type">RECT</span></td>
+  <td>filled (1,0pt) [4 points]</td>
+  <td>(415,3, 494,6) 43×25</td>
+</tr>
+<tr>
+  <td>graphic_15</td>
+  <td>1</td>
+  <td><span class="image-type">RECT</span></td>
+  <td>filled (1,0pt) [4 points]</td>
+  <td>(372,3, 495,1) 42×24</td>
+</tr>
+<tr>
+  <td>graphic_16</td>
+  <td>1</td>
+  <td><span class="image-type">RECT</span></td>
+  <td>filled (1,0pt) [4 points]</td>
+  <td>(413,7, 494,6) 64×25</td>
+</tr>
+<tr>
+  <td>graphic_17</td>
+  <td>1</td>
+  <td><span class="image-type">RECT</span></td>
+  <td>filled (1,0pt) [4 points]</td>
+  <td>(478,3, 494,6) 64×25</td>
+</tr>
+<tr>
+  <td>graphic_18</td>
+  <td>1</td>
+  <td><span class="image-type">RECT</span></td>
+  <td>filled (1,0pt) [4 points]</td>
+  <td>(414,2, 495,1) 63×24</td>
+</tr>
+<tr>
+  <td>graphic_19</td>
+  <td>1</td>
+  <td><span class="image-type">RECT</span></td>
+  <td>filled (1,0pt) [4 points]</td>
+  <td>(476,7, 494,6) 81×25</td>
+</tr>
+<tr>
+  <td>graphic_20</td>
+  <td>1</td>
+  <td><span class="image-type">RECT</span></td>
+  <td>filled (1,0pt) [4 points]</td>
+  <td>(558,3, 494,6) 81×25</td>
+</tr>
+<tr>
+  <td>graphic_21</td>
+  <td>1</td>
+  <td><span class="image-type">RECT</span></td>
+  <td>filled (1,0pt) [4 points]</td>
+  <td>(477,2, 495,1) 80×24</td>
+</tr>
+<tr>
+  <td>graphic_22</td>
+  <td>1</td>
+  <td><span class="image-type">PATH</span></td>
+  <td>filled (1,0pt) [18 points]</td>
+  <td>(556,7, 494,6) 10×25</td>
+</tr>
+<tr>
+  <td>graphic_23</td>
+  <td>1</td>
+  <td><span class="image-type">PATH</span></td>
+  <td>filled (1,0pt) [18 points]</td>
+  <td>(567,3, 494,6) 10×25</td>
+</tr>
+<tr>
+  <td>graphic_24</td>
+  <td>1</td>
+  <td><span class="image-type">PATH</span></td>
+  <td>filled (1,0pt) [12 points]</td>
+  <td>(557,2, 495,1) 9×24</td>
+</tr>
+<tr>
+  <td>graphic_25</td>
+  <td>1</td>
+  <td><span class="image-type">PATH</span></td>
+  <td>filled (1,0pt) [18 points]</td>
+  <td>(35,9, 382,8) 65×25</td>
+</tr>
+<tr>
+  <td>graphic_26</td>
+  <td>1</td>
+  <td><span class="image-type">PATH</span></td>
+  <td>filled (1,0pt) [18 points]</td>
+  <td>(101,6, 382,8) 65×25</td>
+</tr>
+<tr>
+  <td>graphic_27</td>
+  <td>1</td>
+  <td><span class="image-type">PATH</span></td>
+  <td>filled (1,0pt) [12 points]</td>
+  <td>(36,4, 383,3) 64×24</td>
+</tr>
+<tr>
+  <td>graphic_28</td>
+  <td>1</td>
+  <td><span class="image-type">RECT</span></td>
+  <td>filled (1,0pt) [4 points]</td>
+  <td>(100,0, 382,8) 66×25</td>
+</tr>
+<tr>
+  <td>graphic_29</td>
+  <td>1</td>
+  <td><span class="image-type">RECT</span></td>
+  <td>filled (1,0pt) [4 points]</td>
+  <td>(166,8, 382,8) 66×25</td>
+</tr>
+<tr>
+  <td>graphic_30</td>
+  <td>1</td>
+  <td><span class="image-type">RECT</span></td>
+  <td>filled (1,0pt) [4 points]</td>
+  <td>(100,6, 383,3) 65×24</td>
+</tr>
+<tr>
+  <td>graphic_31</td>
+  <td>1</td>
+  <td><span class="image-type">RECT</span></td>
+  <td>filled (1,0pt) [4 points]</td>
+  <td>(165,2, 382,8) 60×25</td>
+</tr>
+<tr>
+  <td>graphic_32</td>
+  <td>1</td>
+  <td><span class="image-type">RECT</span></td>
+  <td>filled (1,0pt) [4 points]</td>
+  <td>(225,6, 382,8) 60×25</td>
+</tr>
+<tr>
+  <td>graphic_33</td>
+  <td>1</td>
+  <td><span class="image-type">RECT</span></td>
+  <td>filled (1,0pt) [4 points]</td>
+  <td>(165,7, 383,3) 59×24</td>
+</tr>
+<tr>
+  <td>graphic_34</td>
+  <td>1</td>
+  <td><span class="image-type">RECT</span></td>
+  <td>filled (1,0pt) [4 points]</td>
+  <td>(224,0, 382,8) 67×25</td>
+</tr>
+<tr>
+  <td>graphic_35</td>
+  <td>1</td>
+  <td><span class="image-type">RECT</span></td>
+  <td>filled (1,0pt) [4 points]</td>
+  <td>(291,8, 382,8) 67×25</td>
+</tr>
+<tr>
+  <td>graphic_36</td>
+  <td>1</td>
+  <td><span class="image-type">RECT</span></td>
+  <td>filled (1,0pt) [4 points]</td>
+  <td>(224,5, 383,3) 66×24</td>
+</tr>
+<tr>
+  <td>graphic_37</td>
+  <td>1</td>
+  <td><span class="image-type">RECT</span></td>
+  <td>filled (1,0pt) [4 points]</td>
+  <td>(290,2, 382,8) 172×25</td>
+</tr>
+<tr>
+  <td>graphic_38</td>
+  <td>1</td>
+  <td><span class="image-type">RECT</span></td>
+  <td>filled (1,0pt) [4 points]</td>
+  <td>(462,4, 382,8) 172×25</td>
+</tr>
+<tr>
+  <td>graphic_39</td>
+  <td>1</td>
+  <td><span class="image-type">RECT</span></td>
+  <td>filled (1,0pt) [4 points]</td>
+  <td>(290,8, 383,3) 171×24</td>
+</tr>
+<tr>
+  <td>graphic_40</td>
+  <td>1</td>
+  <td><span class="image-type">PATH</span></td>
+  <td>filled (1,0pt) [18 points]</td>
+  <td>(460,8, 382,8) 106×25</td>
+</tr>
+<tr>
+  <td>graphic_41</td>
+  <td>1</td>
+  <td><span class="image-type">PATH</span></td>
+  <td>filled (1,0pt) [18 points]</td>
+  <td>(567,3, 382,8) 106×25</td>
+</tr>
+<tr>
+  <td>graphic_42</td>
+  <td>1</td>
+  <td><span class="image-type">PATH</span></td>
+  <td>filled (1,0pt) [12 points]</td>
+  <td>(461,3, 383,3) 105×24</td>
+</tr>
+<tr>
+  <td>graphic_43</td>
+  <td>1</td>
+  <td><span class="image-type">RECT</span></td>
+  <td>filled (1,0pt) [4 points]</td>
+  <td>(266,4, 720,8) 1×87</td>
+</tr>
+<tr>
+  <td>graphic_44</td>
+  <td>1</td>
+  <td><span class="image-type">RECT</span></td>
+  <td>filled (1,0pt) [4 points]</td>
+  <td>(266,4, 599,0) 1×209</td>
+</tr>
+<tr>
+  <td>graphic_45</td>
+  <td>1</td>
+  <td><span class="image-type">RECT</span></td>
+  <td>filled (1,0pt) [4 points]</td>
+  <td>(266,4, 558,7) 1×162</td>
+</tr>
+<tr>
+  <td>graphic_46</td>
+  <td>1</td>
+  <td><span class="image-type">RECT</span></td>
+  <td>filled (1,0pt) [4 points]</td>
+  <td>(266,4, 558,7) 1×40</td>
+</tr>
+<tr>
+  <td>graphic_47</td>
+  <td>1</td>
+  <td><span class="image-type">PATH</span></td>
+  <td>filled (1,0pt) [36 points]</td>
+  <td>(282,8, 636,1) 282×110</td>
+</tr>
+<tr>
+  <td>graphic_48</td>
+  <td>1</td>
+  <td><span class="image-type">RECT</span></td>
+  <td>filled (1,0pt) [4 points]</td>
+  <td>(274,3, 596,3) 290×1</td>
+</tr>
+<tr>
+  <td>graphic_49</td>
+  <td>1</td>
+  <td><span class="image-type">LINE</span></td>
+  <td>stroked (1,0pt) [2 points]</td>
+  <td>(90,3, 16,5) 51×0</td>
+</tr>
+</tbody>
+</table>
+<h2>Fulltext Content</h2>
+<div class="fulltext-container">
+  <div class="fulltext-stats">
+    <span>Words: <strong>142</strong></span>
+    <span>Characters: <strong>863</strong></span>
+  </div>
+  <div class="fulltext-content">
+    <pre>Vystavil:
+
+Jan Novák
+jan.novak@example.com
+
+Přijal:
+
+Fakturujeme Vám:
+
+Č. Položka Množství MJ DPH (%) JC bez DPH
+JC s DPH
+
+Celkem bez DPH
+Celkem s DPH
+
+1 1 ks 21 1 000 000,00
+1 210 000,00
+
+1 000 000,00
+1 210 000,00
+
+Sazba DPH  Základ DPH Celkem
+
+21% 1 000 000,00 Kč 210 000,00 Kč 1 210 000,00 Kč
+
+Fakturovaná částka 1 210 000,00 Kč
+
+Zaplaceno 0,00 Kč
+Celkem k úhradě 1 210 000,00 Kč
+
+Faktura slouží zároveň jako dodací list.
+
+Způsob platby: Převodní příkaz
+
+K úhradě: 1 210 000,00 Kč
+Variabilní symbol: 26050001
+
+Dříč s.r.o.
+Za rohem 123
+12300 Ráj
+Česká republika
+
+IČO: 12345678
+DIČ: CZ12345678
+
+Faktura: 26050001
+Daňový doklad
+
+Odběratel:
+
+PŘÍKLADOVÁ a.s.
+
+Ukázková 1
+110 00 Praha 1
+Česká republika
+
+IČO: 00000019
+DIČ: CZ00000019
+
+Datum vystavení: 9.5.2026
+DUZP: 9.5.2026
+Splatnost: 23.5.2026
+
+Baterie
+
+Vytvořeno aplikací www.flowii.com 1 / 1</pre>
+  </div>
+</div>
+</div>
+<div id="semantic" class="layer-content">
+<h2>Semantic Entities</h2>
+<div class="entities-list">
+<div class="entity">
+  <div class="entity-header">
+    <span class="entity-type">CUSTOMER</span>
+    <span class="entity-source">from block_8</span>
+    <span class="entity-confidence">80%</span>
+  </div>
+</div>
+<div class="entity">
+  <div class="entity-header">
+    <span class="entity-type">INVOICE</span>
+    <span class="entity-source">from block_10</span>
+    <span class="entity-confidence">80%</span>
+  </div>
+  <div class="entity-fields">
+    <div class="field"><span class="field-name">name:</span> <span class="field-value">Daňový doklad</span></div>
+  </div>
+</div>
+</div>
+</div>
+<div id="toc" class="layer-content">
+<h2>Table of Contents</h2>
+<div class="toc-container">
+  <div class="toc-stats">
+    <span>Entries: <strong>3</strong></span>
+    <span>Heuristic: <strong>3</strong></span>
+  </div>
+  <div class="toc-entries">
+    <div class="toc-entry toc-level-1">
+      <span class="toc-level">L1</span>
+      <span class="toc-title">Faktura: 26050001</span>
+      <span class="toc-dots"></span>
+      <span class="toc-page">1</span>
+      <span class="toc-meta">
+        <span class="toc-source toc-source-heuristic">heuristic</span>
+        <span class="toc-block-ref">block_10</span>
+        <span class="toc-confidence">95%</span>
+      </span>
+    </div>
+    <div class="toc-entry toc-level-2">
+      <span class="toc-level">L2</span>
+      <span class="toc-title">Vystavil:</span>
+      <span class="toc-dots"></span>
+      <span class="toc-page">1</span>
+      <span class="toc-meta">
+        <span class="toc-source toc-source-heuristic">heuristic</span>
+        <span class="toc-block-ref">block_6</span>
+        <span class="toc-confidence">80%</span>
+      </span>
+    </div>
+    <div class="toc-entry toc-level-2">
+      <span class="toc-level">L2</span>
+      <span class="toc-title">Přijal:</span>
+      <span class="toc-dots"></span>
+      <span class="toc-page">1</span>
+      <span class="toc-meta">
+        <span class="toc-source toc-source-heuristic">heuristic</span>
+        <span class="toc-block-ref">block_14</span>
+        <span class="toc-confidence">80%</span>
+      </span>
+    </div>
+  </div>
+</div>
+</div>
+<script>
+function showLayer(layerId) {
+	document.querySelectorAll('.layer-content').forEach(el => el.classList.remove('active'));
+	document.querySelectorAll('.tab').forEach(el => el.classList.remove('active'));
+	document.getElementById(layerId).classList.add('active');
+	event.target.classList.add('active');
+}
+function toggleAuxiliary() {
+	var btn = document.querySelector('.toggle-auxiliary');
+	var blocks = document.querySelectorAll('.auxiliary-block');
+	var countEl = document.getElementById('blockCount');
+	var showing = btn.classList.toggle('active');
+	blocks.forEach(function(el) {
+		el.style.display = showing ? '' : 'none';
+	});
+	if (btn.classList.contains('active')) {
+		btn.textContent = 'Hide auxiliary blocks';
+		if (countEl) {
+			var total = document.querySelectorAll('.block').length;
+			countEl.textContent = 'Showing ' + total + '/' + total + ' blocks';
+		}
+	} else {
+		btn.textContent = 'Show auxiliary blocks';
+		if (countEl) {
+			var total = document.querySelectorAll('.block').length;
+			var aux = blocks.length;
+			countEl.textContent = 'Showing ' + (total - aux) + '/' + total + ' blocks (' + aux + ' auxiliary hidden)';
+		}
+	}
+}
+</script>
+</body>
+</html>

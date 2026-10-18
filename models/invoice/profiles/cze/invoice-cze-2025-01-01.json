@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cassandragargoyle.dev/portunix-ireco/models/invoice/profiles/cze/invoice-cze-2025-01-01.json",
+  "title": "Invoice Profile - Czech Republic (effective 2025-01-01)",
+  "description": "Czech Republic invoice profile reflecting the 2024 VAT amendment (Act No. 349/2023 Sb.) consolidating VAT rates from 2025-01-01: standard 21%, reduced 12%, zero 0%.",
+  "country": "CZE",
+  "valid_from": "2025-01-01",
+  "valid_to": null,
+  "extends": "../../core/invoice.schema.json",
+  "language": "cs",
+  "currency_default": "CZK",
+  "identifiers": {
+    "tax_id": {
+      "label_cs": "IČO",
+      "label_en": "Business identification number",
+      "pattern": "^[0-9]{8}$",
+      "applies_to": ["seller", "buyer"],
+      "required_on": ["seller"]
+    },
+    "vat_id": {
+      "label_cs": "DIČ",
+      "label_en": "VAT identification number",
+      "pattern": "^CZ[0-9]{8,10}$",
+      "applies_to": ["seller", "buyer"],
+      "required_on": ["seller"],
+      "notes": "Required when seller is a VAT payer."
+    }
+  },
+  "required_fields": [
+    "invoice_number",
+    "issue_date",
+    "tax_point_date",
+    "seller.name",
+    "seller.address",
+    "seller.tax_id",
+    "buyer.name",
+    "buyer.address",
+    "lines",
+    "vat_breakdown",
+    "totals"
+  ],
+  "field_aliases": {
+    "tax_point_date": {
+      "cs": "DUZP",
+      "en": "Date of taxable supply"
+    },
+    "payment.reference": {
+      "cs": "Variabilní symbol",
+      "en": "Variable symbol"
+    }
+  },
+  "vat_categories": [
+    { "code": "S", "rate": 21, "label_cs": "Základní sazba" },
+    { "code": "S", "rate": 12, "label_cs": "Snížená sazba" },
+    { "code": "Z", "rate": 0,  "label_cs": "Osvobozeno" }
+  ],
+  "payment_reference": {
+    "variable_symbol": {
+      "label_cs": "Variabilní symbol",
+      "pattern": "^[0-9]{1,10}$",
+      "maps_to": "payment.reference"
+    },
+    "constant_symbol": {
+      "label_cs": "Konstantní symbol",
+      "pattern": "^[0-9]{1,10}$"
+    },
+    "specific_symbol": {
+      "label_cs": "Specifický symbol",
+      "pattern": "^[0-9]{1,10}$"
+    }
+  },
+  "notes": [
+    "From 2025-01-01 the previous two reduced VAT rates (15% and 10%) merged into a single 12% rate.",
+    "Czech invoices commonly include three payment symbols (variable, constant, specific) in addition to or instead of a single payment reference.",
+    "Bank account often appears in domestic format 'prefix-number/bankcode' alongside IBAN."
+  ]
+}

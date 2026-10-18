@@ -1,0 +1,15 @@
+{
+  "version": "1.0",
+  "description": "EN 16931 BT-118 (VAT category code) → ISDOC ClassifiedTaxCategory mapping for CZ. Identity mapping: ISDOC reuses the EN 16931 codelist verbatim.",
+  "mapping": {
+    "S": "S",
+    "Z": "Z",
+    "E": "E",
+    "AE": "AE",
+    "K": "K",
+    "G": "G",
+    "O": "O",
+    "L": "L",
+    "M": "M"
+  }
+}

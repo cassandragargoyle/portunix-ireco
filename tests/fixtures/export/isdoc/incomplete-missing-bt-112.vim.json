@@ -1,0 +1,39 @@
+{
+  "vim_version": "1.5",
+  "document": {"source": "incomplete.pdf"},
+  "layers": {
+    "structural": {"blocks": []},
+    "semantic": {
+      "entities": [
+        {
+          "type": "invoice_header",
+          "source_block": "block_3",
+          "confidence": 0.97,
+          "fields": {
+            "invoice_number": "INCOMPLETE_001",
+            "issue_date": "12.05.2026"
+          }
+        },
+        {
+          "type": "issuer",
+          "source_block": "block_5",
+          "confidence": 0.93,
+          "fields": {
+            "name": "Foo s.r.o.",
+            "tax_id": "27074358"
+          }
+        },
+        {
+          "type": "totals",
+          "source_block": "block_27",
+          "confidence": 0.92,
+          "fields": {
+            "total_without_vat": "1000.00",
+            "total_vat": "210.00",
+            "currency": "CZK"
+          }
+        }
+      ]
+    }
+  }
+}

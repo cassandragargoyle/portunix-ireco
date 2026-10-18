@@ -1,0 +1,18 @@
+{
+  "version": "1.0",
+  "description": "ISO 4217 currency codes accepted by Czech ERP imports.",
+  "allowed": [
+    "CZK",
+    "EUR",
+    "USD",
+    "GBP",
+    "PLN",
+    "HUF",
+    "CHF",
+    "SEK",
+    "NOK",
+    "DKK",
+    "JPY",
+    "CNY"
+  ]
+}

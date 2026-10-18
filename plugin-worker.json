@@ -1,0 +1,32 @@
+{
+  "name": "ireco-worker",
+  "version": "0.1.0",
+  "description": "Invoice and document processing engine on top of ptx-reco / VIM 1.5",
+  "author": "CassandraGargoyle",
+  "license": "MIT",
+  "plugin": {
+    "type": "helper",
+    "binary": "ptx-ireco-worker",
+    "runtime": "python",
+    "python_min_version": "3.11",
+    "interface": "cli,grpc"
+  },
+  "dependencies": {
+    "portunix_min_version": "2.0.0",
+    "os_support": ["linux", "windows", "darwin"],
+    "optional_tools": []
+  },
+  "permissions": {
+    "level": "limited",
+    "filesystem": ["read", "write"],
+    "network": []
+  },
+  "commands": [
+    {
+      "name": "ptx-ireco-worker",
+      "description": "Invoice/document worker (parse + extract pipeline)",
+      "usage": "portunix ireco-worker <subcommand> [options]",
+      "subcommands": ["process", "run", "batch", "task"]
+    }
+  ]
+}

@@ -1,0 +1,266 @@
+{
+  "version": "1.0",
+  "isdoc_version": "6.0.2",
+  "namespace": "http://isdoc.cz/namespace/2013",
+  "root_element": "Invoice",
+  "description": "EN 16931 BT/BG → ISDOC 6.0.2 path mapping for Czech invoices. Order matches the XSD's element ordering inside <Invoice>. Entries with `entity_type` + `field` resolve from layers.semantic.entities[?type=...].fields[...]. Entries with `value` are literals (no semantic source). Entries with `children` are repeating groups.",
+  "fields": [
+    {
+      "bt": "BT-3",
+      "isdoc_xpath": "/Invoice/DocumentType",
+      "value": "1",
+      "cardinality": "1",
+      "required_in": ["minimal", "standard", "full"]
+    },
+    {
+      "bt": "BT-1",
+      "entity_type": "invoice_header",
+      "field": "invoice_number",
+      "isdoc_xpath": "/Invoice/ID",
+      "cardinality": "1",
+      "required_in": ["minimal", "standard", "full"]
+    },
+    {
+      "isdoc_xpath": "/Invoice/UUID",
+      "value": "00000000-0000-0000-0000-000000000000",
+      "cardinality": "1",
+      "required_in": ["minimal", "standard", "full"],
+      "comment": "Placeholder UUID. ERPs that re-validate UUID uniqueness should re-issue."
+    },
+    {
+      "bt": "BT-2",
+      "entity_type": "invoice_header",
+      "field": "issue_date",
+      "isdoc_xpath": "/Invoice/IssueDate",
+      "cardinality": "1",
+      "required_in": ["minimal", "standard", "full"],
+      "transform": "iso_date"
+    },
+    {
+      "bt": "BT-72",
+      "entity_type": "invoice_header",
+      "field": "tax_point_date",
+      "isdoc_xpath": "/Invoice/TaxPointDate",
+      "cardinality": "0..1",
+      "required_in": ["standard", "full"],
+      "transform": "iso_date"
+    },
+    {
+      "isdoc_xpath": "/Invoice/VATApplicable",
+      "value": "true",
+      "cardinality": "1",
+      "required_in": ["minimal", "standard", "full"]
+    },
+    {
+      "isdoc_xpath": "/Invoice/ElectronicPossibilityAgreementReference",
+      "value": "",
+      "cardinality": "1",
+      "required_in": ["minimal", "standard", "full"]
+    },
+    {
+      "bt": "BT-5",
+      "entity_type": "totals",
+      "field": "currency",
+      "isdoc_xpath": "/Invoice/LocalCurrencyCode",
+      "cardinality": "1",
+      "required_in": ["minimal", "standard", "full"],
+      "transform": "iso_currency"
+    },
+    {
+      "isdoc_xpath": "/Invoice/CurrRate",
+      "value": "1",
+      "cardinality": "1",
+      "required_in": ["minimal", "standard", "full"]
+    },
+    {
+      "isdoc_xpath": "/Invoice/RefCurrRate",
+      "value": "1",
+      "cardinality": "1",
+      "required_in": ["minimal", "standard", "full"]
+    },
+    {
+      "bg": "BG-4",
+      "entity_type": "issuer",
+      "isdoc_xpath": "/Invoice/AccountingSupplierParty",
+      "cardinality": "1",
+      "required_in": ["minimal", "standard", "full"],
+      "children": [
+        {
+          "isdoc_xpath": "Party/PartyIdentification/ID",
+          "field": "tax_id",
+          "bt": "BT-29",
+          "required_in": ["standard", "full"]
+        },
+        {
+          "isdoc_xpath": "Party/PartyName/Name",
+          "field": "name",
+          "bt": "BT-27",
+          "required_in": ["minimal", "standard", "full"]
+        },
+        {
+          "isdoc_xpath": "Party/PostalAddress/StreetName",
+          "field": "street",
+          "bt": "BT-35",
+          "required_in": ["standard", "full"]
+        },
+        {
+          "isdoc_xpath": "Party/PostalAddress/CityName",
+          "field": "city",
+          "bt": "BT-37",
+          "required_in": ["standard", "full"]
+        },
+        {
+          "isdoc_xpath": "Party/PostalAddress/Country/IdentificationCode",
+          "field": "country",
+          "bt": "BT-40",
+          "required_in": ["standard", "full"],
+          "transform": "country_alpha2"
+        }
+      ]
+    },
+    {
+      "bg": "BG-7",
+      "entity_type": "buyer",
+      "isdoc_xpath": "/Invoice/AccountingCustomerParty",
+      "cardinality": "0..1",
+      "required_in": ["standard", "full"],
+      "children": [
+        {
+          "isdoc_xpath": "Party/PartyIdentification/ID",
+          "field": "tax_id",
+          "bt": "BT-46",
+          "required_in": ["standard", "full"]
+        },
+        {
+          "isdoc_xpath": "Party/PartyName/Name",
+          "field": "name",
+          "bt": "BT-44",
+          "required_in": ["standard", "full"]
+        },
+        {
+          "isdoc_xpath": "Party/PostalAddress/StreetName",
+          "field": "street",
+          "bt": "BT-50"
+        },
+        {
+          "isdoc_xpath": "Party/PostalAddress/CityName",
+          "field": "city",
+          "bt": "BT-52"
+        },
+        {
+          "isdoc_xpath": "Party/PostalAddress/Country/IdentificationCode",
+          "field": "country",
+          "bt": "BT-55",
+          "transform": "country_alpha2"
+        }
+      ]
+    },
+    {
+      "bg": "BG-25",
+      "entity_type": "invoice_line",
+      "isdoc_xpath": "/Invoice/InvoiceLines/InvoiceLine",
+      "cardinality": "0..n",
+      "required_in": ["standard", "full"],
+      "children": [
+        {
+          "isdoc_xpath": "ID",
+          "field": "id",
+          "bt": "BT-126",
+          "required_in": ["standard", "full"]
+        },
+        {
+          "isdoc_xpath": "InvoicedQuantity",
+          "field": "quantity",
+          "bt": "BT-129",
+          "required_in": ["standard", "full"],
+          "transform": "decimal3"
+        },
+        {
+          "isdoc_xpath": "LineExtensionAmount",
+          "field": "net_amount",
+          "bt": "BT-131",
+          "required_in": ["standard", "full"],
+          "transform": "decimal2"
+        },
+        {
+          "isdoc_xpath": "Note",
+          "field": "description",
+          "bt": "BT-127"
+        }
+      ]
+    },
+    {
+      "bg": "BG-23",
+      "entity_type": "vat_breakdown",
+      "isdoc_xpath": "/Invoice/TaxTotal/TaxSubTotal",
+      "cardinality": "1..n",
+      "required_in": ["standard", "full"],
+      "children": [
+        {
+          "isdoc_xpath": "TaxableAmount",
+          "field": "base",
+          "bt": "BT-116",
+          "required_in": ["standard", "full"],
+          "transform": "decimal2"
+        },
+        {
+          "isdoc_xpath": "TaxAmount",
+          "field": "tax",
+          "bt": "BT-117",
+          "required_in": ["standard", "full"],
+          "transform": "decimal2"
+        },
+        {
+          "isdoc_xpath": "Percent",
+          "field": "rate_percent",
+          "bt": "BT-119",
+          "required_in": ["standard", "full"]
+        }
+      ]
+    },
+    {
+      "bt": "BT-110",
+      "entity_type": "totals",
+      "field": "total_vat",
+      "isdoc_xpath": "/Invoice/TaxTotal/TaxAmount",
+      "cardinality": "1",
+      "required_in": ["minimal", "standard", "full"],
+      "transform": "decimal2"
+    },
+    {
+      "bt": "BT-109",
+      "entity_type": "totals",
+      "field": "total_without_vat",
+      "isdoc_xpath": "/Invoice/LegalMonetaryTotal/TaxExclusiveAmount",
+      "cardinality": "1",
+      "required_in": ["minimal", "standard", "full"],
+      "transform": "decimal2"
+    },
+    {
+      "bt": "BT-112",
+      "entity_type": "totals",
+      "field": "total_with_vat",
+      "isdoc_xpath": "/Invoice/LegalMonetaryTotal/TaxInclusiveAmount",
+      "cardinality": "1",
+      "required_in": ["minimal", "standard", "full"],
+      "transform": "decimal2"
+    },
+    {
+      "bt": "BT-115",
+      "entity_type": "totals",
+      "field": "total_with_vat",
+      "isdoc_xpath": "/Invoice/LegalMonetaryTotal/PayableAmount",
+      "cardinality": "1",
+      "required_in": ["minimal", "standard", "full"],
+      "transform": "decimal2"
+    },
+    {
+      "bt": "BT-83",
+      "entity_type": "payment",
+      "field": "variable_symbol",
+      "isdoc_xpath": "/Invoice/PaymentMeans/Payment/VariableSymbol",
+      "cardinality": "0..1",
+      "required_in": ["full"]
+    }
+  ]
+}

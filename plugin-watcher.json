@@ -1,0 +1,33 @@
+{
+  "name": "ireco-watcher",
+  "version": "0.1.0",
+  "description": "File system monitor for invoice/document recognition pipeline",
+  "author": "CassandraGargoyle",
+  "license": "MIT",
+  "plugin": {
+    "type": "helper",
+    "binary": "ptx-ireco-watcher",
+    "runtime": "python",
+    "python_min_version": "3.11",
+    "interface": "cli,grpc"
+  },
+  "dependencies": {
+    "portunix_min_version": "2.0.0",
+    "ptx_ireco_worker_min_version": "0.1.0",
+    "os_support": ["linux", "windows", "darwin"],
+    "optional_tools": []
+  },
+  "permissions": {
+    "level": "limited",
+    "filesystem": ["read", "write"],
+    "network": []
+  },
+  "commands": [
+    {
+      "name": "ptx-ireco-watcher",
+      "description": "File system watcher for automatic invoice processing",
+      "usage": "portunix ireco-watcher [options]",
+      "subcommands": []
+    }
+  ]
+}

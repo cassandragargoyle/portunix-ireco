@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cassandragargoyle.dev/portunix-ireco/models/invoice/profiles/cze/invoice-cze-2013-01-01.json",
+  "title": "Invoice Profile - Czech Republic (effective 2013-01-01)",
+  "description": "Czech Republic invoice profile. Reflects VAT Act (z. č. 235/2004 Sb.) requirements for tax documents. Effective from the 2013 VAT Act amendment.",
+  "country": "CZE",
+  "valid_from": "2013-01-01",
+  "valid_to": "2024-12-31",
+  "extends": "../../core/invoice.schema.json",
+  "language": "cs",
+  "currency_default": "CZK",
+  "identifiers": {
+    "tax_id": {
+      "label_cs": "IČO",
+      "label_en": "Business identification number",
+      "pattern": "^[0-9]{8}$",
+      "applies_to": ["seller", "buyer"],
+      "required_on": ["seller"]
+    },
+    "vat_id": {
+      "label_cs": "DIČ",
+      "label_en": "VAT identification number",
+      "pattern": "^CZ[0-9]{8,10}$",
+      "applies_to": ["seller", "buyer"],
+      "required_on": ["seller"],
+      "notes": "Required when seller is a VAT payer."
+    }
+  },
+  "required_fields": [
+    "invoice_number",
+    "issue_date",
+    "tax_point_date",
+    "seller.name",
+    "seller.address",
+    "seller.tax_id",
+    "buyer.name",
+    "buyer.address",
+    "lines",
+    "vat_breakdown",
+    "totals"
+  ],
+  "field_aliases": {
+    "tax_point_date": {
+      "cs": "DUZP",
+      "en": "Date of taxable supply"
+    },
+    "payment.reference": {
+      "cs": "Variabilní symbol",
+      "en": "Variable symbol"
+    }
+  },
+  "vat_categories": [
+    { "code": "S", "rate": 21, "label_cs": "Základní sazba" },
+    { "code": "S", "rate": 15, "label_cs": "První snížená sazba" },
+    { "code": "S", "rate": 10, "label_cs": "Druhá snížená sazba", "valid_from": "2015-01-01" },
+    { "code": "Z", "rate": 0,  "label_cs": "Osvobozeno" }
+  ],
+  "payment_reference": {
+    "variable_symbol": {
+      "label_cs": "Variabilní symbol",
+      "pattern": "^[0-9]{1,10}$",
+      "maps_to": "payment.reference"
+    },
+    "constant_symbol": {
+      "label_cs": "Konstantní symbol",
+      "pattern": "^[0-9]{1,10}$"
+    },
+    "specific_symbol": {
+      "label_cs": "Specifický symbol",
+      "pattern": "^[0-9]{1,10}$"
+    }
+  },
+  "notes": [
+    "Czech invoices commonly include three payment symbols (variable, constant, specific) in addition to or instead of a single payment reference.",
+    "Bank account often appears in domestic format 'prefix-number/bankcode' alongside IBAN."
+  ]
+}

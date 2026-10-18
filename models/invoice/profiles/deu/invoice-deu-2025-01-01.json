@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cassandragargoyle.dev/portunix-ireco/models/invoice/profiles/deu/invoice-deu-2025-01-01.json",
+  "title": "Invoice Profile - Germany (effective 2025-01-01)",
+  "description": "Germany invoice profile based on UStG section 14 requirements. Aligned with the e-invoicing mandate that introduces obligation for B2B e-invoices (XRechnung / ZUGFeRD) from 2025-01-01.",
+  "country": "DEU",
+  "valid_from": "2025-01-01",
+  "valid_to": null,
+  "extends": "../../core/invoice.schema.json",
+  "language": "de",
+  "currency_default": "EUR",
+  "identifiers": {
+    "vat_id": {
+      "label_de": "USt-IdNr.",
+      "label_en": "VAT identification number",
+      "pattern": "^DE[0-9]{9}$",
+      "applies_to": ["seller", "buyer"],
+      "required_on": ["seller"],
+      "notes": "Required for intra-EU transactions and when seller is VAT-registered."
+    },
+    "tax_number": {
+      "label_de": "Steuernummer",
+      "label_en": "Tax number",
+      "pattern": "^[0-9/]{10,13}$",
+      "applies_to": ["seller"],
+      "required_on": ["seller"],
+      "notes": "Either Steuernummer or USt-IdNr. must be present (UStG section 14(4) no. 2)."
+    }
+  },
+  "required_fields": [
+    "invoice_number",
+    "issue_date",
+    "tax_point_date",
+    "seller.name",
+    "seller.address",
+    "buyer.name",
+    "buyer.address",
+    "lines",
+    "vat_breakdown",
+    "totals"
+  ],
+  "required_one_of": [
+    ["seller.vat_id", "seller.tax_id"]
+  ],
+  "field_aliases": {
+    "tax_point_date": {
+      "de": "Leistungsdatum",
+      "en": "Date of supply"
+    },
+    "invoice_number": {
+      "de": "Rechnungsnummer",
+      "en": "Invoice number"
+    }
+  },
+  "vat_categories": [
+    { "code": "S", "rate": 19, "label_de": "Regelsteuersatz" },
+    { "code": "S", "rate": 7,  "label_de": "ermäßigter Steuersatz" },
+    { "code": "Z", "rate": 0,  "label_de": "steuerfrei" },
+    { "code": "AE", "rate": 0, "label_de": "Reverse-Charge" }
+  ],
+  "einvoicing": {
+    "formats": ["XRechnung", "ZUGFeRD-2.x"],
+    "mandate": {
+      "b2b_receive_capable": "2025-01-01",
+      "b2b_issue_required": "2027-01-01",
+      "notes": "From 2025-01-01 all German B2B recipients must be able to receive structured e-invoices. Issuing obligation is phased through 2027-2028."
+    }
+  },
+  "notes": [
+    "Small-amount invoices (Kleinbetragsrechnungen, gross <= 250 EUR) have reduced field requirements per UStDV section 33.",
+    "Reverse-charge invoices must include a note 'Steuerschuldnerschaft des Leistungsempfängers'."
+  ]
+}

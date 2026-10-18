@@ -1,0 +1,95 @@
+{
+  "vim_version": "1.5",
+  "document": {
+    "source": "flowii-FA_26050001.pdf"
+  },
+  "layers": {
+    "structural": {
+      "blocks": []
+    },
+    "semantic": {
+      "entities": [
+        {
+          "type": "invoice_header",
+          "source_block": "block_3",
+          "confidence": 0.97,
+          "fields": {
+            "invoice_number": "FA_26050001",
+            "issue_date": "12.05.2026",
+            "tax_point_date": "12.05.2026",
+            "due_date": "26.05.2026",
+            "document_kind": "Daňový doklad"
+          }
+        },
+        {
+          "type": "issuer",
+          "source_block": "block_5",
+          "confidence": 0.93,
+          "fields": {
+            "name": "Flowii s.r.o.",
+            "street": "Hlavní 100",
+            "city": "Praha",
+            "country": "Česká republika",
+            "tax_id": "27074358",
+            "vat_id": "CZ27074358"
+          }
+        },
+        {
+          "type": "buyer",
+          "source_block": "block_8",
+          "confidence": 0.91,
+          "fields": {
+            "name": "CassandraGargoyle s.r.o.",
+            "street": "Vedlejší 200",
+            "city": "Brno",
+            "country": "CZ",
+            "tax_id": "26168685",
+            "vat_id": "CZ26168685"
+          }
+        },
+        {
+          "type": "invoice_line",
+          "source_block": "block_15",
+          "confidence": 0.85,
+          "fields": {
+            "id": "1",
+            "quantity": "1",
+            "net_amount": "1000.00",
+            "description": "Vývoj software"
+          }
+        },
+        {
+          "type": "vat_breakdown",
+          "source_block": "block_22",
+          "confidence": 0.85,
+          "fields": {
+            "rate_percent": "21",
+            "base": "1000.00",
+            "tax": "210.00"
+          }
+        },
+        {
+          "type": "totals",
+          "source_block": "block_27",
+          "confidence": 0.92,
+          "fields": {
+            "total_without_vat": "1000.00",
+            "total_vat": "210.00",
+            "total_with_vat": "1210.00",
+            "currency": "CZK"
+          }
+        },
+        {
+          "type": "payment",
+          "source_block": "block_30",
+          "confidence": 0.95,
+          "fields": {
+            "variable_symbol": "26050001",
+            "amount_due": "1210.00",
+            "currency": "CZK"
+          }
+        }
+      ]
+    }
+  }
+}

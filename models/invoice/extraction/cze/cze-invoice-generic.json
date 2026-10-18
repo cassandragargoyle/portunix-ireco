@@ -1,0 +1,83 @@
+{
+  "id": "cze-invoice-generic",
+  "version": "1.0",
+  "country": "CZE",
+  "description": "Generic CZE invoice flexylayout — anchors on common Czech labels (IČO, DIČ, Datum vystavení, DUZP, Splatnost, Variabilní symbol). Handles Flowii-rendered invoices among others.",
+  "entities": [
+    {
+      "type": "invoice_header",
+      "anchor": {"any_block_regex": "Faktura:\\s*\\S+"},
+      "confidence": 0.95,
+      "fields": [
+        {"name": "invoice_number", "from": "global", "regex": "Faktura:\\s*(\\S+)"},
+        {"name": "issue_date", "from": "global", "regex": "Datum\\s+vystavení:\\s*(\\d{1,2}\\.\\d{1,2}\\.\\d{4})", "transform": "cz_date_iso"},
+        {"name": "tax_point_date", "from": "global", "regex": "DUZP:\\s*(\\d{1,2}\\.\\d{1,2}\\.\\d{4})", "transform": "cz_date_iso"},
+        {"name": "due_date", "from": "global", "regex": "Splatnost:\\s*(\\d{1,2}\\.\\d{1,2}\\.\\d{4})", "transform": "cz_date_iso"},
+        {"name": "document_kind", "from": "global", "regex": "(Daňový doklad)"}
+      ]
+    },
+    {
+      "type": "issuer",
+      "anchor": {"any_block_regex": "IČO:\\s*12345678"},
+      "confidence": 0.92,
+      "fields": [
+        {"name": "name", "from": "anchor_block_line", "index": 0},
+        {"name": "street", "from": "anchor_block_line", "index": 1},
+        {"name": "city", "from": "anchor_block_line", "index": 2},
+        {"name": "country", "from": "anchor_block_line", "index": 3},
+        {"name": "tax_id", "from": "anchor_block", "regex": "IČO:\\s*(\\S+)"},
+        {"name": "vat_id", "from": "anchor_block", "regex": "DIČ:\\s*(\\S+)"}
+      ]
+    },
+    {
+      "type": "buyer",
+      "anchor": {
+        "block_after_header_matching": {
+          "header_pattern": "Odběratel:",
+          "block_regex": "(s\\.r\\.o\\.|a\\.s\\.|spol\\.\\s*s\\s*r\\.o\\.|GmbH|S\\.A\\.|Inc\\.|Ltd\\.|Česká republika|Slovenská republika)"
+        }
+      },
+      "confidence": 0.9,
+      "fields": [
+        {"name": "name", "from": "anchor_block_line", "index": 0},
+        {"name": "street", "from": "anchor_block_line", "index": 1},
+        {"name": "city", "from": "anchor_block_line", "index": 2},
+        {"name": "country", "from": "anchor_block_line", "index": 3},
+        {"name": "tax_id", "from": "global", "regex": "IČO:\\s*(00\\d{6})"},
+        {"name": "vat_id", "from": "global", "regex": "DIČ:\\s*(CZ00\\d{6})"}
+      ]
+    },
+    {
+      "type": "totals",
+      "anchor": {"any_block_contains": "Fakturovaná částka"},
+      "confidence": 0.88,
+      "fields": [
+        {"name": "total_without_vat", "from": "global", "regex": "(\\d[\\d\\s]*,\\d{2})\\s*Kč(\\d[\\d\\s]*,\\d{2})\\s*Kč(\\d[\\d\\s]*,\\d{2})\\s*Kč", "group": 1, "transform": "normalize_amount"},
+        {"name": "total_vat", "from": "global", "regex": "(\\d[\\d\\s]*,\\d{2})\\s*Kč(\\d[\\d\\s]*,\\d{2})\\s*Kč(\\d[\\d\\s]*,\\d{2})\\s*Kč", "group": 2, "transform": "normalize_amount"},
+        {"name": "total_with_vat", "from": "global", "regex": "(\\d[\\d\\s]*,\\d{2})\\s*Kč(\\d[\\d\\s]*,\\d{2})\\s*Kč(\\d[\\d\\s]*,\\d{2})\\s*Kč", "group": 3, "transform": "normalize_amount"},
+        {"name": "currency", "from": "global", "regex": "(Kč|CZK|EUR|€)", "transform": "currency_code"}
+      ]
+    },
+    {
+      "type": "vat_breakdown",
+      "anchor": {"any_block_contains": "Sazba DPH"},
+      "confidence": 0.85,
+      "fields": [
+        {"name": "rate_percent", "from": "anchor_block", "regex": "(\\d{1,2})\\s*%"},
+        {"name": "base", "from": "global", "regex": "(\\d[\\d\\s]*,\\d{2})\\s*Kč(\\d[\\d\\s]*,\\d{2})\\s*Kč(\\d[\\d\\s]*,\\d{2})\\s*Kč", "group": 1, "transform": "normalize_amount"},
+        {"name": "tax", "from": "global", "regex": "(\\d[\\d\\s]*,\\d{2})\\s*Kč(\\d[\\d\\s]*,\\d{2})\\s*Kč(\\d[\\d\\s]*,\\d{2})\\s*Kč", "group": 2, "transform": "normalize_amount"}
+      ]
+    },
+    {
+      "type": "payment",
+      "anchor": {"any_block_contains": "Variabilní symbol"},
+      "confidence": 0.95,
+      "fields": [
+        {"name": "variable_symbol", "from": "anchor_block", "regex": "Variabilní\\s+symbol:?\\s*(\\d+)"},
+        {"name": "amount_due", "from": "anchor_block", "regex": "K\\s+úhradě:?\\s*(\\d[\\d\\s]*,\\d{2})\\s*Kč", "transform": "normalize_amount"},
+        {"name": "currency", "from": "global", "regex": "(Kč|CZK|EUR|€)", "transform": "currency_code"},
+        {"name": "method", "from": "anchor_block", "regex": "Způsob\\s+platby:?\\s*([^\\n]+?)\\s*(?:K\\s+úhradě|$)"}
+      ]
+    }
+  ]
+}

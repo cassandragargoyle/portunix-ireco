@@ -1,0 +1,269 @@
+# portunix-ireco .gitignore
+# Generated from bootstrap-scripts template
+
+# Claude Code local configuration (role selection, user-specific settings)
+CLAUDE.local.md
+
+# Translation files (temporary, generated on demand)  
+.translated/
+
+# Operating System Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+*~
+
+# IDE and Editor Files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+*.sublime-project
+*.sublime-workspace
+
+# Temporary Files
+*.tmp
+*.temp
+*.log
+*.cache
+.temp/
+temp/
+
+# Build and Output Directories
+build/
+dist/
+out/
+target/
+bin/
+obj/
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Dependency Directories
+node_modules/
+vendor/
+packages/
+.pnp/
+.pnp.js
+
+# Package Manager Files
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+Pipfile.lock
+poetry.lock
+Gemfile.lock
+composer.lock
+
+# Environment and Configuration Files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env.*
+config.local.*
+secrets.yaml
+secrets.json
+
+# Private Documentation and Development Files
+GEMINI.md
+TODO.md
+PRIVATE.md
+docs/private/
+.private/
+
+# Development and Debug Files
+.debug/
+debug.log
+*.debug
+/core
+/core.*
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage and Testing
+coverage/
+*.cover
+.coverage
+.coverage.*
+.cache
+.pytest_cache/
+.tox/
+.nox/
+htmlcov/
+.nyc_output
+lcov.info
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# Runtime Data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Backup Files
+*.backup
+*.bak
+*.orig
+
+# Language Specific Ignores
+
+# C/C++
+*.o
+*.obj
+*.lib
+*.a
+*.la
+*.so
+*.dll
+*.exe
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+compile_commands.json
+
+# Java
+*.class
+*.jar
+*.war
+*.ear
+*.nar
+hs_err_pid*
+.gradle/
+gradle-app.setting
+!gradle-wrapper.jar
+!gradle-wrapper.properties
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+.venv/
+pip-log.txt
+pip-delete-this-directory.txt
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.npm
+.eslintcache
+.node_repl_history
+.yarn-integrity
+
+# Go
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+go.work
+go.work.sum
+
+# Rust
+target/
+Cargo.lock
+**/*.rs.bk
+
+# .NET
+bin/
+obj/
+*.user
+*.suo
+*.cache
+*.docstates
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+
+# PHP
+vendor/
+composer.phar
+.php_cs.cache
+
+# Ruby
+*.gem
+*.rbc
+/.config
+/coverage/
+/InstalledFiles
+/pkg/
+/spec/reports/
+/spec/examples.txt
+/test/tmp/
+/test/version_tmp/
+/tmp/
+.bundle/
+vendor/bundle
+.rspec
+.rvmrc
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+*.db-journal
+
+# Certificates and Keys
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+*.cer
+*.csr
+
+# Cloud and Container Files
+.docker/
+docker-compose.override.yml
+.terraform/
+*.tfstate
+*.tfstate.*
+.terragrunt-cache/
+
+# Project Specific
+# Add project-specific ignores below
+data/
+src/*.egg-info/
+.venv/
+# Personal scratch notes
+NOTES.md

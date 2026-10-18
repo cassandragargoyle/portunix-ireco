@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "doc_types": ["invoice"],
+  "io": {
+    "input_dir": "./in",
+    "output_dir": "./out"
+  },
+  "invoice": {
+    "tenancy": "known",
+    "recipients": [
+      {
+        "id": "x",
+        "name": "X",
+        "ico": "12",
+        "extraction": {"depth": "header"}
+      }
+    ]
+  }
+}

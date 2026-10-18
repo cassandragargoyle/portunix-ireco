@@ -1,0 +1,13 @@
+{
+  "$schema": "https://cassandragargoyle.example/ireco/config-1.0.json",
+  "version": 2,
+  "doc_types": ["invoice"],
+  "io": {
+    "input_dir": "./in",
+    "output_dir": "./out"
+  },
+  "invoice": {
+    "tenancy": "multitenant",
+    "extraction": {"depth": "header"}
+  }
+}

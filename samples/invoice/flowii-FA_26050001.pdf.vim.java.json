@@ -1,0 +1,3223 @@
+{
+  "vim_version" : "1.4",
+  "document" : {
+    "source" : "flowii-FA_26050001.pdf",
+    "pages" : 1,
+    "metadata" : {
+      "encodingFormat" : "application/pdf",
+      "contentSize" : 32774,
+      "inLanguage" : "cs",
+      "producer" : "iTextSharp 5.2.0 (c) 1T3XT BVBA",
+      "additionalProperties" : {
+        "pageCount" : "1"
+      }
+    }
+  },
+  "layers" : {
+    "physical" : {
+      "blocks" : [ {
+        "id" : "block_1",
+        "bbox" : {
+          "right" : 109.502625,
+          "bottom" : 112.16083,
+          "x" : 41.74507,
+          "y" : 36.835285,
+          "width" : 67.75755,
+          "height" : 75.32555
+        },
+        "page" : 1,
+        "text_elements" : [ {
+          "text" : "Dříč s.r.o.",
+          "bbox" : {
+            "right" : 80.25804,
+            "bottom" : 43.286438,
+            "x" : 41.74507,
+            "y" : 36.835285,
+            "width" : 38.51297,
+            "height" : 6.4511523
+          },
+          "page" : 1,
+          "font_size" : 19.0,
+          "font_name" : "ArialBold",
+          "confidence" : 1.0
+        }, {
+          "text" : "Za rohem 123",
+          "bbox" : {
+            "right" : 93.078735,
+            "bottom" : 56.531494,
+            "x" : 41.74507,
+            "y" : 50.710907,
+            "width" : 51.333664,
+            "height" : 5.8205886
+          },
+          "page" : 1,
+          "font_size" : 18.0,
+          "font_name" : "ArialRegular",
+          "confidence" : 1.0
+        }, {
+          "text" : "12300 Ráj",
+          "bbox" : {
+            "right" : 80.18015,
+            "bottom" : 66.59778,
+            "x" : 41.74507,
+            "y" : 60.77719,
+            "width" : 38.43508,
+            "height" : 5.8205886
+          },
+          "page" : 1,
+          "font_size" : 18.0,
+          "font_name" : "ArialRegular",
+          "confidence" : 1.0
+        }, {
+          "text" : "Česká republika",
+          "bbox" : {
+            "right" : 102.08539,
+            "bottom" : 76.66406,
+            "x" : 41.74507,
+            "y" : 70.843475,
+            "width" : 60.340317,
+            "height" : 5.8205886
+          },
+          "page" : 1,
+          "font_size" : 18.0,
+          "font_name" : "ArialRegular",
+          "confidence" : 1.0
+        }, {
+          "text" : "IČO: 12345678",
+          "bbox" : {
+            "right" : 98.37676,
+            "bottom" : 102.094604,
+            "x" : 41.74507,
+            "y" : 96.27402,
+            "width" : 56.63169,
+            "height" : 5.8205886
+          },
+          "page" : 1,
+          "font_size" : 18.0,
+          "font_name" : "ArialRegular",
+          "confidence" : 1.0
+        }, {
+          "text" : "DIČ: CZ12345678",
+          "bbox" : {
+            "right" : 109.502625,
+            "bottom" : 112.16083,
+            "x" : 41.74507,
+            "y" : 106.34024,
+            "width" : 67.75755,
+            "height" : 5.8205886
+          },
+          "page" : 1,
+          "font_size" : 18.0,
+          "font_name" : "ArialRegular",
+          "confidence" : 1.0
+        } ]
+      }, {
+        "id" : "block_2",
+        "bbox" : {
+          "right" : 182.90364,
+          "bottom" : 280.63818,
+          "x" : 41.74507,
+          "y" : 245.04787,
+          "width" : 141.15857,
+          "height" : 35.590317
+        },
+        "page" : 1,
+        "text_elements" : [ {
+          "text" : "Způsob platby:Převodní příkaz",
+          "bbox" : {
+            "right" : 182.90364,
+            "bottom" : 251.49902,
+            "x" : 41.74507,
+            "y" : 245.04787,
+            "width" : 141.15857,
+            "height" : 6.4511523
+          },
+          "page" : 1,
+          "font_size" : 19.0,
+          "font_name" : "ArialBold",
+          "confidence" : 1.0
+        }, {
+          "text" : "K úhradě:1 210 000,00 Kč",
+          "bbox" : {
+            "right" : 182.34734,
+            "bottom" : 270.0421,
+            "x" : 41.74507,
+            "y" : 263.59097,
+            "width" : 140.60226,
+            "height" : 6.4511523
+          },
+          "page" : 1,
+          "font_size" : 19.0,
+          "font_name" : "ArialBold",
+          "confidence" : 1.0
+        }, {
+          "text" : "Variabilní symbol:26050001",
+          "bbox" : {
+            "right" : 157.97641,
+            "bottom" : 280.63818,
+            "x" : 41.74507,
+            "y" : 274.18704,
+            "width" : 116.23134,
+            "height" : 6.4511523
+          },
+          "page" : 1,
+          "font_size" : 19.0,
+          "font_name" : "ArialBold",
+          "confidence" : 1.0
+        } ]
+      }, {
+        "id" : "block_3",
+        "bbox" : {
+          "right" : 109.266335,
+          "bottom" : 360.1086,
+          "x" : 41.74507,
+          "y" : 306.60574,
+          "width" : 67.52126,
+          "height" : 53.50287
+        },
+        "page" : 1,
+        "text_elements" : [ {
+          "text" : "Fakturujeme Vám:",
+          "bbox" : {
+            "right" : 109.266335,
+            "bottom" : 312.42633,
+            "x" : 41.74507,
+            "y" : 306.60574,
+            "width" : 67.52126,
+            "height" : 5.8205886
+          },
+          "page" : 1,
+          "font_size" : 18.0,
+          "font_name" : "ArialRegular",
+          "confidence" : 1.0
+        }, {
+          "text" : "Č.Položka",
+          "bbox" : {
+            "right" : 89.89992,
+            "bottom" : 337.85687,
+            "x" : 42.274876,
+            "y" : 332.0363,
+            "width" : 47.625042,
+            "height" : 5.8205886
+          },
+          "page" : 1,
+          "font_size" : 18.0,
+          "font_name" : "ArialRegular",
+          "confidence" : 1.0
+        }, {
+          "text" : "1Baterie",
+          "bbox" : {
+            "right" : 87.78071,
+            "bottom" : 360.1086,
+            "x" : 41.74507,
+            "y" : 354.28802,
+            "width" : 46.035637,
+            "height" : 5.8205886
+          },
+          "page" : 1,
+          "font_size" : 18.0,
+          "font_name" : "ArialRegular",
+          "confidence" : 1.0
+        } ]
+      }, {
+        "id" : "block_4",
+        "bbox" : {
+          "right" : 402.74536,
+          "bottom" : 468.1884,
+          "x" : 41.74507,
+          "y" : 442.66434,
+          "width" : 361.0003,
+          "height" : 25.524048
+        },
+        "page" : 1,
+        "text_elements" : [ {
+          "text" : "ZákladDPHCelkemFakturovaná částka",
+          "bbox" : {
+            "right" : 402.74536,
+            "bottom" : 449.11548,
+            "x" : 137.6394,
+            "y" : 442.66434,
+            "width" : 265.10596,
+            "height" : 6.4511523
+          },
+          "page" : 1,
+          "font_size" : 18.0,
+          "font_name" : "ArialRegular",
+          "confidence" : 1.0
+        }, {
+          "text" : "Sazba DPH",
+          "bbox" : {
+            "right" : 86.533554,
+            "bottom" : 449.11548,
+            "x" : 42.274876,
+            "y" : 443.2949,
+            "width" : 44.25868,
+            "height" : 5.8205886
+          },
+          "page" : 1,
+          "font_size" : 18.0,
+          "font_name" : "ArialRegular",
+          "confidence" : 1.0
+        }, {
+          "text" : "1 000 000,00 Kč210 000,00 Kč1 210 000,00 KčZaplaceno",
+          "bbox" : {
+            "right" : 361.15903,
+            "bottom" : 468.1884,
+            "x" : 112.73866,
+            "y" : 462.3678,
+            "width" : 248.42036,
+            "height" : 5.8205886
+          },
+          "page" : 1,
+          "font_size" : 16.0,
+          "font_name" : "ArialRegular",
+          "confidence" : 1.0
+        }, {
+          "text" : "21%",
+          "bbox" : {
+            "right" : 55.859024,
+            "bottom" : 468.1884,
+            "x" : 41.74507,
+            "y" : 463.01453,
+            "width" : 14.113953,
+            "height" : 5.1738567
+          },
+          "page" : 1,
+          "font_size" : 16.0,
+          "font_name" : "ArialRegular",
+          "confidence" : 1.0
+        } ]
+      }, {
+        "id" : "block_5",
+        "bbox" : {
+          "right" : 181.84935,
+          "bottom" : 497.85736,
+          "x" : 41.74507,
+          "y" : 492.03677,
+          "width" : 140.10428,
+          "height" : 5.8205886
+        },
+        "page" : 1,
+        "text_elements" : [ {
+          "text" : "Faktura slouží zároveň jako dodací list.",
+          "bbox" : {
+            "right" : 181.84935,
+            "bottom" : 497.85736,
+            "x" : 41.74507,
+            "y" : 492.03677,
+            "width" : 140.10428,
+            "height" : 5.8205886
+          },
+          "page" : 1,
+          "font_size" : 18.0,
+          "font_name" : "ArialRegular",
+          "confidence" : 1.0
+        } ]
+      }, {
+        "id" : "block_6",
+        "bbox" : {
+          "right" : 118.73604,
+          "bottom" : 645.1426,
+          "x" : 36.447044,
+          "y" : 607.43304,
+          "width" : 82.288994,
+          "height" : 37.709534
+        },
+        "page" : 1,
+        "text_elements" : [ {
+          "text" : "Vystavil:",
+          "bbox" : {
+            "right" : 71.20476,
+            "bottom" : 613.8842,
+            "x" : 36.447044,
+            "y" : 607.43304,
+            "width" : 34.757713,
+            "height" : 6.4511523
+          },
+          "page" : 1,
+          "font_size" : 19.0,
+          "font_name" : "ArialBold",
+          "confidence" : 1.0
+        }, {
+          "text" : "Jan Novák",
+          "bbox" : {
+            "right" : 83.06546,
+            "bottom" : 635.0763,
+            "x" : 36.447044,
+            "y" : 629.2557,
+            "width" : 46.618416,
+            "height" : 5.8205886
+          },
+          "page" : 1,
+          "font_size" : 18.0,
+          "font_name" : "ArialRegular",
+          "confidence" : 1.0
+        }, {
+          "text" : "jan.novak@example.com",
+          "bbox" : {
+            "right" : 118.73604,
+            "bottom" : 645.1426,
+            "x" : 36.447044,
+            "y" : 639.32196,
+            "width" : 82.288994,
+            "height" : 5.8205886
+          },
+          "page" : 1,
+          "font_size" : 18.0,
+          "font_name" : "ArialRegular",
+          "confidence" : 1.0
+        } ]
+      }, {
+        "id" : "block_7",
+        "bbox" : {
+          "right" : 141.39148,
+          "bottom" : 824.55304,
+          "x" : 30.300503,
+          "y" : 819.05835,
+          "width" : 111.09097,
+          "height" : 5.4946966
+        },
+        "page" : 1,
+        "text_elements" : [ {
+          "text" : "Vytvořeno aplikací www.flowii.com",
+          "bbox" : {
+            "right" : 141.39148,
+            "bottom" : 824.55304,
+            "x" : 30.300503,
+            "y" : 819.05835,
+            "width" : 111.09097,
+            "height" : 5.4946966
+          },
+          "page" : 1,
+          "font_size" : 15.0,
+          "font_name" : "ArialRegular",
+          "confidence" : 1.0
+        } ]
+      }, {
+        "id" : "block_8",
+        "bbox" : {
+          "right" : 322.37796,
+          "bottom" : 83.55145,
+          "x" : 282.80542,
+          "y" : 77.59428,
+          "width" : 39.57254,
+          "height" : 5.9571786
+        },
+        "page" : 1,
+        "text_elements" : [ {
+          "text" : "Odběratel:",
+          "bbox" : {
+            "right" : 322.37796,
+            "bottom" : 83.55145,
+            "x" : 282.80542,
+            "y" : 77.59428,
+            "width" : 39.57254,
+            "height" : 5.9571786
+          },
+          "page" : 1,
+          "font_size" : 19.0,
+          "font_name" : "ArialItalic",
+          "confidence" : 1.0
+        } ]
+      }, {
+        "id" : "block_9",
+        "bbox" : {
+          "right" : 384.20224,
+          "bottom" : 279.04877,
+          "x" : 282.80542,
+          "y" : 218.65848,
+          "width" : 101.39682,
+          "height" : 60.39029
+        },
+        "page" : 1,
+        "text_elements" : [ {
+          "text" : "IČO: 00000019",
+          "bbox" : {
+            "right" : 339.4371,
+            "bottom" : 224.47906,
+            "x" : 282.80542,
+            "y" : 218.65848,
+            "width" : 56.631683,
+            "height" : 5.8205886
+          },
+          "page" : 1,
+          "font_size" : 18.0,
+          "font_name" : "ArialRegular",
+          "confidence" : 1.0
+        }, {
+          "text" : "DIČ: CZ00000019",
+          "bbox" : {
+            "right" : 350.56296,
+            "bottom" : 234.54529,
+            "x" : 282.80542,
+            "y" : 228.7247,
+            "width" : 67.75754,
+            "height" : 5.8205886
+          },
+          "page" : 1,
+          "font_size" : 18.0,
+          "font_name" : "ArialRegular",
+          "confidence" : 1.0
+        }, {
+          "text" : "Datum vystavení: 9.5.2026",
+          "bbox" : {
+            "right" : 379.17233,
+            "bottom" : 258.91626,
+            "x" : 282.80542,
+            "y" : 253.09567,
+            "width" : 96.36691,
+            "height" : 5.8205886
+          },
+          "page" : 1,
+          "font_size" : 18.0,
+          "font_name" : "ArialRegular",
+          "confidence" : 1.0
+        }, {
+          "text" : "DUZP: 9.5.2026",
+          "bbox" : {
+            "right" : 379.17233,
+            "bottom" : 268.98248,
+            "x" : 282.80542,
+            "y" : 263.1619,
+            "width" : 96.36691,
+            "height" : 5.8205886
+          },
+          "page" : 1,
+          "font_size" : 18.0,
+          "font_name" : "ArialRegular",
+          "confidence" : 1.0
+        }, {
+          "text" : "Splatnost: 23.5.2026",
+          "bbox" : {
+            "right" : 384.20224,
+            "bottom" : 279.04877,
+            "x" : 282.80542,
+            "y" : 272.59763,
+            "width" : 101.39682,
+            "height" : 6.4511523
+          },
+          "page" : 1,
+          "font_size" : 19.0,
+          "font_name" : "ArialBold",
+          "confidence" : 1.0
+        } ]
+      }, {
+        "id" : "block_10",
+        "bbox" : {
+          "right" : 564.82056,
+          "bottom" : 62.88916,
+          "x" : 433.26944,
+          "y" : 37.909626,
+          "width" : 131.55112,
+          "height" : 24.979534
+        },
+        "page" : 1,
+        "text_elements" : [ {
+          "text" : "Faktura: 26050001",
+          "bbox" : {
+            "right" : 564.82056,
+            "bottom" : 49.114258,
+            "x" : 433.26944,
+            "y" : 37.909626,
+            "width" : 131.55112,
+            "height" : 11.204633
+          },
+          "page" : 1,
+          "font_size" : 33.0,
+          "font_name" : "ArialBold",
+          "confidence" : 1.0
+        }, {
+          "text" : "Daňový doklad",
+          "bbox" : {
+            "right" : 564.60333,
+            "bottom" : 62.88916,
+            "x" : 510.09085,
+            "y" : 57.068573,
+            "width" : 54.51248,
+            "height" : 5.8205886
+          },
+          "page" : 1,
+          "font_size" : 18.0,
+          "font_name" : "ArialRegular",
+          "confidence" : 1.0
+        } ]
+      }, {
+        "id" : "block_11",
+        "bbox" : {
+          "right" : 396.65582,
+          "bottom" : 166.73053,
+          "x" : 304.5273,
+          "y" : 119.48458,
+          "width" : 92.12851,
+          "height" : 47.24595
+        },
+        "page" : 1,
+        "text_elements" : [ {
+          "text" : "PŘÍKLADOVÁ a.s.",
+          "bbox" : {
+            "right" : 377.47748,
+            "bottom" : 125.93573,
+            "x" : 304.5273,
+            "y" : 119.48458,
+            "width" : 72.950165,
+            "height" : 6.4511523
+          },
+          "page" : 1,
+          "font_size" : 19.0,
+          "font_name" : "ArialBold",
+          "confidence" : 1.0
+        }, {
+          "text" : "Ukázková 1",
+          "bbox" : {
+            "right" : 396.65582,
+            "bottom" : 146.59802,
+            "x" : 304.5273,
+            "y" : 140.77744,
+            "width" : 92.12851,
+            "height" : 5.8205886
+          },
+          "page" : 1,
+          "font_size" : 18.0,
+          "font_name" : "ArialRegular",
+          "confidence" : 1.0
+        }, {
+          "text" : "110 00 Praha 1",
+          "bbox" : {
+            "right" : 389.29156,
+            "bottom" : 156.6643,
+            "x" : 304.5273,
+            "y" : 150.84372,
+            "width" : 84.76425,
+            "height" : 5.8205886
+          },
+          "page" : 1,
+          "font_size" : 18.0,
+          "font_name" : "ArialRegular",
+          "confidence" : 1.0
+        }, {
+          "text" : "Česká republika",
+          "bbox" : {
+            "right" : 364.86765,
+            "bottom" : 166.73053,
+            "x" : 304.5273,
+            "y" : 160.90994,
+            "width" : 60.340332,
+            "height" : 5.8205886
+          },
+          "page" : 1,
+          "font_size" : 18.0,
+          "font_name" : "ArialRegular",
+          "confidence" : 1.0
+        } ]
+      }, {
+        "id" : "block_12",
+        "bbox" : {
+          "right" : 556.46875,
+          "bottom" : 369.11523,
+          "x" : 322.0108,
+          "y" : 332.0363,
+          "width" : 234.45795,
+          "height" : 37.07895
+        },
+        "page" : 1,
+        "text_elements" : [ {
+          "text" : "MnožstvíMJDPH (%)JC bez DPHCelkem bez DPH",
+          "bbox" : {
+            "right" : 556.46875,
+            "bottom" : 337.85687,
+            "x" : 322.0108,
+            "y" : 332.0363,
+            "width" : 234.45795,
+            "height" : 5.8205886
+          },
+          "page" : 1,
+          "font_size" : 18.0,
+          "font_name" : "ArialRegular",
+          "confidence" : 1.0
+        }, {
+          "text" : "JC s DPHCelkem s DPH",
+          "bbox" : {
+            "right" : 556.31934,
+            "bottom" : 342.6251,
+            "x" : 443.86548,
+            "y" : 337.60852,
+            "width" : 112.45386,
+            "height" : 5.0165715
+          },
+          "page" : 1,
+          "font_size" : 16.0,
+          "font_name" : "ArialItalic",
+          "confidence" : 1.0
+        }, {
+          "text" : "1ks211 000 000,001 000 000,00",
+          "bbox" : {
+            "right" : 555.5967,
+            "bottom" : 360.1086,
+            "x" : 349.03076,
+            "y" : 354.28802,
+            "width" : 206.56592,
+            "height" : 5.8205886
+          },
+          "page" : 1,
+          "font_size" : 18.0,
+          "font_name" : "ArialRegular",
+          "confidence" : 1.0
+        }, {
+          "text" : "1 210 000,001 210 000,00",
+          "bbox" : {
+            "right" : 555.603,
+            "bottom" : 369.11523,
+            "x" : 431.1502,
+            "y" : 364.09866,
+            "width" : 124.45282,
+            "height" : 5.0165715
+          },
+          "page" : 1,
+          "font_size" : 16.0,
+          "font_name" : "ArialItalic",
+          "confidence" : 1.0
+        } ]
+      }, {
+        "id" : "block_13",
+        "bbox" : {
+          "right" : 561.15643,
+          "bottom" : 479.31424,
+          "x" : 322.54062,
+          "y" : 442.66434,
+          "width" : 238.61581,
+          "height" : 36.649902
+        },
+        "page" : 1,
+        "text_elements" : [ {
+          "text" : "1 210 000,00 Kč",
+          "bbox" : {
+            "right" : 560.62665,
+            "bottom" : 449.11548,
+            "x" : 497.9054,
+            "y" : 442.66434,
+            "width" : 62.721252,
+            "height" : 6.4511523
+          },
+          "page" : 1,
+          "font_size" : 19.0,
+          "font_name" : "ArialBold",
+          "confidence" : 1.0
+        }, {
+          "text" : "0,00 Kč",
+          "bbox" : {
+            "right" : 560.9477,
+            "bottom" : 469.248,
+            "x" : 532.3426,
+            "y" : 463.4274,
+            "width" : 28.605103,
+            "height" : 5.8205886
+          },
+          "page" : 1,
+          "font_size" : 18.0,
+          "font_name" : "ArialRegular",
+          "confidence" : 1.0
+        }, {
+          "text" : "Celkem k úhradě",
+          "bbox" : {
+            "right" : 390.55988,
+            "bottom" : 479.31424,
+            "x" : 322.54062,
+            "y" : 472.8631,
+            "width" : 68.01926,
+            "height" : 6.4511523
+          },
+          "page" : 1,
+          "font_size" : 19.0,
+          "font_name" : "ArialBold",
+          "confidence" : 1.0
+        }, {
+          "text" : "1 210 000,00 Kč",
+          "bbox" : {
+            "right" : 561.15643,
+            "bottom" : 479.31424,
+            "x" : 498.43518,
+            "y" : 472.8631,
+            "width" : 62.721252,
+            "height" : 6.4511523
+          },
+          "page" : 1,
+          "font_size" : 19.0,
+          "font_name" : "ArialBold",
+          "confidence" : 1.0
+        } ]
+      }, {
+        "id" : "block_14",
+        "bbox" : {
+          "right" : 350.9407,
+          "bottom" : 613.8842,
+          "x" : 327.83865,
+          "y" : 607.43304,
+          "width" : 23.10205,
+          "height" : 6.4511523
+        },
+        "page" : 1,
+        "text_elements" : [ {
+          "text" : "Přijal:",
+          "bbox" : {
+            "right" : 350.9407,
+            "bottom" : 613.8842,
+            "x" : 327.83865,
+            "y" : 607.43304,
+            "width" : 23.10205,
+            "height" : 6.4511523
+          },
+          "page" : 1,
+          "font_size" : 19.0,
+          "font_name" : "ArialBold",
+          "confidence" : 1.0
+        } ]
+      }, {
+        "id" : "block_15",
+        "bbox" : {
+          "right" : 564.3847,
+          "bottom" : 824.55304,
+          "x" : 546.44446,
+          "y" : 817.9594,
+          "width" : 17.940247,
+          "height" : 6.5936356
+        },
+        "page" : 1,
+        "text_elements" : [ {
+          "text" : "1 / 1",
+          "bbox" : {
+            "right" : 564.3847,
+            "bottom" : 824.55304,
+            "x" : 546.44446,
+            "y" : 817.9594,
+            "width" : 17.940247,
+            "height" : 6.5936356
+          },
+          "page" : 1,
+          "font_size" : 18.0,
+          "font_name" : "ArialRegular",
+          "confidence" : 1.0
+        } ]
+      } ],
+      "barcodes" : [ ],
+      "tables" : [ ],
+      "graphics" : [ {
+        "id" : "graphic_1",
+        "page" : 1,
+        "bbox" : {
+          "right" : 59.758373,
+          "bottom" : 519.5074,
+          "x" : 35.91724,
+          "y" : 494.6067,
+          "width" : 23.841133,
+          "height" : 24.900696
+        },
+        "element_type" : "PATH",
+        "points" : [ {
+          "x" : 40.685467,
+          "y" : 519.5074,
+          "type" : "move"
+        }, {
+          "x" : 59.22857,
+          "y" : 519.5074,
+          "type" : "line"
+        }, {
+          "x" : 59.521023,
+          "y" : 519.5074,
+          "type" : "curve_cp1"
+        }, {
+          "x" : 59.758373,
+          "y" : 519.27,
+          "type" : "curve_cp2"
+        }, {
+          "x" : 59.758373,
+          "y" : 518.9776,
+          "type" : "curve_end"
+        }, {
+          "x" : 59.758373,
+          "y" : 495.13647,
+          "type" : "line"
+        }, {
+          "x" : 59.758373,
+          "y" : 494.84402,
+          "type" : "curve_cp1"
+        }, {
+          "x" : 59.521023,
+          "y" : 494.6067,
+          "type" : "curve_cp2"
+        }, {
+          "x" : 59.22857,
+          "y" : 494.6067,
+          "type" : "curve_end"
+        }, {
+          "x" : 40.685467,
+          "y" : 494.6067,
+          "type" : "line"
+        }, {
+          "x" : 38.053406,
+          "y" : 494.6067,
+          "type" : "curve_cp1"
+        }, {
+          "x" : 35.91724,
+          "y" : 496.74283,
+          "type" : "curve_cp2"
+        }, {
+          "x" : 35.91724,
+          "y" : 499.3749,
+          "type" : "curve_end"
+        }, {
+          "x" : 35.91724,
+          "y" : 514.73914,
+          "type" : "line"
+        }, {
+          "x" : 35.91724,
+          "y" : 517.3712,
+          "type" : "curve_cp1"
+        }, {
+          "x" : 38.053406,
+          "y" : 519.5074,
+          "type" : "curve_cp2"
+        }, {
+          "x" : 40.685467,
+          "y" : 519.5074,
+          "type" : "curve_end"
+        }, {
+          "x" : 40.685467,
+          "y" : 519.5074,
+          "type" : "line"
+        } ],
+        "stroke_width" : 1.0,
+        "filled" : true,
+        "winding_rule" : "even_odd"
+      }, {
+        "id" : "graphic_2",
+        "page" : 1,
+        "bbox" : {
+          "right" : 84.1293,
+          "bottom" : 519.5074,
+          "x" : 60.288177,
+          "y" : 494.6067,
+          "width" : 23.841125,
+          "height" : 24.900696
+        },
+        "element_type" : "PATH",
+        "points" : [ {
+          "x" : 65.056404,
+          "y" : 519.5074,
+          "type" : "move"
+        }, {
+          "x" : 83.5995,
+          "y" : 519.5074,
+          "type" : "line"
+        }, {
+          "x" : 83.89195,
+          "y" : 519.5074,
+          "type" : "curve_cp1"
+        }, {
+          "x" : 84.1293,
+          "y" : 519.27,
+          "type" : "curve_cp2"
+        }, {
+          "x" : 84.1293,
+          "y" : 518.9776,
+          "type" : "curve_end"
+        }, {
+          "x" : 84.1293,
+          "y" : 495.13647,
+          "type" : "line"
+        }, {
+          "x" : 84.1293,
+          "y" : 494.84402,
+          "type" : "curve_cp1"
+        }, {
+          "x" : 83.89195,
+          "y" : 494.6067,
+          "type" : "curve_cp2"
+        }, {
+          "x" : 83.5995,
+          "y" : 494.6067,
+          "type" : "curve_end"
+        }, {
+          "x" : 65.056404,
+          "y" : 494.6067,
+          "type" : "line"
+        }, {
+          "x" : 62.42434,
+          "y" : 494.6067,
+          "type" : "curve_cp1"
+        }, {
+          "x" : 60.288177,
+          "y" : 496.74283,
+          "type" : "curve_cp2"
+        }, {
+          "x" : 60.288177,
+          "y" : 499.3749,
+          "type" : "curve_end"
+        }, {
+          "x" : 60.288177,
+          "y" : 514.73914,
+          "type" : "line"
+        }, {
+          "x" : 60.288177,
+          "y" : 517.3712,
+          "type" : "curve_cp1"
+        }, {
+          "x" : 62.42434,
+          "y" : 519.5074,
+          "type" : "curve_cp2"
+        }, {
+          "x" : 65.056404,
+          "y" : 519.5074,
+          "type" : "curve_end"
+        }, {
+          "x" : 65.056404,
+          "y" : 519.5074,
+          "type" : "line"
+        } ],
+        "stroke_width" : 1.0,
+        "filled" : true,
+        "winding_rule" : "even_odd"
+      }, {
+        "id" : "graphic_3",
+        "page" : 1,
+        "bbox" : {
+          "right" : 59.22857,
+          "bottom" : 518.9776,
+          "x" : 36.447044,
+          "y" : 495.13647,
+          "width" : 22.781525,
+          "height" : 23.841125
+        },
+        "element_type" : "PATH",
+        "points" : [ {
+          "x" : 40.685467,
+          "y" : 518.9776,
+          "type" : "move"
+        }, {
+          "x" : 59.22857,
+          "y" : 518.9776,
+          "type" : "line"
+        }, {
+          "x" : 59.22857,
+          "y" : 495.13647,
+          "type" : "line"
+        }, {
+          "x" : 40.685467,
+          "y" : 495.13647,
+          "type" : "line"
+        }, {
+          "x" : 38.345856,
+          "y" : 495.13647,
+          "type" : "curve_cp1"
+        }, {
+          "x" : 36.447044,
+          "y" : 497.03528,
+          "type" : "curve_cp2"
+        }, {
+          "x" : 36.447044,
+          "y" : 499.3749,
+          "type" : "curve_end"
+        }, {
+          "x" : 36.447044,
+          "y" : 514.73914,
+          "type" : "line"
+        }, {
+          "x" : 36.447044,
+          "y" : 517.0788,
+          "type" : "curve_cp1"
+        }, {
+          "x" : 38.345856,
+          "y" : 518.9776,
+          "type" : "curve_cp2"
+        }, {
+          "x" : 40.685467,
+          "y" : 518.9776,
+          "type" : "curve_end"
+        }, {
+          "x" : 40.685467,
+          "y" : 518.9776,
+          "type" : "line"
+        } ],
+        "stroke_width" : 1.0,
+        "filled" : true,
+        "winding_rule" : "even_odd"
+      }, {
+        "id" : "graphic_4",
+        "page" : 1,
+        "bbox" : {
+          "right" : 301.3485,
+          "bottom" : 519.5074,
+          "x" : 58.698765,
+          "y" : 494.60666,
+          "width" : 242.64975,
+          "height" : 24.900726
+        },
+        "element_type" : "RECT",
+        "points" : [ {
+          "x" : 58.698765,
+          "y" : 519.5074,
+          "type" : "move"
+        }, {
+          "x" : 301.3485,
+          "y" : 519.5074,
+          "type" : "line"
+        }, {
+          "x" : 301.3485,
+          "y" : 494.60666,
+          "type" : "line"
+        }, {
+          "x" : 58.698765,
+          "y" : 494.60666,
+          "type" : "line"
+        } ],
+        "stroke_width" : 1.0,
+        "filled" : true,
+        "winding_rule" : "non_zero"
+      }, {
+        "id" : "graphic_5",
+        "page" : 1,
+        "bbox" : {
+          "right" : 544.528,
+          "bottom" : 519.5074,
+          "x" : 301.8783,
+          "y" : 494.60666,
+          "width" : 242.64972,
+          "height" : 24.900726
+        },
+        "element_type" : "RECT",
+        "points" : [ {
+          "x" : 301.8783,
+          "y" : 519.5074,
+          "type" : "move"
+        }, {
+          "x" : 544.528,
+          "y" : 519.5074,
+          "type" : "line"
+        }, {
+          "x" : 544.528,
+          "y" : 494.60666,
+          "type" : "line"
+        }, {
+          "x" : 301.8783,
+          "y" : 494.60666,
+          "type" : "line"
+        } ],
+        "stroke_width" : 1.0,
+        "filled" : true,
+        "winding_rule" : "non_zero"
+      }, {
+        "id" : "graphic_6",
+        "page" : 1,
+        "bbox" : {
+          "right" : 300.8187,
+          "bottom" : 518.9776,
+          "x" : 59.22857,
+          "y" : 495.13647,
+          "width" : 241.59012,
+          "height" : 23.841125
+        },
+        "element_type" : "RECT",
+        "points" : [ {
+          "x" : 59.22857,
+          "y" : 518.9776,
+          "type" : "move"
+        }, {
+          "x" : 300.8187,
+          "y" : 518.9776,
+          "type" : "line"
+        }, {
+          "x" : 300.8187,
+          "y" : 495.13647,
+          "type" : "line"
+        }, {
+          "x" : 59.22857,
+          "y" : 495.13647,
+          "type" : "line"
+        } ],
+        "stroke_width" : 1.0,
+        "filled" : true,
+        "winding_rule" : "non_zero"
+      }, {
+        "id" : "graphic_7",
+        "page" : 1,
+        "bbox" : {
+          "right" : 356.9778,
+          "bottom" : 519.5074,
+          "x" : 300.2889,
+          "y" : 494.60666,
+          "width" : 56.688904,
+          "height" : 24.900726
+        },
+        "element_type" : "RECT",
+        "points" : [ {
+          "x" : 300.2889,
+          "y" : 519.5074,
+          "type" : "move"
+        }, {
+          "x" : 356.9778,
+          "y" : 519.5074,
+          "type" : "line"
+        }, {
+          "x" : 356.9778,
+          "y" : 494.60666,
+          "type" : "line"
+        }, {
+          "x" : 300.2889,
+          "y" : 494.60666,
+          "type" : "line"
+        } ],
+        "stroke_width" : 1.0,
+        "filled" : true,
+        "winding_rule" : "non_zero"
+      }, {
+        "id" : "graphic_8",
+        "page" : 1,
+        "bbox" : {
+          "right" : 414.19653,
+          "bottom" : 519.5074,
+          "x" : 357.5076,
+          "y" : 494.60666,
+          "width" : 56.688934,
+          "height" : 24.900726
+        },
+        "element_type" : "RECT",
+        "points" : [ {
+          "x" : 357.5076,
+          "y" : 519.5074,
+          "type" : "move"
+        }, {
+          "x" : 414.19653,
+          "y" : 519.5074,
+          "type" : "line"
+        }, {
+          "x" : 414.19653,
+          "y" : 494.60666,
+          "type" : "line"
+        }, {
+          "x" : 357.5076,
+          "y" : 494.60666,
+          "type" : "line"
+        } ],
+        "stroke_width" : 1.0,
+        "filled" : true,
+        "winding_rule" : "non_zero"
+      }, {
+        "id" : "graphic_9",
+        "page" : 1,
+        "bbox" : {
+          "right" : 356.448,
+          "bottom" : 518.9776,
+          "x" : 300.8187,
+          "y" : 495.13647,
+          "width" : 55.629303,
+          "height" : 23.841125
+        },
+        "element_type" : "RECT",
+        "points" : [ {
+          "x" : 300.8187,
+          "y" : 518.9776,
+          "type" : "move"
+        }, {
+          "x" : 356.448,
+          "y" : 518.9776,
+          "type" : "line"
+        }, {
+          "x" : 356.448,
+          "y" : 495.13647,
+          "type" : "line"
+        }, {
+          "x" : 300.8187,
+          "y" : 495.13647,
+          "type" : "line"
+        } ],
+        "stroke_width" : 1.0,
+        "filled" : true,
+        "winding_rule" : "non_zero"
+      }, {
+        "id" : "graphic_10",
+        "page" : 1,
+        "bbox" : {
+          "right" : 372.8719,
+          "bottom" : 519.5074,
+          "x" : 355.9182,
+          "y" : 494.60666,
+          "width" : 16.953674,
+          "height" : 24.900726
+        },
+        "element_type" : "RECT",
+        "points" : [ {
+          "x" : 355.9182,
+          "y" : 519.5074,
+          "type" : "move"
+        }, {
+          "x" : 372.8719,
+          "y" : 519.5074,
+          "type" : "line"
+        }, {
+          "x" : 372.8719,
+          "y" : 494.60666,
+          "type" : "line"
+        }, {
+          "x" : 355.9182,
+          "y" : 494.60666,
+          "type" : "line"
+        } ],
+        "stroke_width" : 1.0,
+        "filled" : true,
+        "winding_rule" : "non_zero"
+      }, {
+        "id" : "graphic_11",
+        "page" : 1,
+        "bbox" : {
+          "right" : 390.3554,
+          "bottom" : 519.5074,
+          "x" : 373.4017,
+          "y" : 494.60666,
+          "width" : 16.953705,
+          "height" : 24.900726
+        },
+        "element_type" : "RECT",
+        "points" : [ {
+          "x" : 373.4017,
+          "y" : 519.5074,
+          "type" : "move"
+        }, {
+          "x" : 390.3554,
+          "y" : 519.5074,
+          "type" : "line"
+        }, {
+          "x" : 390.3554,
+          "y" : 494.60666,
+          "type" : "line"
+        }, {
+          "x" : 373.4017,
+          "y" : 494.60666,
+          "type" : "line"
+        } ],
+        "stroke_width" : 1.0,
+        "filled" : true,
+        "winding_rule" : "non_zero"
+      }, {
+        "id" : "graphic_12",
+        "page" : 1,
+        "bbox" : {
+          "right" : 372.3421,
+          "bottom" : 518.9776,
+          "x" : 356.448,
+          "y" : 495.13647,
+          "width" : 15.894104,
+          "height" : 23.841125
+        },
+        "element_type" : "RECT",
+        "points" : [ {
+          "x" : 356.448,
+          "y" : 518.9776,
+          "type" : "move"
+        }, {
+          "x" : 372.3421,
+          "y" : 518.9776,
+          "type" : "line"
+        }, {
+          "x" : 372.3421,
+          "y" : 495.13647,
+          "type" : "line"
+        }, {
+          "x" : 356.448,
+          "y" : 495.13647,
+          "type" : "line"
+        } ],
+        "stroke_width" : 1.0,
+        "filled" : true,
+        "winding_rule" : "non_zero"
+      }, {
+        "id" : "graphic_13",
+        "page" : 1,
+        "bbox" : {
+          "right" : 414.72632,
+          "bottom" : 519.5074,
+          "x" : 371.8123,
+          "y" : 494.60666,
+          "width" : 42.914032,
+          "height" : 24.900726
+        },
+        "element_type" : "RECT",
+        "points" : [ {
+          "x" : 371.8123,
+          "y" : 519.5074,
+          "type" : "move"
+        }, {
+          "x" : 414.72632,
+          "y" : 519.5074,
+          "type" : "line"
+        }, {
+          "x" : 414.72632,
+          "y" : 494.60666,
+          "type" : "line"
+        }, {
+          "x" : 371.8123,
+          "y" : 494.60666,
+          "type" : "line"
+        } ],
+        "stroke_width" : 1.0,
+        "filled" : true,
+        "winding_rule" : "non_zero"
+      }, {
+        "id" : "graphic_14",
+        "page" : 1,
+        "bbox" : {
+          "right" : 458.17017,
+          "bottom" : 519.5074,
+          "x" : 415.25613,
+          "y" : 494.60666,
+          "width" : 42.914032,
+          "height" : 24.900726
+        },
+        "element_type" : "RECT",
+        "points" : [ {
+          "x" : 415.25613,
+          "y" : 519.5074,
+          "type" : "move"
+        }, {
+          "x" : 458.17017,
+          "y" : 519.5074,
+          "type" : "line"
+        }, {
+          "x" : 458.17017,
+          "y" : 494.60666,
+          "type" : "line"
+        }, {
+          "x" : 415.25613,
+          "y" : 494.60666,
+          "type" : "line"
+        } ],
+        "stroke_width" : 1.0,
+        "filled" : true,
+        "winding_rule" : "non_zero"
+      }, {
+        "id" : "graphic_15",
+        "page" : 1,
+        "bbox" : {
+          "right" : 414.19653,
+          "bottom" : 518.9776,
+          "x" : 372.3421,
+          "y" : 495.13647,
+          "width" : 41.85443,
+          "height" : 23.841125
+        },
+        "element_type" : "RECT",
+        "points" : [ {
+          "x" : 372.3421,
+          "y" : 518.9776,
+          "type" : "move"
+        }, {
+          "x" : 414.19653,
+          "y" : 518.9776,
+          "type" : "line"
+        }, {
+          "x" : 414.19653,
+          "y" : 495.13647,
+          "type" : "line"
+        }, {
+          "x" : 372.3421,
+          "y" : 495.13647,
+          "type" : "line"
+        } ],
+        "stroke_width" : 1.0,
+        "filled" : true,
+        "winding_rule" : "non_zero"
+      }, {
+        "id" : "graphic_16",
+        "page" : 1,
+        "bbox" : {
+          "right" : 477.7729,
+          "bottom" : 519.5074,
+          "x" : 413.66672,
+          "y" : 494.60666,
+          "width" : 64.10617,
+          "height" : 24.900726
+        },
+        "element_type" : "RECT",
+        "points" : [ {
+          "x" : 413.66672,
+          "y" : 519.5074,
+          "type" : "move"
+        }, {
+          "x" : 477.7729,
+          "y" : 519.5074,
+          "type" : "line"
+        }, {
+          "x" : 477.7729,
+          "y" : 494.60666,
+          "type" : "line"
+        }, {
+          "x" : 413.66672,
+          "y" : 494.60666,
+          "type" : "line"
+        } ],
+        "stroke_width" : 1.0,
+        "filled" : true,
+        "winding_rule" : "non_zero"
+      }, {
+        "id" : "graphic_17",
+        "page" : 1,
+        "bbox" : {
+          "right" : 542.4088,
+          "bottom" : 519.5074,
+          "x" : 478.30267,
+          "y" : 494.60666,
+          "width" : 64.10614,
+          "height" : 24.900726
+        },
+        "element_type" : "RECT",
+        "points" : [ {
+          "x" : 478.30267,
+          "y" : 519.5074,
+          "type" : "move"
+        }, {
+          "x" : 542.4088,
+          "y" : 519.5074,
+          "type" : "line"
+        }, {
+          "x" : 542.4088,
+          "y" : 494.60666,
+          "type" : "line"
+        }, {
+          "x" : 478.30267,
+          "y" : 494.60666,
+          "type" : "line"
+        } ],
+        "stroke_width" : 1.0,
+        "filled" : true,
+        "winding_rule" : "non_zero"
+      }, {
+        "id" : "graphic_18",
+        "page" : 1,
+        "bbox" : {
+          "right" : 477.24307,
+          "bottom" : 518.9776,
+          "x" : 414.19653,
+          "y" : 495.13647,
+          "width" : 63.04654,
+          "height" : 23.841125
+        },
+        "element_type" : "RECT",
+        "points" : [ {
+          "x" : 414.19653,
+          "y" : 518.9776,
+          "type" : "move"
+        }, {
+          "x" : 477.24307,
+          "y" : 518.9776,
+          "type" : "line"
+        }, {
+          "x" : 477.24307,
+          "y" : 495.13647,
+          "type" : "line"
+        }, {
+          "x" : 414.19653,
+          "y" : 495.13647,
+          "type" : "line"
+        } ],
+        "stroke_width" : 1.0,
+        "filled" : true,
+        "winding_rule" : "non_zero"
+      }, {
+        "id" : "graphic_19",
+        "page" : 1,
+        "bbox" : {
+          "right" : 557.77313,
+          "bottom" : 519.5074,
+          "x" : 476.71326,
+          "y" : 494.60666,
+          "width" : 81.059875,
+          "height" : 24.900726
+        },
+        "element_type" : "RECT",
+        "points" : [ {
+          "x" : 476.71326,
+          "y" : 519.5074,
+          "type" : "move"
+        }, {
+          "x" : 557.77313,
+          "y" : 519.5074,
+          "type" : "line"
+        }, {
+          "x" : 557.77313,
+          "y" : 494.60666,
+          "type" : "line"
+        }, {
+          "x" : 476.71326,
+          "y" : 494.60666,
+          "type" : "line"
+        } ],
+        "stroke_width" : 1.0,
+        "filled" : true,
+        "winding_rule" : "non_zero"
+      }, {
+        "id" : "graphic_20",
+        "page" : 1,
+        "bbox" : {
+          "right" : 639.3628,
+          "bottom" : 519.5074,
+          "x" : 558.3029,
+          "y" : 494.60666,
+          "width" : 81.059875,
+          "height" : 24.900726
+        },
+        "element_type" : "RECT",
+        "points" : [ {
+          "x" : 558.3029,
+          "y" : 519.5074,
+          "type" : "move"
+        }, {
+          "x" : 639.3628,
+          "y" : 519.5074,
+          "type" : "line"
+        }, {
+          "x" : 639.3628,
+          "y" : 494.60666,
+          "type" : "line"
+        }, {
+          "x" : 558.3029,
+          "y" : 494.60666,
+          "type" : "line"
+        } ],
+        "stroke_width" : 1.0,
+        "filled" : true,
+        "winding_rule" : "non_zero"
+      }, {
+        "id" : "graphic_21",
+        "page" : 1,
+        "bbox" : {
+          "right" : 557.2433,
+          "bottom" : 518.9776,
+          "x" : 477.24307,
+          "y" : 495.13647,
+          "width" : 80.00021,
+          "height" : 23.841125
+        },
+        "element_type" : "RECT",
+        "points" : [ {
+          "x" : 477.24307,
+          "y" : 518.9776,
+          "type" : "move"
+        }, {
+          "x" : 557.2433,
+          "y" : 518.9776,
+          "type" : "line"
+        }, {
+          "x" : 557.2433,
+          "y" : 495.13647,
+          "type" : "line"
+        }, {
+          "x" : 477.24307,
+          "y" : 495.13647,
+          "type" : "line"
+        } ],
+        "stroke_width" : 1.0,
+        "filled" : true,
+        "winding_rule" : "non_zero"
+      }, {
+        "id" : "graphic_22",
+        "page" : 1,
+        "bbox" : {
+          "right" : 566.7798,
+          "bottom" : 519.5074,
+          "x" : 556.71356,
+          "y" : 494.6067,
+          "width" : 10.066223,
+          "height" : 24.900696
+        },
+        "element_type" : "PATH",
+        "points" : [ {
+          "x" : 557.2433,
+          "y" : 519.5074,
+          "type" : "move"
+        }, {
+          "x" : 562.0116,
+          "y" : 519.5074,
+          "type" : "line"
+        }, {
+          "x" : 564.6436,
+          "y" : 519.5074,
+          "type" : "curve_cp1"
+        }, {
+          "x" : 566.7798,
+          "y" : 517.3712,
+          "type" : "curve_cp2"
+        }, {
+          "x" : 566.7798,
+          "y" : 514.73914,
+          "type" : "curve_end"
+        }, {
+          "x" : 566.7798,
+          "y" : 499.3749,
+          "type" : "line"
+        }, {
+          "x" : 566.7798,
+          "y" : 496.74283,
+          "type" : "curve_cp1"
+        }, {
+          "x" : 564.6436,
+          "y" : 494.6067,
+          "type" : "curve_cp2"
+        }, {
+          "x" : 562.0116,
+          "y" : 494.6067,
+          "type" : "curve_end"
+        }, {
+          "x" : 557.2433,
+          "y" : 494.6067,
+          "type" : "line"
+        }, {
+          "x" : 556.9509,
+          "y" : 494.6067,
+          "type" : "curve_cp1"
+        }, {
+          "x" : 556.71356,
+          "y" : 494.84402,
+          "type" : "curve_cp2"
+        }, {
+          "x" : 556.71356,
+          "y" : 495.13647,
+          "type" : "curve_end"
+        }, {
+          "x" : 556.71356,
+          "y" : 518.9776,
+          "type" : "line"
+        }, {
+          "x" : 556.71356,
+          "y" : 519.27,
+          "type" : "curve_cp1"
+        }, {
+          "x" : 556.9509,
+          "y" : 519.5074,
+          "type" : "curve_cp2"
+        }, {
+          "x" : 557.2433,
+          "y" : 519.5074,
+          "type" : "curve_end"
+        }, {
+          "x" : 557.2433,
+          "y" : 519.5074,
+          "type" : "line"
+        } ],
+        "stroke_width" : 1.0,
+        "filled" : true,
+        "winding_rule" : "even_odd"
+      }, {
+        "id" : "graphic_23",
+        "page" : 1,
+        "bbox" : {
+          "right" : 577.37585,
+          "bottom" : 519.5074,
+          "x" : 567.3096,
+          "y" : 494.6067,
+          "width" : 10.066284,
+          "height" : 24.900696
+        },
+        "element_type" : "PATH",
+        "points" : [ {
+          "x" : 567.8394,
+          "y" : 519.5074,
+          "type" : "move"
+        }, {
+          "x" : 572.6076,
+          "y" : 519.5074,
+          "type" : "line"
+        }, {
+          "x" : 575.2397,
+          "y" : 519.5074,
+          "type" : "curve_cp1"
+        }, {
+          "x" : 577.37585,
+          "y" : 517.3712,
+          "type" : "curve_cp2"
+        }, {
+          "x" : 577.37585,
+          "y" : 514.73914,
+          "type" : "curve_end"
+        }, {
+          "x" : 577.37585,
+          "y" : 499.3749,
+          "type" : "line"
+        }, {
+          "x" : 577.37585,
+          "y" : 496.74283,
+          "type" : "curve_cp1"
+        }, {
+          "x" : 575.2397,
+          "y" : 494.6067,
+          "type" : "curve_cp2"
+        }, {
+          "x" : 572.6076,
+          "y" : 494.6067,
+          "type" : "curve_end"
+        }, {
+          "x" : 567.8394,
+          "y" : 494.6067,
+          "type" : "line"
+        }, {
+          "x" : 567.54694,
+          "y" : 494.6067,
+          "type" : "curve_cp1"
+        }, {
+          "x" : 567.3096,
+          "y" : 494.84402,
+          "type" : "curve_cp2"
+        }, {
+          "x" : 567.3096,
+          "y" : 495.13647,
+          "type" : "curve_end"
+        }, {
+          "x" : 567.3096,
+          "y" : 518.9776,
+          "type" : "line"
+        }, {
+          "x" : 567.3096,
+          "y" : 519.27,
+          "type" : "curve_cp1"
+        }, {
+          "x" : 567.54694,
+          "y" : 519.5074,
+          "type" : "curve_cp2"
+        }, {
+          "x" : 567.8394,
+          "y" : 519.5074,
+          "type" : "curve_end"
+        }, {
+          "x" : 567.8394,
+          "y" : 519.5074,
+          "type" : "line"
+        } ],
+        "stroke_width" : 1.0,
+        "filled" : true,
+        "winding_rule" : "even_odd"
+      }, {
+        "id" : "graphic_24",
+        "page" : 1,
+        "bbox" : {
+          "right" : 566.24994,
+          "bottom" : 518.9776,
+          "x" : 557.2433,
+          "y" : 495.13647,
+          "width" : 9.006653,
+          "height" : 23.841125
+        },
+        "element_type" : "PATH",
+        "points" : [ {
+          "x" : 557.2433,
+          "y" : 518.9776,
+          "type" : "move"
+        }, {
+          "x" : 562.0116,
+          "y" : 518.9776,
+          "type" : "line"
+        }, {
+          "x" : 564.35114,
+          "y" : 518.9776,
+          "type" : "curve_cp1"
+        }, {
+          "x" : 566.24994,
+          "y" : 517.0788,
+          "type" : "curve_cp2"
+        }, {
+          "x" : 566.24994,
+          "y" : 514.73914,
+          "type" : "curve_end"
+        }, {
+          "x" : 566.24994,
+          "y" : 499.3749,
+          "type" : "line"
+        }, {
+          "x" : 566.24994,
+          "y" : 497.03528,
+          "type" : "curve_cp1"
+        }, {
+          "x" : 564.35114,
+          "y" : 495.13647,
+          "type" : "curve_cp2"
+        }, {
+          "x" : 562.0116,
+          "y" : 495.13647,
+          "type" : "curve_end"
+        }, {
+          "x" : 557.2433,
+          "y" : 495.13647,
+          "type" : "line"
+        }, {
+          "x" : 557.2433,
+          "y" : 518.9776,
+          "type" : "line"
+        }, {
+          "x" : 557.2433,
+          "y" : 518.9776,
+          "type" : "line"
+        } ],
+        "stroke_width" : 1.0,
+        "filled" : true,
+        "winding_rule" : "even_odd"
+      }, {
+        "id" : "graphic_25",
+        "page" : 1,
+        "bbox" : {
+          "right" : 101.08299,
+          "bottom" : 408.24878,
+          "x" : 35.91724,
+          "y" : 382.81827,
+          "width" : 65.16576,
+          "height" : 25.430511
+        },
+        "element_type" : "PATH",
+        "points" : [ {
+          "x" : 40.685467,
+          "y" : 408.24878,
+          "type" : "move"
+        }, {
+          "x" : 100.5532,
+          "y" : 408.24878,
+          "type" : "line"
+        }, {
+          "x" : 100.84565,
+          "y" : 408.24878,
+          "type" : "curve_cp1"
+        }, {
+          "x" : 101.083,
+          "y" : 408.0114,
+          "type" : "curve_cp2"
+        }, {
+          "x" : 101.083,
+          "y" : 407.71896,
+          "type" : "curve_end"
+        }, {
+          "x" : 101.083,
+          "y" : 383.34802,
+          "type" : "line"
+        }, {
+          "x" : 101.083,
+          "y" : 383.05557,
+          "type" : "curve_cp1"
+        }, {
+          "x" : 100.84565,
+          "y" : 382.81827,
+          "type" : "curve_cp2"
+        }, {
+          "x" : 100.5532,
+          "y" : 382.81827,
+          "type" : "curve_end"
+        }, {
+          "x" : 40.685467,
+          "y" : 382.81827,
+          "type" : "line"
+        }, {
+          "x" : 38.053406,
+          "y" : 382.81827,
+          "type" : "curve_cp1"
+        }, {
+          "x" : 35.91724,
+          "y" : 384.9544,
+          "type" : "curve_cp2"
+        }, {
+          "x" : 35.91724,
+          "y" : 387.5865,
+          "type" : "curve_end"
+        }, {
+          "x" : 35.91724,
+          "y" : 403.4806,
+          "type" : "line"
+        }, {
+          "x" : 35.91724,
+          "y" : 406.1126,
+          "type" : "curve_cp1"
+        }, {
+          "x" : 38.053406,
+          "y" : 408.24878,
+          "type" : "curve_cp2"
+        }, {
+          "x" : 40.685467,
+          "y" : 408.24878,
+          "type" : "curve_end"
+        }, {
+          "x" : 40.685467,
+          "y" : 408.24878,
+          "type" : "line"
+        } ],
+        "stroke_width" : 1.0,
+        "filled" : true,
+        "winding_rule" : "even_odd"
+      }, {
+        "id" : "graphic_26",
+        "page" : 1,
+        "bbox" : {
+          "right" : 166.77856,
+          "bottom" : 408.24878,
+          "x" : 101.61281,
+          "y" : 382.81827,
+          "width" : 65.16576,
+          "height" : 25.430511
+        },
+        "element_type" : "PATH",
+        "points" : [ {
+          "x" : 106.381035,
+          "y" : 408.24878,
+          "type" : "move"
+        }, {
+          "x" : 166.24875,
+          "y" : 408.24878,
+          "type" : "line"
+        }, {
+          "x" : 166.54121,
+          "y" : 408.24878,
+          "type" : "curve_cp1"
+        }, {
+          "x" : 166.77856,
+          "y" : 408.0114,
+          "type" : "curve_cp2"
+        }, {
+          "x" : 166.77856,
+          "y" : 407.71896,
+          "type" : "curve_end"
+        }, {
+          "x" : 166.77856,
+          "y" : 383.34802,
+          "type" : "line"
+        }, {
+          "x" : 166.77856,
+          "y" : 383.05557,
+          "type" : "curve_cp1"
+        }, {
+          "x" : 166.54121,
+          "y" : 382.81827,
+          "type" : "curve_cp2"
+        }, {
+          "x" : 166.24875,
+          "y" : 382.81827,
+          "type" : "curve_end"
+        }, {
+          "x" : 106.381035,
+          "y" : 382.81827,
+          "type" : "line"
+        }, {
+          "x" : 103.74896,
+          "y" : 382.81827,
+          "type" : "curve_cp1"
+        }, {
+          "x" : 101.61281,
+          "y" : 384.9544,
+          "type" : "curve_cp2"
+        }, {
+          "x" : 101.61281,
+          "y" : 387.5865,
+          "type" : "curve_end"
+        }, {
+          "x" : 101.61281,
+          "y" : 403.4806,
+          "type" : "line"
+        }, {
+          "x" : 101.61281,
+          "y" : 406.1126,
+          "type" : "curve_cp1"
+        }, {
+          "x" : 103.74896,
+          "y" : 408.24878,
+          "type" : "curve_cp2"
+        }, {
+          "x" : 106.381035,
+          "y" : 408.24878,
+          "type" : "curve_end"
+        }, {
+          "x" : 106.381035,
+          "y" : 408.24878,
+          "type" : "line"
+        } ],
+        "stroke_width" : 1.0,
+        "filled" : true,
+        "winding_rule" : "even_odd"
+      }, {
+        "id" : "graphic_27",
+        "page" : 1,
+        "bbox" : {
+          "right" : 100.5532,
+          "bottom" : 407.71896,
+          "x" : 36.447044,
+          "y" : 383.34802,
+          "width" : 64.106155,
+          "height" : 24.370941
+        },
+        "element_type" : "PATH",
+        "points" : [ {
+          "x" : 40.685467,
+          "y" : 407.71896,
+          "type" : "move"
+        }, {
+          "x" : 100.5532,
+          "y" : 407.71896,
+          "type" : "line"
+        }, {
+          "x" : 100.5532,
+          "y" : 383.34802,
+          "type" : "line"
+        }, {
+          "x" : 40.685467,
+          "y" : 383.34802,
+          "type" : "line"
+        }, {
+          "x" : 38.345856,
+          "y" : 383.34802,
+          "type" : "curve_cp1"
+        }, {
+          "x" : 36.447044,
+          "y" : 385.24683,
+          "type" : "curve_cp2"
+        }, {
+          "x" : 36.447044,
+          "y" : 387.5865,
+          "type" : "curve_end"
+        }, {
+          "x" : 36.447044,
+          "y" : 403.4806,
+          "type" : "line"
+        }, {
+          "x" : 36.447044,
+          "y" : 405.82016,
+          "type" : "curve_cp1"
+        }, {
+          "x" : 38.345856,
+          "y" : 407.71896,
+          "type" : "curve_cp2"
+        }, {
+          "x" : 40.685467,
+          "y" : 407.71896,
+          "type" : "curve_end"
+        }, {
+          "x" : 40.685467,
+          "y" : 407.71896,
+          "type" : "line"
+        } ],
+        "stroke_width" : 1.0,
+        "filled" : true,
+        "winding_rule" : "even_odd"
+      }, {
+        "id" : "graphic_28",
+        "page" : 1,
+        "bbox" : {
+          "right" : 166.24876,
+          "bottom" : 408.2488,
+          "x" : 100.02339,
+          "y" : 382.81827,
+          "width" : 66.22537,
+          "height" : 25.430542
+        },
+        "element_type" : "RECT",
+        "points" : [ {
+          "x" : 100.02339,
+          "y" : 408.2488,
+          "type" : "move"
+        }, {
+          "x" : 166.24876,
+          "y" : 408.2488,
+          "type" : "line"
+        }, {
+          "x" : 166.24876,
+          "y" : 382.81827,
+          "type" : "line"
+        }, {
+          "x" : 100.02339,
+          "y" : 382.81827,
+          "type" : "line"
+        } ],
+        "stroke_width" : 1.0,
+        "filled" : true,
+        "winding_rule" : "non_zero"
+      }, {
+        "id" : "graphic_29",
+        "page" : 1,
+        "bbox" : {
+          "right" : 233.00392,
+          "bottom" : 408.2488,
+          "x" : 166.77856,
+          "y" : 382.81827,
+          "width" : 66.22536,
+          "height" : 25.430542
+        },
+        "element_type" : "RECT",
+        "points" : [ {
+          "x" : 166.77856,
+          "y" : 408.2488,
+          "type" : "move"
+        }, {
+          "x" : 233.00392,
+          "y" : 408.2488,
+          "type" : "line"
+        }, {
+          "x" : 233.00392,
+          "y" : 382.81827,
+          "type" : "line"
+        }, {
+          "x" : 166.77856,
+          "y" : 382.81827,
+          "type" : "line"
+        } ],
+        "stroke_width" : 1.0,
+        "filled" : true,
+        "winding_rule" : "non_zero"
+      }, {
+        "id" : "graphic_30",
+        "page" : 1,
+        "bbox" : {
+          "right" : 165.71895,
+          "bottom" : 407.719,
+          "x" : 100.5532,
+          "y" : 383.34805,
+          "width" : 65.16575,
+          "height" : 24.370941
+        },
+        "element_type" : "RECT",
+        "points" : [ {
+          "x" : 100.5532,
+          "y" : 407.719,
+          "type" : "move"
+        }, {
+          "x" : 165.71895,
+          "y" : 407.719,
+          "type" : "line"
+        }, {
+          "x" : 165.71895,
+          "y" : 383.34805,
+          "type" : "line"
+        }, {
+          "x" : 100.5532,
+          "y" : 383.34805,
+          "type" : "line"
+        } ],
+        "stroke_width" : 1.0,
+        "filled" : true,
+        "winding_rule" : "non_zero"
+      }, {
+        "id" : "graphic_31",
+        "page" : 1,
+        "bbox" : {
+          "right" : 225.05688,
+          "bottom" : 408.2488,
+          "x" : 165.18915,
+          "y" : 382.81827,
+          "width" : 59.867737,
+          "height" : 25.430542
+        },
+        "element_type" : "RECT",
+        "points" : [ {
+          "x" : 165.18915,
+          "y" : 408.2488,
+          "type" : "move"
+        }, {
+          "x" : 225.05688,
+          "y" : 408.2488,
+          "type" : "line"
+        }, {
+          "x" : 225.05688,
+          "y" : 382.81827,
+          "type" : "line"
+        }, {
+          "x" : 165.18915,
+          "y" : 382.81827,
+          "type" : "line"
+        } ],
+        "stroke_width" : 1.0,
+        "filled" : true,
+        "winding_rule" : "non_zero"
+      }, {
+        "id" : "graphic_32",
+        "page" : 1,
+        "bbox" : {
+          "right" : 285.4544,
+          "bottom" : 408.2488,
+          "x" : 225.58669,
+          "y" : 382.81827,
+          "width" : 59.86772,
+          "height" : 25.430542
+        },
+        "element_type" : "RECT",
+        "points" : [ {
+          "x" : 225.58669,
+          "y" : 408.2488,
+          "type" : "move"
+        }, {
+          "x" : 285.4544,
+          "y" : 408.2488,
+          "type" : "line"
+        }, {
+          "x" : 285.4544,
+          "y" : 382.81827,
+          "type" : "line"
+        }, {
+          "x" : 225.58669,
+          "y" : 382.81827,
+          "type" : "line"
+        } ],
+        "stroke_width" : 1.0,
+        "filled" : true,
+        "winding_rule" : "non_zero"
+      }, {
+        "id" : "graphic_33",
+        "page" : 1,
+        "bbox" : {
+          "right" : 224.52708,
+          "bottom" : 407.719,
+          "x" : 165.71895,
+          "y" : 383.34805,
+          "width" : 58.808136,
+          "height" : 24.370941
+        },
+        "element_type" : "RECT",
+        "points" : [ {
+          "x" : 165.71895,
+          "y" : 407.719,
+          "type" : "move"
+        }, {
+          "x" : 224.52708,
+          "y" : 407.719,
+          "type" : "line"
+        }, {
+          "x" : 224.52708,
+          "y" : 383.34805,
+          "type" : "line"
+        }, {
+          "x" : 165.71895,
+          "y" : 383.34805,
+          "type" : "line"
+        } ],
+        "stroke_width" : 1.0,
+        "filled" : true,
+        "winding_rule" : "non_zero"
+      }, {
+        "id" : "graphic_34",
+        "page" : 1,
+        "bbox" : {
+          "right" : 291.28226,
+          "bottom" : 408.2488,
+          "x" : 223.99728,
+          "y" : 382.81827,
+          "width" : 67.28497,
+          "height" : 25.430542
+        },
+        "element_type" : "RECT",
+        "points" : [ {
+          "x" : 223.99728,
+          "y" : 408.2488,
+          "type" : "move"
+        }, {
+          "x" : 291.28226,
+          "y" : 408.2488,
+          "type" : "line"
+        }, {
+          "x" : 291.28226,
+          "y" : 382.81827,
+          "type" : "line"
+        }, {
+          "x" : 223.99728,
+          "y" : 382.81827,
+          "type" : "line"
+        } ],
+        "stroke_width" : 1.0,
+        "filled" : true,
+        "winding_rule" : "non_zero"
+      }, {
+        "id" : "graphic_35",
+        "page" : 1,
+        "bbox" : {
+          "right" : 359.09702,
+          "bottom" : 408.2488,
+          "x" : 291.81204,
+          "y" : 382.81827,
+          "width" : 67.28497,
+          "height" : 25.430542
+        },
+        "element_type" : "RECT",
+        "points" : [ {
+          "x" : 291.81204,
+          "y" : 408.2488,
+          "type" : "move"
+        }, {
+          "x" : 359.09702,
+          "y" : 408.2488,
+          "type" : "line"
+        }, {
+          "x" : 359.09702,
+          "y" : 382.81827,
+          "type" : "line"
+        }, {
+          "x" : 291.81204,
+          "y" : 382.81827,
+          "type" : "line"
+        } ],
+        "stroke_width" : 1.0,
+        "filled" : true,
+        "winding_rule" : "non_zero"
+      }, {
+        "id" : "graphic_36",
+        "page" : 1,
+        "bbox" : {
+          "right" : 290.75244,
+          "bottom" : 407.719,
+          "x" : 224.52708,
+          "y" : 383.34805,
+          "width" : 66.22536,
+          "height" : 24.370941
+        },
+        "element_type" : "RECT",
+        "points" : [ {
+          "x" : 224.52708,
+          "y" : 407.719,
+          "type" : "move"
+        }, {
+          "x" : 290.75244,
+          "y" : 407.719,
+          "type" : "line"
+        }, {
+          "x" : 290.75244,
+          "y" : 383.34805,
+          "type" : "line"
+        }, {
+          "x" : 224.52708,
+          "y" : 383.34805,
+          "type" : "line"
+        } ],
+        "stroke_width" : 1.0,
+        "filled" : true,
+        "winding_rule" : "non_zero"
+      }, {
+        "id" : "graphic_37",
+        "page" : 1,
+        "bbox" : {
+          "right" : 461.87878,
+          "bottom" : 408.2488,
+          "x" : 290.22266,
+          "y" : 382.81827,
+          "width" : 171.65613,
+          "height" : 25.430542
+        },
+        "element_type" : "RECT",
+        "points" : [ {
+          "x" : 290.22266,
+          "y" : 408.2488,
+          "type" : "move"
+        }, {
+          "x" : 461.87878,
+          "y" : 408.2488,
+          "type" : "line"
+        }, {
+          "x" : 461.87878,
+          "y" : 382.81827,
+          "type" : "line"
+        }, {
+          "x" : 290.22266,
+          "y" : 382.81827,
+          "type" : "line"
+        } ],
+        "stroke_width" : 1.0,
+        "filled" : true,
+        "winding_rule" : "non_zero"
+      }, {
+        "id" : "graphic_38",
+        "page" : 1,
+        "bbox" : {
+          "right" : 634.06476,
+          "bottom" : 408.2488,
+          "x" : 462.4086,
+          "y" : 382.81827,
+          "width" : 171.65616,
+          "height" : 25.430542
+        },
+        "element_type" : "RECT",
+        "points" : [ {
+          "x" : 462.4086,
+          "y" : 408.2488,
+          "type" : "move"
+        }, {
+          "x" : 634.06476,
+          "y" : 408.2488,
+          "type" : "line"
+        }, {
+          "x" : 634.06476,
+          "y" : 382.81827,
+          "type" : "line"
+        }, {
+          "x" : 462.4086,
+          "y" : 382.81827,
+          "type" : "line"
+        } ],
+        "stroke_width" : 1.0,
+        "filled" : true,
+        "winding_rule" : "non_zero"
+      }, {
+        "id" : "graphic_39",
+        "page" : 1,
+        "bbox" : {
+          "right" : 461.349,
+          "bottom" : 407.719,
+          "x" : 290.75244,
+          "y" : 383.34805,
+          "width" : 170.59656,
+          "height" : 24.370941
+        },
+        "element_type" : "RECT",
+        "points" : [ {
+          "x" : 290.75244,
+          "y" : 407.719,
+          "type" : "move"
+        }, {
+          "x" : 461.349,
+          "y" : 407.719,
+          "type" : "line"
+        }, {
+          "x" : 461.349,
+          "y" : 383.34805,
+          "type" : "line"
+        }, {
+          "x" : 290.75244,
+          "y" : 383.34805,
+          "type" : "line"
+        } ],
+        "stroke_width" : 1.0,
+        "filled" : true,
+        "winding_rule" : "non_zero"
+      }, {
+        "id" : "graphic_40",
+        "page" : 1,
+        "bbox" : {
+          "right" : 566.7798,
+          "bottom" : 408.24878,
+          "x" : 460.8192,
+          "y" : 382.81827,
+          "width" : 105.96057,
+          "height" : 25.430511
+        },
+        "element_type" : "PATH",
+        "points" : [ {
+          "x" : 461.349,
+          "y" : 408.24878,
+          "type" : "move"
+        }, {
+          "x" : 562.0116,
+          "y" : 408.24878,
+          "type" : "line"
+        }, {
+          "x" : 564.6436,
+          "y" : 408.24878,
+          "type" : "curve_cp1"
+        }, {
+          "x" : 566.7798,
+          "y" : 406.1126,
+          "type" : "curve_cp2"
+        }, {
+          "x" : 566.7798,
+          "y" : 403.4806,
+          "type" : "curve_end"
+        }, {
+          "x" : 566.7798,
+          "y" : 387.5865,
+          "type" : "line"
+        }, {
+          "x" : 566.7798,
+          "y" : 384.9544,
+          "type" : "curve_cp1"
+        }, {
+          "x" : 564.6436,
+          "y" : 382.81827,
+          "type" : "curve_cp2"
+        }, {
+          "x" : 562.0116,
+          "y" : 382.81827,
+          "type" : "curve_end"
+        }, {
+          "x" : 461.349,
+          "y" : 382.81827,
+          "type" : "line"
+        }, {
+          "x" : 461.05655,
+          "y" : 382.81827,
+          "type" : "curve_cp1"
+        }, {
+          "x" : 460.8192,
+          "y" : 383.05557,
+          "type" : "curve_cp2"
+        }, {
+          "x" : 460.8192,
+          "y" : 383.34802,
+          "type" : "curve_end"
+        }, {
+          "x" : 460.8192,
+          "y" : 407.71896,
+          "type" : "line"
+        }, {
+          "x" : 460.8192,
+          "y" : 408.0114,
+          "type" : "curve_cp1"
+        }, {
+          "x" : 461.05655,
+          "y" : 408.24878,
+          "type" : "curve_cp2"
+        }, {
+          "x" : 461.349,
+          "y" : 408.24878,
+          "type" : "curve_end"
+        }, {
+          "x" : 461.349,
+          "y" : 408.24878,
+          "type" : "line"
+        } ],
+        "stroke_width" : 1.0,
+        "filled" : true,
+        "winding_rule" : "even_odd"
+      }, {
+        "id" : "graphic_41",
+        "page" : 1,
+        "bbox" : {
+          "right" : 673.27014,
+          "bottom" : 408.24878,
+          "x" : 567.3096,
+          "y" : 382.81827,
+          "width" : 105.96057,
+          "height" : 25.430511
+        },
+        "element_type" : "PATH",
+        "points" : [ {
+          "x" : 567.8394,
+          "y" : 408.24878,
+          "type" : "move"
+        }, {
+          "x" : 668.50195,
+          "y" : 408.24878,
+          "type" : "line"
+        }, {
+          "x" : 671.13403,
+          "y" : 408.24878,
+          "type" : "curve_cp1"
+        }, {
+          "x" : 673.27014,
+          "y" : 406.1126,
+          "type" : "curve_cp2"
+        }, {
+          "x" : 673.27014,
+          "y" : 403.4806,
+          "type" : "curve_end"
+        }, {
+          "x" : 673.27014,
+          "y" : 387.5865,
+          "type" : "line"
+        }, {
+          "x" : 673.27014,
+          "y" : 384.9544,
+          "type" : "curve_cp1"
+        }, {
+          "x" : 671.13403,
+          "y" : 382.81827,
+          "type" : "curve_cp2"
+        }, {
+          "x" : 668.50195,
+          "y" : 382.81827,
+          "type" : "curve_end"
+        }, {
+          "x" : 567.8394,
+          "y" : 382.81827,
+          "type" : "line"
+        }, {
+          "x" : 567.54694,
+          "y" : 382.81827,
+          "type" : "curve_cp1"
+        }, {
+          "x" : 567.3096,
+          "y" : 383.05557,
+          "type" : "curve_cp2"
+        }, {
+          "x" : 567.3096,
+          "y" : 383.34802,
+          "type" : "curve_end"
+        }, {
+          "x" : 567.3096,
+          "y" : 407.71896,
+          "type" : "line"
+        }, {
+          "x" : 567.3096,
+          "y" : 408.0114,
+          "type" : "curve_cp1"
+        }, {
+          "x" : 567.54694,
+          "y" : 408.24878,
+          "type" : "curve_cp2"
+        }, {
+          "x" : 567.8394,
+          "y" : 408.24878,
+          "type" : "curve_end"
+        }, {
+          "x" : 567.8394,
+          "y" : 408.24878,
+          "type" : "line"
+        } ],
+        "stroke_width" : 1.0,
+        "filled" : true,
+        "winding_rule" : "even_odd"
+      }, {
+        "id" : "graphic_42",
+        "page" : 1,
+        "bbox" : {
+          "right" : 566.24994,
+          "bottom" : 407.71896,
+          "x" : 461.349,
+          "y" : 383.34802,
+          "width" : 104.90094,
+          "height" : 24.370941
+        },
+        "element_type" : "PATH",
+        "points" : [ {
+          "x" : 461.349,
+          "y" : 407.71896,
+          "type" : "move"
+        }, {
+          "x" : 562.0116,
+          "y" : 407.71896,
+          "type" : "line"
+        }, {
+          "x" : 564.35114,
+          "y" : 407.71896,
+          "type" : "curve_cp1"
+        }, {
+          "x" : 566.24994,
+          "y" : 405.82016,
+          "type" : "curve_cp2"
+        }, {
+          "x" : 566.24994,
+          "y" : 403.4806,
+          "type" : "curve_end"
+        }, {
+          "x" : 566.24994,
+          "y" : 387.5865,
+          "type" : "line"
+        }, {
+          "x" : 566.24994,
+          "y" : 385.24683,
+          "type" : "curve_cp1"
+        }, {
+          "x" : 564.35114,
+          "y" : 383.34802,
+          "type" : "curve_cp2"
+        }, {
+          "x" : 562.0116,
+          "y" : 383.34802,
+          "type" : "curve_end"
+        }, {
+          "x" : 461.349,
+          "y" : 383.34802,
+          "type" : "line"
+        }, {
+          "x" : 461.349,
+          "y" : 407.71896,
+          "type" : "line"
+        }, {
+          "x" : 461.349,
+          "y" : 407.71896,
+          "type" : "line"
+        } ],
+        "stroke_width" : 1.0,
+        "filled" : true,
+        "winding_rule" : "even_odd"
+      }, {
+        "id" : "graphic_43",
+        "page" : 1,
+        "bbox" : {
+          "right" : 267.4411,
+          "bottom" : 808.25,
+          "x" : 266.3815,
+          "y" : 720.8325,
+          "width" : 1.0596008,
+          "height" : 87.41748
+        },
+        "element_type" : "RECT",
+        "points" : [ {
+          "x" : 266.3815,
+          "y" : 808.25,
+          "type" : "move"
+        }, {
+          "x" : 267.4411,
+          "y" : 808.25,
+          "type" : "line"
+        }, {
+          "x" : 267.4411,
+          "y" : 720.8325,
+          "type" : "line"
+        }, {
+          "x" : 266.3815,
+          "y" : 720.8325,
+          "type" : "line"
+        } ],
+        "stroke_width" : 1.0,
+        "filled" : true,
+        "winding_rule" : "non_zero"
+      }, {
+        "id" : "graphic_44",
+        "page" : 1,
+        "bbox" : {
+          "right" : 267.4411,
+          "bottom" : 808.25,
+          "x" : 266.3815,
+          "y" : 598.97784,
+          "width" : 1.0596008,
+          "height" : 209.27216
+        },
+        "element_type" : "RECT",
+        "points" : [ {
+          "x" : 266.3815,
+          "y" : 808.25,
+          "type" : "move"
+        }, {
+          "x" : 267.4411,
+          "y" : 808.25,
+          "type" : "line"
+        }, {
+          "x" : 267.4411,
+          "y" : 598.97784,
+          "type" : "line"
+        }, {
+          "x" : 266.3815,
+          "y" : 598.97784,
+          "type" : "line"
+        } ],
+        "stroke_width" : 1.0,
+        "filled" : true,
+        "winding_rule" : "non_zero"
+      }, {
+        "id" : "graphic_45",
+        "page" : 1,
+        "bbox" : {
+          "right" : 267.4411,
+          "bottom" : 720.8325,
+          "x" : 266.3815,
+          "y" : 558.7128,
+          "width" : 1.0596008,
+          "height" : 162.11969
+        },
+        "element_type" : "RECT",
+        "points" : [ {
+          "x" : 266.3815,
+          "y" : 720.8325,
+          "type" : "move"
+        }, {
+          "x" : 267.4411,
+          "y" : 720.8325,
+          "type" : "line"
+        }, {
+          "x" : 267.4411,
+          "y" : 558.7128,
+          "type" : "line"
+        }, {
+          "x" : 266.3815,
+          "y" : 558.7128,
+          "type" : "line"
+        } ],
+        "stroke_width" : 1.0,
+        "filled" : true,
+        "winding_rule" : "non_zero"
+      }, {
+        "id" : "graphic_46",
+        "page" : 1,
+        "bbox" : {
+          "right" : 267.4411,
+          "bottom" : 598.97784,
+          "x" : 266.3815,
+          "y" : 558.7128,
+          "width" : 1.0596008,
+          "height" : 40.265015
+        },
+        "element_type" : "RECT",
+        "points" : [ {
+          "x" : 266.3815,
+          "y" : 598.97784,
+          "type" : "move"
+        }, {
+          "x" : 267.4411,
+          "y" : 598.97784,
+          "type" : "line"
+        }, {
+          "x" : 267.4411,
+          "y" : 558.7128,
+          "type" : "line"
+        }, {
+          "x" : 266.3815,
+          "y" : 558.7128,
+          "type" : "line"
+        } ],
+        "stroke_width" : 1.0,
+        "filled" : true,
+        "winding_rule" : "non_zero"
+      }, {
+        "id" : "graphic_47",
+        "page" : 1,
+        "bbox" : {
+          "right" : 564.6605,
+          "bottom" : 745.7333,
+          "x" : 282.80542,
+          "y" : 636.064,
+          "width" : 281.8551,
+          "height" : 109.66925
+        },
+        "element_type" : "PATH",
+        "points" : [ {
+          "x" : 288.10342,
+          "y" : 745.7333,
+          "type" : "move"
+        }, {
+          "x" : 559.36255,
+          "y" : 745.7333,
+          "type" : "line"
+        }, {
+          "x" : 562.28705,
+          "y" : 745.7333,
+          "type" : "curve_cp1"
+        }, {
+          "x" : 564.6605,
+          "y" : 743.35974,
+          "type" : "curve_cp2"
+        }, {
+          "x" : 564.6605,
+          "y" : 740.43524,
+          "type" : "curve_end"
+        }, {
+          "x" : 564.6605,
+          "y" : 641.36206,
+          "type" : "line"
+        }, {
+          "x" : 564.6605,
+          "y" : 638.43756,
+          "type" : "curve_cp1"
+        }, {
+          "x" : 562.28705,
+          "y" : 636.064,
+          "type" : "curve_cp2"
+        }, {
+          "x" : 559.36255,
+          "y" : 636.064,
+          "type" : "curve_end"
+        }, {
+          "x" : 288.10342,
+          "y" : 636.064,
+          "type" : "line"
+        }, {
+          "x" : 285.17896,
+          "y" : 636.064,
+          "type" : "curve_cp1"
+        }, {
+          "x" : 282.80542,
+          "y" : 638.43756,
+          "type" : "curve_cp2"
+        }, {
+          "x" : 282.80542,
+          "y" : 641.36206,
+          "type" : "curve_end"
+        }, {
+          "x" : 282.80542,
+          "y" : 740.43524,
+          "type" : "line"
+        }, {
+          "x" : 282.80542,
+          "y" : 743.35974,
+          "type" : "curve_cp1"
+        }, {
+          "x" : 285.17896,
+          "y" : 745.7333,
+          "type" : "curve_cp2"
+        }, {
+          "x" : 288.10342,
+          "y" : 745.7333,
+          "type" : "curve_end"
+        }, {
+          "x" : 288.10342,
+          "y" : 745.7333,
+          "type" : "line"
+        }, {
+          "x" : 288.10342,
+          "y" : 745.2034,
+          "type" : "move"
+        }, {
+          "x" : 559.36255,
+          "y" : 745.2034,
+          "type" : "line"
+        }, {
+          "x" : 561.9946,
+          "y" : 745.2034,
+          "type" : "curve_cp1"
+        }, {
+          "x" : 564.1308,
+          "y" : 743.06726,
+          "type" : "curve_cp2"
+        }, {
+          "x" : 564.1308,
+          "y" : 740.43524,
+          "type" : "curve_end"
+        }, {
+          "x" : 564.1308,
+          "y" : 641.36206,
+          "type" : "line"
+        }, {
+          "x" : 564.1308,
+          "y" : 638.73004,
+          "type" : "curve_cp1"
+        }, {
+          "x" : 561.9946,
+          "y" : 636.5939,
+          "type" : "curve_cp2"
+        }, {
+          "x" : 559.36255,
+          "y" : 636.5939,
+          "type" : "curve_end"
+        }, {
+          "x" : 288.10342,
+          "y" : 636.5939,
+          "type" : "line"
+        }, {
+          "x" : 285.47137,
+          "y" : 636.5939,
+          "type" : "curve_cp1"
+        }, {
+          "x" : 283.3352,
+          "y" : 638.73004,
+          "type" : "curve_cp2"
+        }, {
+          "x" : 283.3352,
+          "y" : 641.36206,
+          "type" : "curve_end"
+        }, {
+          "x" : 283.3352,
+          "y" : 740.43524,
+          "type" : "line"
+        }, {
+          "x" : 283.3352,
+          "y" : 743.06726,
+          "type" : "curve_cp1"
+        }, {
+          "x" : 285.47137,
+          "y" : 745.2034,
+          "type" : "curve_cp2"
+        }, {
+          "x" : 288.10342,
+          "y" : 745.2034,
+          "type" : "curve_end"
+        }, {
+          "x" : 288.10342,
+          "y" : 745.7333,
+          "type" : "line"
+        } ],
+        "stroke_width" : 1.0,
+        "filled" : true,
+        "winding_rule" : "even_odd"
+      }, {
+        "id" : "graphic_48",
+        "page" : 1,
+        "bbox" : {
+          "right" : 564.6606,
+          "bottom" : 597.3884,
+          "x" : 274.32855,
+          "y" : 596.32886,
+          "width" : 290.33203,
+          "height" : 1.0595703
+        },
+        "element_type" : "RECT",
+        "points" : [ {
+          "x" : 274.32855,
+          "y" : 597.3884,
+          "type" : "move"
+        }, {
+          "x" : 564.6606,
+          "y" : 597.3884,
+          "type" : "line"
+        }, {
+          "x" : 564.6606,
+          "y" : 596.32886,
+          "type" : "line"
+        }, {
+          "x" : 274.32855,
+          "y" : 596.32886,
+          "type" : "line"
+        } ],
+        "stroke_width" : 1.0,
+        "filled" : true,
+        "winding_rule" : "non_zero"
+      }, {
+        "id" : "graphic_49",
+        "page" : 1,
+        "bbox" : {
+          "right" : 141.33147,
+          "bottom" : 16.546736,
+          "x" : 90.31724,
+          "y" : 16.546736,
+          "width" : 51.01423,
+          "height" : 0.0
+        },
+        "element_type" : "LINE",
+        "points" : [ {
+          "x" : 90.31724,
+          "y" : 16.546736,
+          "type" : "move"
+        }, {
+          "x" : 141.33147,
+          "y" : 16.546736,
+          "type" : "line"
+        } ],
+        "stroke_width" : 1.0,
+        "stroked" : true
+      } ],
+      "fulltext" : {
+        "content" : "Vystavil:\n\nJan Novák\njan.novak@example.com\n\nPřijal:\n\nFakturujeme Vám:\n\nČ. Položka Množství MJ DPH (%) JC bez DPH\nJC s DPH\n\nCelkem bez DPH\nCelkem s DPH\n\n1 1 ks 21 1 000 000,00\n1 210 000,00\n\n1 000 000,00\n1 210 000,00\n\nSazba DPH  Základ DPH Celkem\n\n21% 1 000 000,00 Kč 210 000,00 Kč 1 210 000,00 Kč\n\nFakturovaná částka 1 210 000,00 Kč\n\nZaplaceno 0,00 Kč\nCelkem k úhradě 1 210 000,00 Kč\n\nFaktura slouží zároveň jako dodací list.\n\nZpůsob platby: Převodní příkaz\n\nK úhradě: 1 210 000,00 Kč\nVariabilní symbol: 26050001\n\nDříč s.r.o.\nZa rohem 123\n12300 Ráj\nČeská republika\n\nIČO: 12345678\nDIČ: CZ12345678\n\nFaktura: 26050001\nDaňový doklad\n\nOdběratel:\n\nPŘÍKLADOVÁ a.s.\n\nUkázková 1\n110 00 Praha 1\nČeská republika\n\nIČO: 00000019\nDIČ: CZ00000019\n\nDatum vystavení: 9.5.2026\nDUZP: 9.5.2026\nSplatnost: 23.5.2026\n\nBaterie\n\nVytvořeno aplikací www.flowii.com 1 / 1",
+        "wordCount" : 142,
+        "characterCount" : 863
+      }
+    },
+    "structural" : {
+      "blocks" : [ {
+        "id" : "block_1",
+        "type" : "content",
+        "significance" : "primary",
+        "page" : 1,
+        "header" : null,
+        "content" : [ "Dříč s.r.o.", "Za rohem 123", "12300 Ráj", "Česká republika", "IČO: 12345678", "DIČ: CZ12345678" ]
+      }, {
+        "id" : "block_2",
+        "type" : "content",
+        "significance" : "primary",
+        "page" : 1,
+        "header" : null,
+        "content" : [ "Způsob platby:Převodní příkaz", "K úhradě:1 210 000,00 Kč", "Variabilní symbol:26050001" ]
+      }, {
+        "id" : "block_3",
+        "type" : "content",
+        "significance" : "primary",
+        "page" : 1,
+        "header" : null,
+        "content" : [ "Fakturujeme Vám:", "Č.Položka", "1Baterie" ]
+      }, {
+        "id" : "block_4",
+        "type" : "content",
+        "significance" : "primary",
+        "page" : 1,
+        "header" : null,
+        "content" : [ "ZákladDPHCelkemFakturovaná částka", "Sazba DPH", "1 000 000,00 Kč210 000,00 Kč1 210 000,00 KčZaplaceno", "21%" ]
+      }, {
+        "id" : "block_5",
+        "type" : "content",
+        "significance" : "primary",
+        "page" : 1,
+        "header" : null,
+        "content" : [ "Faktura slouží zároveň jako dodací list." ]
+      }, {
+        "id" : "block_6",
+        "type" : "labeled_content",
+        "significance" : "primary",
+        "page" : 1,
+        "header" : "Vystavil:",
+        "content" : [ "Jan Novák", "jan.novak@example.com" ]
+      }, {
+        "id" : "block_7",
+        "type" : "content",
+        "significance" : "primary",
+        "page" : 1,
+        "header" : null,
+        "content" : [ "Vytvořeno aplikací www.flowii.com" ]
+      }, {
+        "id" : "block_8",
+        "type" : "labeled_content",
+        "significance" : "primary",
+        "page" : 1,
+        "header" : "Odběratel:",
+        "content" : [ ]
+      }, {
+        "id" : "block_9",
+        "type" : "content",
+        "significance" : "primary",
+        "page" : 1,
+        "header" : null,
+        "content" : [ "IČO: 00000019", "DIČ: CZ00000019", "Datum vystavení: 9.5.2026", "DUZP: 9.5.2026", "Splatnost: 23.5.2026" ]
+      }, {
+        "id" : "block_10",
+        "type" : "labeled_content",
+        "significance" : "primary",
+        "page" : 1,
+        "header" : "Faktura: 26050001",
+        "content" : [ "Daňový doklad" ]
+      }, {
+        "id" : "block_11",
+        "type" : "content",
+        "significance" : "primary",
+        "page" : 1,
+        "header" : null,
+        "content" : [ "PŘÍKLADOVÁ a.s.", "Ukázková 1", "110 00 Praha 1", "Česká republika" ]
+      }, {
+        "id" : "block_12",
+        "type" : "content",
+        "significance" : "primary",
+        "page" : 1,
+        "header" : null,
+        "content" : [ "MnožstvíMJDPH (%)JC bez DPHCelkem bez DPH", "JC s DPHCelkem s DPH", "1ks211 000 000,001 000 000,00", "1 210 000,001 210 000,00" ]
+      }, {
+        "id" : "block_13",
+        "type" : "content",
+        "significance" : "primary",
+        "page" : 1,
+        "header" : null,
+        "content" : [ "1 210 000,00 Kč", "0,00 Kč", "Celkem k úhradě", "1 210 000,00 Kč" ]
+      }, {
+        "id" : "block_14",
+        "type" : "labeled_content",
+        "significance" : "primary",
+        "page" : 1,
+        "header" : "Přijal:",
+        "content" : [ ]
+      }, {
+        "id" : "block_15",
+        "type" : "page_number",
+        "significance" : "auxiliary",
+        "page" : 1,
+        "header" : null,
+        "content" : [ "1 / 1" ]
+      } ],
+      "barcodes" : [ ]
+    },
+    "semantic" : {
+      "entities" : [ {
+        "type" : "customer",
+        "source_block" : "block_8",
+        "fields" : { },
+        "confidence" : 0.8
+      }, {
+        "type" : "invoice",
+        "source_block" : "block_10",
+        "fields" : {
+          "name" : "Daňový doklad"
+        },
+        "confidence" : 0.8
+      } ],
+      "payments" : [ ]
+    },
+    "toc" : {
+      "entries" : [ {
+        "title" : "Faktura: 26050001",
+        "page" : 1,
+        "level" : 1,
+        "block_id" : "block_10",
+        "confidence" : 0.95,
+        "source" : "heuristic"
+      }, {
+        "title" : "Vystavil:",
+        "page" : 1,
+        "level" : 2,
+        "block_id" : "block_6",
+        "confidence" : 0.7999999999999999,
+        "source" : "heuristic"
+      }, {
+        "title" : "Přijal:",
+        "page" : 1,
+        "level" : 2,
+        "block_id" : "block_14",
+        "confidence" : 0.7999999999999999,
+        "source" : "heuristic"
+      } ]
+    }
+  }
+}

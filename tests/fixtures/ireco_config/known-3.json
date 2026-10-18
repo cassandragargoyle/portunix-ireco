@@ -1,0 +1,46 @@
+{
+  "$schema": "https://cassandragargoyle.example/ireco/config-1.0.json",
+  "version": 1,
+  "doc_types": [
+    "invoice"
+  ],
+  "io": {
+    "input_dir": "./in",
+    "output_dir": "./out"
+  },
+  "invoice": {
+    "tenancy": "known",
+    "recipients": [
+      {
+        "id": "example-buyer",
+        "name": "PŘÍKLADOVÁ a.s.",
+        "ico": "00000019",
+        "dic": "CZ00000019",
+        "extraction": {
+          "depth": "items",
+          "orders": {
+            "source": "local",
+            "path": "./orders/example-buyer/*.json"
+          }
+        }
+      },
+      {
+        "id": "acme-cz",
+        "name": "ACME CZ s.r.o.",
+        "ico": "12345678",
+        "dic": "CZ12345678",
+        "extraction": {
+          "depth": "header"
+        }
+      },
+      {
+        "id": "globex",
+        "name": "Globex a.s.",
+        "ico": "87654321",
+        "extraction": {
+          "depth": "items"
+        }
+      }
+    ]
+  }
+}

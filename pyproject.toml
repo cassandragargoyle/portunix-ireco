@@ -1,0 +1,66 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ptx-ireco"
+version = "0.1.0"
+description = "Invoice recognition pipeline (parse + extract) on top of ptx-reco / VIM 1.5"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.11"
+authors = [
+    {name = "CassandraGargoyle"},
+]
+
+dependencies = [
+    "ptx-reco>=0.3.4",
+    "watchdog>=3.0",
+    "lxml>=5.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-cov>=4.0",
+    "black>=23.0",
+    "isort>=5.12",
+    "flake8>=6.0",
+    "mypy>=1.0",
+]
+
+[project.scripts]
+ptx-ireco = "ptx_ireco.cli.main:main"
+ptx-ireco-worker = "ptx_ireco.cli.worker_main:main"
+ptx-ireco-watcher = "ptx_ireco.cli.watcher_main:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+ptx_ireco = ["export/isdoc/schemas/*.xsd"]
+
+[tool.uv.sources]
+ptx-reco = { path = "../portunix-reco", editable = true }
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+markers = [
+    "requires_tesseract: test needs the 'tesseract' binary on PATH (issue 007 OCR)",
+    "requires_pdf2image: test needs the 'pdf2image' Python package and Poppler (issue 007 OCR)",
+]
+
+[tool.black]
+line-length = 120
+target-version = ["py311"]
+
+[tool.isort]
+profile = "black"
+line_length = 120
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+warn_return_any = true
+warn_unused_configs = true

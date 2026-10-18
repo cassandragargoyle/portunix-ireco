@@ -1,0 +1,278 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cassandragargoyle.dev/portunix-ireco/models/invoice/core/invoice.schema.json",
+  "title": "Invoice (Core)",
+  "description": "Country-neutral semantic invoice model based on EN 16931. Field IDs reference EN 16931 Business Terms (BT) and Business Groups (BG).",
+  "type": "object",
+  "required": [
+    "invoice_number",
+    "issue_date",
+    "currency",
+    "seller",
+    "buyer",
+    "lines",
+    "totals"
+  ],
+  "properties": {
+    "invoice_number": {
+      "$comment": "BT-1",
+      "type": "string",
+      "description": "Unique identifier of the invoice."
+    },
+    "issue_date": {
+      "$comment": "BT-2",
+      "type": "string",
+      "format": "date",
+      "description": "Date when the invoice was issued."
+    },
+    "type_code": {
+      "$comment": "BT-3 (UNTDID 1001)",
+      "type": "string",
+      "description": "Invoice type code, e.g. 380 = commercial invoice, 381 = credit note."
+    },
+    "currency": {
+      "$comment": "BT-5",
+      "type": "string",
+      "pattern": "^[A-Z]{3}$",
+      "description": "ISO 4217 currency code."
+    },
+    "due_date": {
+      "$comment": "BT-9",
+      "type": "string",
+      "format": "date",
+      "description": "Payment due date."
+    },
+    "tax_point_date": {
+      "$comment": "BT-7 (date of supply / VAT point)",
+      "type": "string",
+      "format": "date",
+      "description": "Date when VAT becomes chargeable. CZ: DUZP."
+    },
+    "buyer_reference": {
+      "$comment": "BT-10",
+      "type": "string"
+    },
+    "purchase_order_reference": {
+      "$comment": "BT-13",
+      "type": "string"
+    },
+    "note": {
+      "$comment": "BT-22",
+      "type": "string"
+    },
+    "seller": {
+      "$ref": "#/$defs/party",
+      "$comment": "BG-4"
+    },
+    "buyer": {
+      "$ref": "#/$defs/party",
+      "$comment": "BG-7"
+    },
+    "payment": {
+      "$ref": "#/$defs/payment",
+      "$comment": "BG-16 / BG-17"
+    },
+    "lines": {
+      "$comment": "BG-25",
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/line"
+      }
+    },
+    "vat_breakdown": {
+      "$comment": "BG-23",
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/vat_category"
+      }
+    },
+    "totals": {
+      "$ref": "#/$defs/totals",
+      "$comment": "BG-22"
+    }
+  },
+  "$defs": {
+    "party": {
+      "type": "object",
+      "required": ["name"],
+      "properties": {
+        "name": {
+          "$comment": "BT-27 / BT-44",
+          "type": "string"
+        },
+        "trading_name": {
+          "$comment": "BT-28 / BT-45",
+          "type": "string"
+        },
+        "vat_id": {
+          "$comment": "BT-31 / BT-48 (VAT identifier)",
+          "type": "string"
+        },
+        "tax_id": {
+          "$comment": "BT-32 (tax registration identifier, e.g. CZ ICO)",
+          "type": "string"
+        },
+        "legal_id": {
+          "$comment": "BT-30 / BT-47 (legal registration identifier)",
+          "type": "string"
+        },
+        "address": {
+          "$ref": "#/$defs/address"
+        },
+        "contact": {
+          "type": "object",
+          "properties": {
+            "email": { "type": "string", "format": "email" },
+            "phone": { "type": "string" }
+          }
+        }
+      }
+    },
+    "address": {
+      "type": "object",
+      "properties": {
+        "line1": { "type": "string" },
+        "line2": { "type": "string" },
+        "city": { "type": "string" },
+        "postal_code": { "type": "string" },
+        "region": { "type": "string" },
+        "country": {
+          "type": "string",
+          "pattern": "^[A-Z]{2}$",
+          "description": "ISO 3166-1 alpha-2."
+        }
+      }
+    },
+    "payment": {
+      "type": "object",
+      "properties": {
+        "means_code": {
+          "$comment": "BT-81 (UNTDID 4461)",
+          "type": "string"
+        },
+        "iban": {
+          "$comment": "BT-84",
+          "type": "string"
+        },
+        "bic": {
+          "$comment": "BT-86",
+          "type": "string"
+        },
+        "account_name": { "type": "string" },
+        "reference": {
+          "$comment": "BT-83 (remittance information / variable symbol)",
+          "type": "string"
+        }
+      }
+    },
+    "line": {
+      "type": "object",
+      "required": ["id", "quantity", "unit_price", "net_amount"],
+      "properties": {
+        "id": {
+          "$comment": "BT-126",
+          "type": "string"
+        },
+        "description": {
+          "$comment": "BT-154",
+          "type": "string"
+        },
+        "quantity": {
+          "$comment": "BT-129",
+          "type": "number"
+        },
+        "unit_code": {
+          "$comment": "BT-130 (UN/ECE Recommendation 20)",
+          "type": "string"
+        },
+        "unit_price": {
+          "$comment": "BT-146",
+          "type": "number"
+        },
+        "net_amount": {
+          "$comment": "BT-131",
+          "type": "number"
+        },
+        "vat_category": {
+          "$comment": "BT-151",
+          "type": "string"
+        },
+        "vat_rate": {
+          "$comment": "BT-152 (percent)",
+          "type": "number"
+        }
+      }
+    },
+    "vat_category": {
+      "type": "object",
+      "required": ["category", "rate", "taxable_amount", "tax_amount"],
+      "properties": {
+        "category": {
+          "$comment": "BT-118 (e.g. S, Z, E, AE, K, G, O)",
+          "type": "string"
+        },
+        "rate": {
+          "$comment": "BT-119",
+          "type": "number"
+        },
+        "taxable_amount": {
+          "$comment": "BT-116",
+          "type": "number"
+        },
+        "tax_amount": {
+          "$comment": "BT-117",
+          "type": "number"
+        }
+      }
+    },
+    "totals": {
+      "type": "object",
+      "required": [
+        "lines_net_total",
+        "tax_exclusive_amount",
+        "tax_total",
+        "tax_inclusive_amount",
+        "amount_due"
+      ],
+      "properties": {
+        "lines_net_total": {
+          "$comment": "BT-106",
+          "type": "number"
+        },
+        "allowance_total": {
+          "$comment": "BT-107",
+          "type": "number"
+        },
+        "charge_total": {
+          "$comment": "BT-108",
+          "type": "number"
+        },
+        "tax_exclusive_amount": {
+          "$comment": "BT-109",
+          "type": "number"
+        },
+        "tax_total": {
+          "$comment": "BT-110",
+          "type": "number"
+        },
+        "tax_inclusive_amount": {
+          "$comment": "BT-112",
+          "type": "number"
+        },
+        "prepaid_amount": {
+          "$comment": "BT-113",
+          "type": "number"
+        },
+        "rounding_amount": {
+          "$comment": "BT-114",
+          "type": "number"
+        },
+        "amount_due": {
+          "$comment": "BT-115",
+          "type": "number"
+        }
+      }
+    }
+  }
+}
