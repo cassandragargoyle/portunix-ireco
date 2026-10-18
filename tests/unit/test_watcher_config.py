@@ -191,3 +191,22 @@ def test_with_overrides_can_replace_parse_ocr() -> None:
     base = WatchConfig(parse_ocr=OcrOptions(enabled=True, dpi=300))
     updated = base.with_overrides(parse_ocr=OcrOptions(enabled=True, dpi=600))
     assert updated.parse_ocr is not None and updated.parse_ocr.dpi == 600
+
+
+def test_from_dict_models_absent_yields_none(tmp_path: Path) -> None:
+    """Without ``models.path`` the watcher leaves the root to the worker (cwd)."""
+    cfg = WatchConfig.from_dict({}, config_path=tmp_path / "ireco.config.json")
+    assert cfg.models_path is None
+
+
+def test_from_dict_models_relative_ignores_cwd(tmp_path: Path, monkeypatch) -> None:
+    """Issue #8: anchoring does not depend on the directory the watcher runs from."""
+    cfgdir = tmp_path / "cfgdir"
+    other = tmp_path / "other"
+    cfgdir.mkdir()
+    other.mkdir()
+    monkeypatch.chdir(other)
+    cfg = WatchConfig.from_dict(
+        {"models": {"path": "./m"}}, config_path=cfgdir / "ireco.config.json"
+    )
+    assert cfg.models_path == (cfgdir / "m").resolve()

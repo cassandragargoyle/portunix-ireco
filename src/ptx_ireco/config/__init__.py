@@ -28,6 +28,7 @@ from ptx_ireco.config.loader import (
     find_config,
     load_config_dict,
     load_config_file,
+    resolve_models_path,
     write_config,
 )
 from ptx_ireco.config.validator import ValidationError, validate_config
@@ -42,6 +43,7 @@ __all__ = [
     "find_config",
     "load_config_dict",
     "load_config_file",
+    "resolve_models_path",
     "validate_config",
     "write_config",
 ]

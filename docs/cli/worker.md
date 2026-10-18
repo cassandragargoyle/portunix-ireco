@@ -54,15 +54,20 @@ For every subcommand, the worker resolves configuration in this order
 1. Explicit CLI flag (`--config`, `--models`, `-o`).
 2. `ireco.config.json` in the current working directory (auto-detected
    when `--config` is absent).
-3. Built-in defaults: no recipient list, models at `cwd/models`.
+3. Built-in defaults: no recipient list, models root = cwd (models in
+   `./models/invoice/`).
 
 When no `ireco.config.json` is present **and** no `--config` is passed,
 the worker still runs — the output simply has no `recipient_id` and
 does not enforce `doc_types` restrictions. This matches the driver
 CLI's no-config behavior.
 
-`--models <path>` overrides `models.path` from the config (this
-`models` section is reserved for issue 004; until then, use the flag).
+`models.path` in the config is the root that contains `models/invoice/`.
+An absolute value is used as is; a relative value is anchored at the
+directory of the config file, the same rule as `ptx-ireco-watcher`, so
+the worker finds the same models whichever directory it is started from.
+`--models <path>` overrides `models.path`; a relative `--models` is
+resolved against the current working directory.
 
 ## Reserved doc types
 

@@ -33,7 +33,6 @@ WATCHER_DEFAULT_RECURSIVE = True
 WATCHER_POST_PROCESS_HANDLERS = ("export-isdoc",)
 EXPORT_ISDOC_FORMATS = ("isdoc", "isdocx")
 EXPORT_ISDOC_PROFILES = ("minimal", "standard", "full")
-MODELS_DEFAULT_PATH = "./models"
 
 # issue 007 — per-page OCR fallback in step 1. Defaults must match the
 # `OcrOptions` dataclass in `ptx_ireco.pipeline.parse` so a missing

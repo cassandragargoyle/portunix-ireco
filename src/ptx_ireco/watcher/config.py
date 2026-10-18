@@ -14,6 +14,7 @@ from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
 
+from ptx_ireco.config.loader import resolve_models_path
 from ptx_ireco.config.schema import (
     WATCHER_DEFAULT_BACKEND,
     WATCHER_DEFAULT_COOLDOWN_SECONDS,
@@ -128,14 +129,7 @@ class WatchConfig:
         directory; without a known config location it stays relative
         and is later resolved against cwd by the worker pipeline.
         """
-        if not raw:
-            return None
-        p = Path(raw)
-        if p.is_absolute():
-            return p
-        if config_path is not None:
-            return (config_path.parent / p).resolve()
-        return p
+        return resolve_models_path(raw, config_path)
 
     def with_overrides(
         self,
