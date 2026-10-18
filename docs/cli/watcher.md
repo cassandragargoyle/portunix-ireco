@@ -76,8 +76,8 @@ The watcher reads three top-level sections:
     "recursive": true
   },
 
-  "models": {             // optional; defaults to cwd ./models
-    "path": "./models"
+  "models": {             // optional; default root = cwd (models in ./models/invoice/)
+    "path": "../ireco-models"  // root that contains models/invoice/
   }
 }
 ```
@@ -91,7 +91,7 @@ The watcher reads three top-level sections:
 | `watcher.cooldown_seconds` | `1.0` | Pause before dispatch to let writers finish. |
 | `watcher.patterns` | `["*.pdf"]` | Case-sensitive globs (matched against file names). |
 | `watcher.recursive` | `true` | Watch subdirectories. |
-| `models.path` | cwd `./models` | Absolute or relative (anchored at the config file). |
+| `models.path` | cwd (models in `./models/invoice/`) | Root that contains `models/invoice/`. Absolute, or relative to the directory of the config file (worker and watcher alike). `--models` overrides it and is relative to cwd. |
 
 Schema additions are **additive** — configs from earlier issues that
 do not declare `watcher` or `models` keep validating against the v1

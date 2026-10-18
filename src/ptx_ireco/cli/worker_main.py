@@ -21,9 +21,12 @@ Config / models precedence (highest → lowest):
 1. Explicit ``--config`` flag (worker CLI side).
 2. ``ireco.config.json`` in cwd (auto-detected when ``--config`` is
    absent).
-3. Defaults: no recipient list, models at cwd ``./models``.
+3. Defaults: no recipient list, models root = cwd (models in
+   ``./models/invoice/``).
 
-``--models`` flag overrides ``models.path`` from the config.
+``--models`` flag overrides ``models.path`` from the config. A relative
+``--models`` is resolved against cwd; a relative ``models.path`` is
+anchored at the directory of the config file (same rule as the watcher).
 """
 
 from __future__ import annotations
@@ -42,6 +45,7 @@ from ptx_ireco.config import (
     UnsupportedVersionError,
     find_config,
     load_config_file,
+    resolve_models_path,
 )
 from ptx_ireco.config.schema import IMPLEMENTED_DOC_TYPES
 from ptx_ireco.pipeline.extract import ExtractionError
@@ -110,7 +114,7 @@ def _cmd_process(args: argparse.Namespace) -> int:
         )
         return 2
 
-    repo_root = _resolve_repo_root(args, cfg)
+    repo_root = _resolve_repo_root(args, cfg, cfg_path)
     model_paths = ModelPaths.default(repo_root)
     options = _build_extraction_options(cfg)
     ocr = build_ocr_options(args, cfg)
@@ -142,7 +146,7 @@ def _cmd_process(args: argparse.Namespace) -> int:
 
 
 def _cmd_batch(args: argparse.Namespace) -> int:
-    cfg, _ = _resolve_config(args)
+    cfg, cfg_path = _resolve_config(args)
     if cfg is not None:
         try:
             _check_implemented_doc_types(cfg)
@@ -164,7 +168,7 @@ def _cmd_batch(args: argparse.Namespace) -> int:
         return 2
     out_dir.mkdir(parents=True, exist_ok=True)
 
-    repo_root = _resolve_repo_root(args, cfg)
+    repo_root = _resolve_repo_root(args, cfg, cfg_path)
     options = _build_extraction_options(cfg)
     ocr = build_ocr_options(args, cfg)
 
@@ -275,22 +279,28 @@ def _resolve_io_path(
 
 
 def _resolve_repo_root(
-    args: argparse.Namespace, cfg: dict[str, Any] | None
+    args: argparse.Namespace,
+    cfg: dict[str, Any] | None,
+    cfg_path: Path | None = None,
 ) -> Path:
     """Explicit ``--models`` flag → ``models.path`` from config → cwd.
 
     Returns the repo root that contains ``models/invoice/...``. The caller
     builds :class:`ModelPaths` from this and passes the same value to the
     pipeline façade so the two views agree on layout.
+
+    A relative ``--models`` stays relative to cwd. A relative
+    ``models.path`` is anchored at the config file's parent directory,
+    the same rule as the watcher (see :func:`resolve_models_path`).
     """
     models = getattr(args, "models", None)
     if models is not None:
         return Path(models)
     if cfg is not None:
         models_section = cfg.get("models") or {}
-        path = models_section.get("path")
-        if path:
-            return Path(path)
+        resolved = resolve_models_path(models_section.get("path"), cfg_path)
+        if resolved is not None:
+            return resolved
     return Path.cwd()
 
 

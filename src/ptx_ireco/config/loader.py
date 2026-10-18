@@ -56,6 +56,24 @@ def find_config(directory: str | Path) -> Path | None:
     return candidate if candidate.is_file() else None
 
 
+def resolve_models_path(raw: str | None, config_path: str | Path | None) -> Path | None:
+    """Return the ``models.path`` root or ``None`` when the key is absent.
+
+    A relative path is anchored at the config file's parent directory;
+    without a known config location it stays relative and is resolved
+    against cwd by the caller. Shared by the worker and the watcher so
+    both read the same config the same way (issue #8).
+    """
+    if not raw:
+        return None
+    p = Path(raw)
+    if p.is_absolute():
+        return p
+    if config_path is not None:
+        return (Path(config_path).parent / p).resolve()
+    return p
+
+
 def load_config_dict(data: Any, *, source: str | Path = "<dict>") -> dict[str, Any]:
     """Validate an in-memory ``data`` value as a v1 config and return it.
 

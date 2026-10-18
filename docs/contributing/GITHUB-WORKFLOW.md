@@ -11,15 +11,15 @@ issues, and pull requests. There is no separate internal server and no sync/publ
 ## Everyday Development
 
 ```bash
-# Work on a branch off main (N = GitHub issue number)
-git switch -c feature/N-short-name
+# Work on a branch off main (N = GitHub issue number, NNN = N zero-padded to three digits)
+git switch -c feature/NNN-short-name
 
 # Commit as you go
 git add .
 git commit -m "feat(N): short description"
 
 # Push the branch to GitHub
-git push -u origin feature/N-short-name
+git push -u origin feature/NNN-short-name
 ```
 
 Merge into `main` only after the tester acceptance protocol shows PASS — see

@@ -119,12 +119,12 @@
     "models": {
       "type": "object",
       "additionalProperties": false,
-      "description": "Optional location of the models tree. Absent → cwd ./models.",
+      "description": "Optional location of the models tree. Absent → the current working directory is the root (models in ./models/invoice/).",
       "properties": {
         "path": {
           "type": "string",
           "minLength": 1,
-          "description": "Absolute or relative path to the directory containing models/invoice/."
+          "description": "Absolute or relative path to the directory containing models/invoice/. A relative path is anchored at the directory of the config file."
         }
       }
     },
