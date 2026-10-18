@@ -3,7 +3,12 @@
 - **Status**: Accepted (wizard-placement statement *superseded in part
   by [ADR-0006](0006-runtime-only-scope.md)* on 2026-05-10 — the
   `init` wizard moves out of the driver CLI to `portunix-reco-studio`
-  per INT-037; the rest of this ADR is unaffected)
+  per INT-037; the `models.path` default and anchoring are
+  *superseded in part by
+  [#8](../issues/done/008-models-path-default-and-anchoring.md)* on
+  2026-10-18 — see [`docs/cli/watcher.md`](../cli/watcher.md) and
+  [`docs/cli/worker.md`](../cli/worker.md); the rest of this ADR is
+  unaffected)
 - **Date**: 2026-05-09
 - **Deciders**: zdendaku
 - **Scope**: top-level architecture of `portunix-ireco` — binaries,
@@ -210,6 +215,13 @@ top-level sections are optional with sensible defaults:
 }
 ```
 
+> **Note ([#8](../issues/done/008-models-path-default-and-anchoring.md),
+> 2026-10-18):** the value `"./models"` above is wrong. `models.path`
+> is the root that *contains* `models/invoice/`, so
+> `"./models"` points to `./models/models/invoice/`. Without the key the
+> root is the current working directory (models in `./models/invoice/`).
+> A relative value is anchored at the directory of the config file.
+
 Existing valid configs without these keys remain valid. CLI flag
 precedence (highest → lowest): explicit CLI flag → `ireco.config.json`
 value → built-in default.
@@ -320,6 +332,14 @@ it becomes a priority.
    `./models`. Implementer should add a single
    `_resolve_model_paths(args, cfg)` helper to keep the rule
    auditable.
+   **Resolved in
+   [#8](../issues/done/008-models-path-default-and-anchoring.md):**
+   the precedence holds, but the default root is cwd (models in
+   `./models/invoice/`). A relative `models.path` is anchored at the
+   directory of the config file in both the worker and the watcher
+   (shared helper
+   `ptx_ireco.config.resolve_models_path`); a relative `--models` is
+   resolved against cwd.
 3. **Watcher backend default.** `local` (low overhead, single
    process) is right for development; `cli` (crash isolation,
    per-file OOM safety) for production. The schema default is
