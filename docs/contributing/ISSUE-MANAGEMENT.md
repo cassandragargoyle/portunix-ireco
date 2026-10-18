@@ -40,7 +40,17 @@ filename number **equals the GitHub issue number** (zero-padded to three digits)
 4. **Reference `N`** in branches and commits: `feature/NNN-name` (zero-padded, `#8` → `feature/008-name`), `feat(N): …`, `fixes #N`.
 
 5. **Archive on completion**: `gh issue close N` and
-   `git mv docs/issues/NNN-name*.md docs/issues/done/`.
+   `git mv docs/issues/NNN-name*.md docs/issues/done/`. `git mv` stages only the move:
+   run `git add docs/issues/done/NNN-name*.md` again if you edited the file (status,
+   closing date) before the move. After the archive commit is on `main` on GitHub,
+   point the "Full details" link in the GitHub body to `done/`, because the old
+   `blob/main/docs/issues/NNN-name.md` link returns 404:
+
+   ```bash
+   gh issue view N --repo cassandragargoyle/portunix-ireco --json body --jq .body \
+     | sed 's#blob/main/docs/issues/NNN-#blob/main/docs/issues/done/NNN-#' \
+     | gh issue edit N --repo cassandragargoyle/portunix-ireco --body-file -
+   ```
 
 The `create-issue` skill (`/create-issue`) automates steps 1–3.
 

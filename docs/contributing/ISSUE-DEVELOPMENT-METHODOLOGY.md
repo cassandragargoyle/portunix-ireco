@@ -101,9 +101,13 @@ This methodology ensures quality, traceability, and proper testing before code i
    - Archive the file (and its verbatims file):
      `git mv docs/issues/{number}-{slug}*.md docs/issues/done/`
    - Commit both changes (status update + archival) in a single commit,
-     e.g. `docs({number}): close issue — archive to done/`
+     e.g. `docs({number}): close issue — archive to done/`; `git mv` stages only the
+     move, so `git add docs/issues/done/{number}-{slug}*.md` again before the commit
    - Close the GitHub issue with reference to the acceptance protocol:
      `gh issue close {number} --comment "Implemented, acceptance: docs/testing/acceptance-{number}.md"`
+   - After the archive commit is on `main` on GitHub, point the "Full details" link in
+     the GitHub issue body to `docs/issues/done/` (the old link returns 404); see
+     [ISSUE-MANAGEMENT.md](ISSUE-MANAGEMENT.md#github-first-workflow)
 
 4. **Post-Merge Cleanup**
    - Delete feature branch after successful merge

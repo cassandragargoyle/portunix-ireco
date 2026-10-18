@@ -74,8 +74,11 @@ See docs/contributing/CODE-STYLE-*.md for language-specific guidelines
 
 3. **Completing issue:**
    - Update the status in the issue file (✅ Implemented, ❌ Closed, or ➡️ Moved)
-   - Move the file (and its verbatims file): `git mv docs/issues/NNN-name*.md docs/issues/done/`
+   - Move the file (and its verbatims file): `git mv docs/issues/NNN-name*.md docs/issues/done/`,
+     then `git add docs/issues/done/NNN-name*.md` (`git mv` stages only the move)
    - Close the GitHub issue: `gh issue close NNN`
+   - After the archive is on `main` on GitHub, point the "Full details" link in the
+     GitHub issue body to `docs/issues/done/` (the old link returns 404)
 
 See [docs/contributing/ISSUE-MANAGEMENT.md](docs/contributing/ISSUE-MANAGEMENT.md) for details.
 
