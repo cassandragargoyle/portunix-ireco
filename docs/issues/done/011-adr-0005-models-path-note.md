@@ -7,11 +7,12 @@ ADR 0005 still shows `"models": { "path": "./models" }` and suggests the default
 `./models/invoice/`), and a relative `models.path` is anchored at the directory of the
 config file. The ADR gets a short "superseded in part" note that points to #8.
 
-**Status**: 📋 Open
+**Status**: ✅ Implemented
 **Type**: Documentation
 **Priority**: Low
 **Component**: `docs/adr/0005-ireco-plugin-split.md`
 **Created**: 2026-10-18
+**Closed**: 2026-10-18 — acceptance: [`docs/testing/acceptance-011.md`](../../testing/acceptance-011.md) (STATUS PASS)
 **GitHub**: #11
 **Related**: #8 (finding F1 in `docs/testing/acceptance-008.md`)
 

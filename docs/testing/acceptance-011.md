@@ -4,7 +4,7 @@
 **Approval for merge**: **YES** — Tester: zdendaku (`/role tester`)
 
 **Issue**: ADR 0005 shows the old models.path example and default
-([`docs/issues/011-adr-0005-models-path-note.md`](../issues/011-adr-0005-models-path-note.md),
+([`docs/issues/done/011-adr-0005-models-path-note.md`](../issues/done/011-adr-0005-models-path-note.md),
 GitHub #11)
 **Branch**: `fix/011-adr-0005-models-path-note`
 **Commits under test**:
