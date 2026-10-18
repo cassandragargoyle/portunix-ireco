@@ -3,71 +3,66 @@
 ## Overview
 
 This document describes the Git workflow and branching strategy for portunix-ireco.
+The repository lives on GitHub (see [GITHUB-WORKFLOW.md](GITHUB-WORKFLOW.md)); the
+full issue lifecycle is described in
+[ISSUE-DEVELOPMENT-METHODOLOGY.md](ISSUE-DEVELOPMENT-METHODOLOGY.md).
 
 ## Branch Structure
 
-### Main Branches
+### Main Branch
 
-- `main` - Production-ready code
-- `develop` - Integration branch for features
+- `main` - The only long-lived branch. It always contains tested code that passed
+  an acceptance protocol. There is no `develop` branch.
 
 ### Supporting Branches
 
-- `feature/*` - New features
-- `hotfix/*` - Critical fixes
-- `release/*` - Release preparation
+Every change is made on a short-lived branch off `main`, named after its GitHub
+issue. `NNN` is the issue number zero-padded to three digits (`#8` → `008`):
+
+- `feature/NNN-short-name` - New features and enhancements
+- `fix/NNN-short-name` - Bug fixes
 
 ## Workflow Process
 
-### 1. Feature Development
+### 1. Feature or Fix Development
 
 ```bash
-# Start new feature
-git checkout develop
-git pull origin develop
-git checkout -b feature/user-authentication
+# Start from an up-to-date main
+git switch main
+git pull origin main
+git switch -c feature/008-short-name
 
-# Work on feature
-git add .
-git commit -m "feat: add login functionality"
-git push origin feature/user-authentication
-
-# Create pull request to develop
+# Work on the change
+git add <files>
+git commit -m "feat(8): short description"
+git push -u origin feature/008-short-name
 ```
 
-### 2. Release Process
+### 2. Testing and Merge
+
+1. The tester checks out the branch, runs the tests, and creates the acceptance
+   protocol `docs/testing/acceptance-NNN.md`.
+2. Only with **PASS** status the branch is merged into `main`, directly or through
+   a Pull Request (`gh pr create`).
+3. The issue file is archived to `docs/issues/done/` and the GitHub issue is closed.
+4. The branch is deleted after the merge.
+
+The developer **must not** merge into `main` before the tester approves.
+
+### 3. Critical Hotfixes
+
+A critical hotfix uses a normal `fix/NNN-short-name` branch. It may bypass the
+regular testing phase only with architect approval; a retroactive acceptance
+protocol is required within 24 hours.
+
+### 4. Releases
 
 ```bash
-# Create release branch
-git checkout develop
-git checkout -b release/v1.2.0
-
-# Prepare release
-npm run build
-npm run test
-git commit -m "chore: prepare release v1.2.0"
-
-# Merge to main and develop
-git checkout main
-git merge release/v1.2.0
-git tag -a v1.2.0 -m "Release version 1.2.0"
-```
-
-### 3. Hotfix Process
-
-```bash
-# Create hotfix from main
-git checkout main
-git checkout -b hotfix/critical-security-fix
-
-# Apply fix
-git commit -m "fix: resolve security vulnerability"
-
-# Merge to both main and develop
-git checkout main
-git merge hotfix/critical-security-fix
-git checkout develop
-git merge hotfix/critical-security-fix
+# On main, after all included issues are merged
+# 1. Bump the version in pyproject.toml ([project].version)
+git commit -am "chore: release v0.2.0"
+git tag -a v0.2.0 -m "Release version 0.2.0"
+git push origin main --tags
 ```
 
 ## Commit Guidelines
@@ -75,12 +70,15 @@ git merge hotfix/critical-security-fix
 ### Message Format
 
 ```text
-<type>(<scope>): <description>
+<type>(<issue-number>): <description>
 
 <body>
 
 <footer>
 ```
+
+The scope is the GitHub issue number without padding (`feat(8): …`). Changes that
+do not belong to an issue omit the scope (`docs: …`).
 
 ### Types
 
@@ -95,26 +93,34 @@ git merge hotfix/critical-security-fix
 ### Examples
 
 ```bash
-git commit -m "feat(auth): add OAuth2 integration"
-git commit -m "fix(api): handle null values in user data"
-git commit -m "docs: update API documentation"
+git commit -m "feat(7): add per-page OCR fallback for scanned PDFs"
+git commit -m "fix(8): anchor relative models.path at the config file"
+git commit -m "docs(8): close issue — archive to done/"
+git commit -m "docs: use zero-padded issue numbers in branch names"
 ```
+
+### Attribution
+
+Do not add `Co-Authored-By` lines for AI tools to commits.
 
 ## Pull Request Process
 
 ### Requirements
 
-- [ ] Feature branch is up to date with target branch
-- [ ] All tests pass
-- [ ] Code follows style guidelines
-- [ ] Documentation is updated
-- [ ] Changes are reviewed by at least one team member
+- [ ] Branch is up to date with `main`
+- [ ] All tests pass (`uv run pytest`)
+- [ ] Code follows the [Python style guide](CODE-STYLE-PYTHON.md)
+- [ ] Documentation is updated (`docs/cli/`, `docs/adr/`, issue file)
+- [ ] Acceptance protocol `docs/testing/acceptance-NNN.md` shows **PASS**
+- [ ] No customer data, real company identifiers, or personal data (public repository)
 
 ### Template
 
 ```markdown
 ## Description
 Brief description of changes
+
+Closes #N
 
 ## Type of Change
 - [ ] Bug fix
@@ -124,8 +130,8 @@ Brief description of changes
 
 ## Testing
 - [ ] Unit tests added/updated
-- [ ] Integration tests pass
-- [ ] Manual testing completed
+- [ ] E2E tests pass
+- [ ] Acceptance protocol: docs/testing/acceptance-NNN.md
 
 ## Checklist
 - [ ] Code follows style guidelines
@@ -137,9 +143,12 @@ Brief description of changes
 
 ### User Setup
 
+The repository is public. Use your GitHub noreply e-mail address to keep your
+personal address out of the history:
+
 ```bash
-git config --global user.name "Your Name"
-git config --global user.email "your.email@example.com"
+git config user.name "Your Name"
+git config user.email "<id>+<user>@users.noreply.github.com"
 ```
 
 ### Aliases
@@ -155,27 +164,31 @@ git config --global alias.last 'log -1 HEAD'
 ### Hooks
 
 ```bash
-# Pre-commit hook
 #!/bin/bash
-npm run lint
-npm run test:unit
+# Pre-commit hook
+set -e
+uv run black --check src tests
+uv run isort --check-only src tests
+uv run flake8 src tests
+uv run pytest tests/unit -q
 ```
 
 ## Best Practices
 
 ### Do
 
-- Write clear commit messages
+- Write clear commit messages with the issue number
 - Keep commits atomic and focused
-- Rebase feature branches before merging
+- Rebase feature branches on `main` before merging
 - Use meaningful branch names
 - Review your own changes before requesting review
 
 ### Don't
 
-- Commit directly to main
+- Commit directly to `main`
+- Merge without a PASS acceptance protocol
 - Push broken code
-- Mix multiple features in one branch
+- Mix multiple issues in one branch
 - Use generic commit messages
 - Force push to shared branches
 
@@ -196,7 +209,7 @@ git commit --amend -m "New message"
 # Merge conflicts
 git status
 # Edit conflicted files
-git add .
+git add <files>
 git commit
 ```
 
