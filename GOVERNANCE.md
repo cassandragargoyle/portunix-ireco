@@ -1,47 +1,27 @@
 # Governance
 
-CassandraGargoyle API is an **open-source project** licensed under the
-[MIT License](LICENSE). The source code, documentation, and build
-artifacts are freely available; anyone may use, modify, and redistribute
-them under the terms of that license, including in commercial and
-proprietary products.
+This project is part of the CassandraGargoyle community.
 
-## Warranty disclaimer
+## Maintainer
 
-The software is provided **"as is", without warranty of any kind**,
-express or implied, including but not limited to the warranties of
-merchantability, fitness for a particular purpose, and non-infringement.
-In no event shall the authors or copyright holders be liable for any
-claim, damages, or other liability — whether in an action of contract,
-tort, or otherwise — arising from, out of, or in connection with the
-software or its use. Use is at the user's own risk. The authoritative
-text is the MIT License in [LICENSE](LICENSE) and applies to every
-release.
-
-## Maintainership
-
-The project is currently maintained by **Quick Computer Servis s.r.o.**,
-which reviews changes and stewards the main repository. Maintainership
-is a service to the community, not a claim of ownership over the code —
-the license remains MIT regardless of who maintains the repository.
+The current maintainer of the project is Quick Computer Servis s.r.o. (company).
+Quick Computer Servis s.r.o. is responsible for the project direction, reviewing changes, and maintaining the main repository.
 
 ## Contributors
 
-Anyone may contribute via pull requests. Contributions are merged after
-review and approval by a maintainer. By contributing, you agree that
-your work is licensed under the project's [MIT License](LICENSE) (see
-[CONTRIBUTING.md](CONTRIBUTING.md) for details).
+Anyone can contribute via pull requests.
+Changes are accepted after review and approval by the project maintainer.
 
 ## Succession
 
-If the current maintainer is no longer able to continue (e.g. ceases to
-operate or stops maintaining the project), maintainership passes to the
-core contributors, who select a new maintainer among themselves. The
-project itself — being MIT-licensed — can also be forked and continued
-independently by anyone at any time; nothing in this document restricts
-that right.
+If Quick Computer Servis s.r.o. is no longer able to maintain the project (e.g. ceases to operate or stops maintaining it),
+the maintainership will first be offered to [COMPANY_NAME].
+
+If this company declines or is unable to take over,
+the maintainership will be transferred to core contributors.
+
+Core contributors will then select a new maintainer for the project.
 
 ## Goal
 
-Keep CassandraGargoyle API a useful, open, vendor-neutral library that
-does not depend on any single company for its long-term existence.
+The goal is to ensure that the project is not dependent on a single company and can continue long-term.
