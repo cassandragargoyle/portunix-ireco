@@ -133,7 +133,12 @@ Prepare the PR description:
    git mv docs/issues/<NNN>-<slug>*.md docs/issues/done/
    ```
 
-3. Commit the status change together with the move (one commit):
+3. Commit the status change together with the move (one commit). `git mv` stages only
+   the move, so stage the edited file again before the commit:
+
+   ```bash
+   git add docs/issues/done/<NNN>-<slug>*.md
+   ```
 
    ```text
    docs(<NNN>): close issue — archive to done/
@@ -145,4 +150,22 @@ Prepare the PR description:
    gh issue close <N> --repo cassandragargoyle/portunix-ireco \
      --comment "Implemented, acceptance: docs/testing/acceptance-<NNN>.md"
    gh issue edit <N> --repo cassandragargoyle/portunix-ireco --remove-label in-progress
+   ```
+
+5. Point the "Full details" link in the GitHub issue body to `done/`. The old link
+   `blob/main/docs/issues/<NNN>-<slug>.md` returns 404 once the archive commit is on
+   `main` on GitHub, so do this after the push or after the PR merge:
+
+   ```bash
+   REPO="cassandragargoyle/portunix-ireco"
+   gh issue view <N> --repo "$REPO" --json body --jq .body \
+     | sed 's#blob/main/docs/issues/<NNN>-#blob/main/docs/issues/done/<NNN>-#' \
+     | gh issue edit <N> --repo "$REPO" --body-file -
+   ```
+
+   Check that the new link works (HTTP 200):
+
+   ```bash
+   curl -s -o /dev/null -w "%{http_code}\n" \
+     "https://github.com/$REPO/blob/main/docs/issues/done/<NNN>-<slug>.md"
    ```
