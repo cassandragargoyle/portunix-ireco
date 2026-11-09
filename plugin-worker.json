@@ -8,7 +8,7 @@
     "type": "helper",
     "binary": "ptx-ireco-worker",
     "runtime": "python",
-    "python_min_version": "3.11",
+    "python_min_version": "3.12",
     "interface": "cli,grpc"
   },
   "dependencies": {

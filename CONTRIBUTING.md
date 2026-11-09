@@ -39,7 +39,7 @@ invoice extraction on top of
    git switch -c fix/NNN-short-name       # bug fixes
    ```
 
-4. **Set up the development environment** — Python 3.11+ and
+4. **Set up the development environment** — Python 3.12+ and
    [uv](https://docs.astral.sh/uv/):
 
    ```bash

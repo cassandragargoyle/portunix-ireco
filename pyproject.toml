@@ -8,7 +8,7 @@ version = "0.1.0"
 description = "Invoice recognition pipeline (parse + extract) on top of ptx-reco / VIM 1.5"
 readme = "README.md"
 license = "MIT"
-requires-python = ">=3.11"
+requires-python = ">=3.12"
 authors = [
     {name = "CassandraGargoyle"},
 ]
@@ -53,14 +53,14 @@ markers = [
 
 [tool.black]
 line-length = 120
-target-version = ["py311"]
+target-version = ["py312"]
 
 [tool.isort]
 profile = "black"
 line_length = 120
 
 [tool.mypy]
-python_version = "3.11"
+python_version = "3.12"
 strict = true
 warn_return_any = true
 warn_unused_configs = true
