@@ -10,6 +10,8 @@ GitHub #12)
 **Commits under test**:
 
 - `7a6028c` — fix(012): Raise the Python minimum to 3.12 as ptx-reco
+- `6692ef9` — fix(12): align dev setup with portunix-reco — address O1 and O2
+  (re-test below)
 
 **Tester**: zdendaku (QA / Test Engineer — generic)
 **Date**: 2026-11-10
@@ -134,8 +136,31 @@ checked from both sides: refusal on 3.11 (T5) and full test runs on
 
 | ID | Severity | Finding | Action |
 | --- | --- | --- | --- |
-| O1 | Info | `scripts/setup-venv.sh:7-8`: the usage examples use `./setup-venv.sh 3.11`. With the new minimum, this example fails (T5). The text is a usage example, not a minimum declaration, so criterion 2 is not affected. | Recommended: change the examples to `3.12`. Not blocking. |
-| O2 | Info | Lock drift from the editable sibling source (see CI notes). This comes from the environment, not from the change. | No action for #12. |
+| O1 | Info | `scripts/setup-venv.sh:7-8`: the usage examples use `./setup-venv.sh 3.11`. With the new minimum, this example fails (T5). The text is a usage example, not a minimum declaration, so criterion 2 is not affected. | **Fixed** in `6692ef9`: the script is removed, as in `portunix-reco`; setup is a plain `uv sync`. Re-tested below. |
+| O2 | Info | Lock drift from the editable sibling source (see CI notes). This comes from the environment, not from the change. | **Fixed** in `6692ef9`: `CONTRIBUTING.md` documents the drift and how to detect and undo it. Re-tested below. |
+
+### Re-test of `6692ef9` (O1, O2) — PASS
+
+Date 2026-11-10, same host. Sibling `../portunix-reco` on `main`
+(`90642a3`, issue #123 merged), clean working tree.
+
+| ID | Given | When | Then | Result |
+| --- | --- | --- | --- | --- |
+| R1 | `e319f6c..6692ef9` | `git diff --stat` | only `CONTRIBUTING.md`, `README.md`, `pyproject.toml`, `uv.lock`, the issue file; `scripts/setup-venv.sh` removed | **PASS** |
+| R2 | sibling on `main`, clean | `uv lock --check` | lock up to date | **PASS** — 47 packages |
+| R3 | `uv.lock` | inspect | no 3.11 split (only the `3.15` split, also in `7a6028c`); `certifi` 2026.10.23, `pypdf` 6.21.4 (portunix-reco#123); `dev` group = `ptx-ireco[dev]` | **PASS** |
+| R4 | fresh environment, Python 3.12.13 | plain `uv sync --frozen`, then `uv run --frozen pytest -q -rs` | pytest, black, isort, flake8, mypy and the three CLIs installed without `--extra dev`; all tests pass | **PASS** — 312 passed, 0 skipped |
+| R5 | fresh environment, Python 3.13.13 | plain `uv sync --frozen`, `pytest -q` | all tests pass | **PASS** — 312 passed |
+| R6 | Python 3.11.15 | `uv sync --frozen --python 3.11` | refused with the `requires-python` message | **PASS** |
+| R7 | the R4 environment | `uv run ptx-ireco [init\|parse\|extract\|run] --help` (README commands) | exit code 0 | **PASS** — all 5 |
+| R8 | the repository | `git grep` for `setup-venv`, `uv pip install -e`, `uv venv` outside issues and protocols | no reference | **PASS** |
+| R9 | `pyproject.toml` | parse with `tomllib` | the `dev` extra stays for pip users; the `dev` group refers to it | **PASS** |
+| R10 | the R4 environment | `black --check src tests`, `mypy src` | the same as before the change | **PASS** — 39 / 19, unchanged |
+| R11 | `CONTRIBUTING.md`, `README.md` | markdownlint (project rules) | no findings | **PASS** |
+
+The O2 note in `CONTRIBUTING.md` matches what this test run saw: with the
+sibling at a committed state that matches `main`, `uv lock --check`
+passes and the lock does not change.
 
 ## Final Decision
 
