@@ -29,6 +29,13 @@ dev = [
     "mypy>=1.0",
 ]
 
+[dependency-groups]
+# uv syncs the dev group by default, so a plain `uv sync` or `uv run pytest` gets the
+# test and lint tools; the list itself lives in the `dev` extra for pip users
+dev = [
+    "ptx-ireco[dev]",
+]
+
 [project.scripts]
 ptx-ireco = "ptx_ireco.cli.main:main"
 ptx-ireco-worker = "ptx_ireco.cli.worker_main:main"
