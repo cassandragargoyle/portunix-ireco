@@ -31,6 +31,15 @@ invoice extraction on top of
    cd portunix-ireco
    ```
 
+   `uv.lock` records the dependencies of the sibling checkout as they
+   are in its working tree. If `portunix-reco` is on another branch or
+   has uncommitted changes in its `pyproject.toml`, a plain `uv run` or
+   `uv sync` rewrites `uv.lock`. Keep the sibling at a committed state
+   that matches `main`, run test sessions with `uv run --frozen`, and
+   check the lock with `uv lock --check` before you commit. If
+   `uv.lock` changes and you did not intend it, check the sibling first
+   and restore the lock with `git checkout -- uv.lock`.
+
 3. **Create a branch** following the project convention (issue number
    zero-padded to three digits, `#8` → `008`):
 
@@ -39,12 +48,11 @@ invoice extraction on top of
    git switch -c fix/NNN-short-name       # bug fixes
    ```
 
-4. **Set up the development environment** — Python 3.11+ and
+4. **Set up the development environment** — Python 3.12+ and
    [uv](https://docs.astral.sh/uv/):
 
    ```bash
-   ./scripts/setup-venv.sh                # creates .venv via uv
-   uv pip install -e ".[dev]"             # package + dev tools
+   uv sync                                # .venv from uv.lock: package + dev tools
    ```
 
    Optional, for OCR of scanned PDFs (issue #7): Tesseract and Poppler

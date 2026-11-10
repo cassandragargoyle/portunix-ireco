@@ -35,18 +35,17 @@ Declared as a dependency on `ptx-reco>=0.3.4` (`pyproject.toml`).
 ## Getting Started
 
 ```bash
-# Create a virtual environment (uv is the preferred tool — see scripts/setup-venv.sh).
-uv venv .venv
-uv pip install -e .
+# Create .venv from uv.lock (Python 3.12+, uv)
+uv sync
 
 # (Optional) declare what this directory processes — see docs/cli/init.md
-ptx-ireco init                                      # interactive wizard
-ptx-ireco init --from-file candidate.json           # CI / non-interactive
+uv run ptx-ireco init                               # interactive wizard
+uv run ptx-ireco init --from-file candidate.json    # CI / non-interactive
 
 # Run the two-step pipeline against an invoice PDF:
-ptx-ireco parse <invoice.pdf> -o <out.vim.json>     # PDF → VIM (physical+structural)
-ptx-ireco extract <out.vim.json>                    # populate semantic in place
-ptx-ireco run <invoice.pdf> -o <out.vim.json>       # parse + extract in one go
+uv run ptx-ireco parse <invoice.pdf> -o <out.vim.json>  # PDF → VIM (physical+structural)
+uv run ptx-ireco extract <out.vim.json>                 # populate semantic in place
+uv run ptx-ireco run <invoice.pdf> -o <out.vim.json>    # parse + extract in one go
 ```
 
 The `extract` step needs `models/invoice/{templates,profiles,extraction}/`

@@ -8,7 +8,7 @@ version = "0.1.0"
 description = "Invoice recognition pipeline (parse + extract) on top of ptx-reco / VIM 1.5"
 readme = "README.md"
 license = "MIT"
-requires-python = ">=3.11"
+requires-python = ">=3.12"
 authors = [
     {name = "CassandraGargoyle"},
 ]
@@ -27,6 +27,13 @@ dev = [
     "isort>=5.12",
     "flake8>=6.0",
     "mypy>=1.0",
+]
+
+[dependency-groups]
+# uv syncs the dev group by default, so a plain `uv sync` or `uv run pytest` gets the
+# test and lint tools; the list itself lives in the `dev` extra for pip users
+dev = [
+    "ptx-ireco[dev]",
 ]
 
 [project.scripts]
@@ -53,14 +60,14 @@ markers = [
 
 [tool.black]
 line-length = 120
-target-version = ["py311"]
+target-version = ["py312"]
 
 [tool.isort]
 profile = "black"
 line_length = 120
 
 [tool.mypy]
-python_version = "3.11"
+python_version = "3.12"
 strict = true
 warn_return_any = true
 warn_unused_configs = true
