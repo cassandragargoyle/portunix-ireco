@@ -5,12 +5,13 @@
 `pyproject.toml` and the plugin manifests declare Python 3.11 as the minimum, but `ptx-reco`
 requires Python 3.12. `uv lock` fails on the Python 3.11 split. The minimum is raised to 3.12.
 
-**Status**: 🔄 In Progress
+**Status**: ✅ Implemented
 **Type**: Bug
 **Priority**: Low
 **Component**: `pyproject.toml`, `plugin-worker.json`, `plugin-watcher.json`, `CONTRIBUTING.md`,
 `README.md`, `uv.lock`, `scripts/setup-venv.sh` (removed)
 **Created**: 2026-11-10
+**Closed**: 2026-11-10 — acceptance: [`docs/testing/acceptance-012.md`](../../testing/acceptance-012.md) (STATUS PASS)
 **GitHub**: #12
 **Related**: cassandragargoyle/portunix-reco#61 (observation O19 of its acceptance),
 cassandragargoyle/portunix-reco-studio#95 (same change)
